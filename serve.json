@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "proyectos/:slug", "destination": "/proyecto.html" },
+    { "source": "blog/:slug", "destination": "/blog.html" }
+  ]
+}

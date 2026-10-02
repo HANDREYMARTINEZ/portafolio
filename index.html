@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrey Martínez — Ingeniero de IA y Automatización</title>
+  <meta name="description" content="Harold Andrey Martínez Cortés — Ingeniero de IA y Automatización en Colombia. Soluciones con inteligencia artificial, automatización de procesos, análisis de datos y software a la medida." />
+  <meta property="og:title" content="Andrey Martínez — Ingeniero de IA y Automatización" />
+  <meta property="og:description" content="Soluciones con IA: reportes y dashboards automáticos, agentes, sistemas de gestión, web, apps y hardware." />
+  <meta property="og:image" content="https://andreymartinezportafolio.vercel.app/img/gymapp/13-dashboards.png" />
+  <meta property="og:url" content="https://andreymartinezportafolio.vercel.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="H.A.M.C Soluciones en IA" />
+  <meta property="og:locale" content="es_CO" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image:alt" content="Panel de dashboards de GymApp, sistema de administración de gimnasio desarrollado por Andrey Martínez" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://andreymartinezportafolio.vercel.app/img/gymapp/13-dashboards.png" />
+  <link rel="canonical" href="https://andreymartinezportafolio.vercel.app/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Harold Andrey Martínez Cortés",
+      "alternateName": "Andrey Martínez",
+      "jobTitle": "Ingeniero de IA y Automatización",
+      "knowsAbout": ["Inteligencia artificial", "Automatización de procesos", "Agentes de IA", "Análisis de datos", "Power BI", "Desarrollo de software", "Ingeniería electrónica", "Seguridad de redes"],
+      "url": "https://andreymartinezportafolio.vercel.app/",
+      "image": "https://andreymartinezportafolio.vercel.app/img/perfil.jpg",
+      "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+      "sameAs": [
+        "https://github.com/HANDREYMARTINEZ",
+        "https://www.linkedin.com/in/andreymartinezdata"
+      ]
+    }
+  </script>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/estilos.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="contenedor nav-interior">
+      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <nav id="menu" class="menu">
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#blog" data-t="nav_blog" data-seccion="blog">Blog</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="menu-contacto" data-cv="" download="" data-t="descargar_cv">Descargar CV</a>
+        <a href="/#contacto" class="menu-contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-icono btn-tema" type="button" data-icono="tema" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema claro/oscuro"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"></path></svg></button>
+        <button class="btn-idioma" type="button" aria-label="Switch to English"><span class="activo">ES</span><span>EN</span></button>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario nav-cta" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span>CV</span></a>
+        <a href="/#contacto" class="boton nav-cta"><span data-t="nav_contacto">Contacto</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <button class="btn-icono btn-menu" type="button" data-icono="menu" aria-controls="menu" aria-expanded="false" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="contenedor hero-grid">
+        <div class="hero-texto revelar">
+          <p id="disponible" class="disponible"><span class="punto"></span><span data-t="disponible">Disponible para nuevos proyectos y oportunidades</span></p>
+          <h1><span class="saludo" data-sitio="rotulo">Colombia · Trabajo remoto</span><span data-sitio="nombre">Harold Andrey Martínez Cortés</span></h1>
+          <p class="rol"><span data-sitio="rol">Ingeniero de IA y Automatización</span></p>
+          <p class="bajada" data-sitio="frase">Diseño e implemento soluciones de inteligencia artificial que automatizan procesos, aceleran el análisis de datos y fortalecen la operación de empresas y emprendimientos: desde reportes generados por agentes de IA hasta sistemas a la medida para web, escritorio, móvil y hardware.</p>
+          <ul id="enfoque" class="enfoque"><li>IA generativa</li><li>Agentes de IA</li><li>Automatización</li><li>Power BI</li><li>Python</li><li>Desarrollo web</li></ul>
+          <div class="botones">
+            <a href="#proyectos" class="boton"><span data-t="ver_proyectos">Ver proyectos</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span data-t="descargar_cv">Descargar CV</span></a>
+            <a href="#contacto" class="boton secundario" data-t="contactame">Contacto</a>
+          </div>
+          <div id="redes" class="redes"><a class="btn-icono" href="https://github.com/HANDREYMARTINEZ" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a><a class="btn-icono" href="https://www.linkedin.com/in/andreymartinezdata" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a><a class="btn-icono" href="mailto:2002.ha.mc@gmail.com" aria-label="Email" title="Email"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></a></div>
+        </div>
+        <a id="destacado" class="destacado revelar" href="/proyectos/app-gimnasio">
+    <span class="destacado-etiqueta"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg> Proyecto destacado</span>
+    <div class="destacado-img"><img src="/img/gymapp/13-dashboards.png" alt="GymApp — Administración de gimnasio" loading="lazy"></div>
+    <div class="destacado-pie">
+      <div><strong>GymApp</strong><span>Administración de gimnasio</span></div>
+      <span class="chip estado"><span class="punto"></span>En producción</span>
+    </div></a>
+      </div>
+      <div class="contenedor">
+        <div id="cifras" class="cifras revelar cifras-texto"><div class="cifra"><strong>1–2 días</strong><span>para reportes que manualmente toman 2–3 semanas</span></div><div class="cifra"><strong>300+</strong><span>clientes gestionados con GymApp en producción</span></div><div class="cifra"><strong>4</strong><span>proyectos documentados como casos de estudio</span></div><div class="cifra"><strong>6</strong><span>años de formación en ingeniería</span></div></div>
+      </div>
+    </section>
+
+    <section id="servicios" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-cabecera revelar">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-num">01</span><span data-t="nav_servicios">Servicios</span></p>
+            <h2 data-t="servicios_titulo">Soluciones que desarrollo</h2>
+            <p class="seccion-bajada" data-t="servicios_bajada">Inteligencia artificial y software a la medida para empresas, emprendimientos e instituciones: desde la automatización de reportes hasta la integración con dispositivos físicos.</p>
+          </div>
+        </div>
+        <div id="lista-servicios" class="servicios">
+        <div class="servicio revelar">
+          <span class="servicio-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg></span>
+          <h3>Reportes y dashboards con IA</h3>
+          <p>Generación automática de informes en Excel, PowerPoint, Power BI y Datorama a partir de una única instrucción. Reduce el tiempo de elaboración de semanas a uno o dos días.</p>
+          <a class="ver-mas" href="/proyectos/reportes-con-ia">Caso de referencia: Reportes con IA <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+        <div class="servicio revelar">
+          <span class="servicio-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2M20 14h2M15 13v2M9 13v2"></path></svg></span>
+          <h3>Agentes de IA y automatización</h3>
+          <p>Agentes que ejecutan de forma autónoma tareas recurrentes: reportes periódicos, integración entre sistemas, notificaciones y flujos programados con Power Automate.</p>
+          <div class="etiquetas"><span class="etiqueta">Claude</span><span class="etiqueta">Power Automate</span><span class="etiqueta">Copilot Studio</span><span class="etiqueta">Python</span></div>
+        </div>
+        <div class="servicio revelar">
+          <span class="servicio-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg></span>
+          <h3>Sistemas de gestión empresarial</h3>
+          <p>Ventas, inventario, caja, clientes y control de acceso en una sola plataforma, con reportes, respaldos y operación sin conexión a internet.</p>
+          <a class="ver-mas" href="/proyectos/app-gimnasio">Caso de referencia: GymApp <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+        <div class="servicio revelar">
+          <span class="servicio-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></span>
+          <h3>Plataformas web</h3>
+          <p>Sitios corporativos y plataformas para empresas, instituciones educativas y comercios, con áreas privadas y permisos diferenciados por rol.</p>
+          <a class="ver-mas" href="/proyectos/pagina-gimnasio">Caso de referencia: Web de gimnasio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+        <div class="servicio revelar">
+          <span class="servicio-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"></rect><path d="M12 18h.01"></path></svg></span>
+          <h3>Aplicaciones móviles</h3>
+          <p>Aplicaciones Android a la medida, con interfaces claras, buen rendimiento y la opción de mantener los datos exclusivamente en el dispositivo.</p>
+          <a class="ver-mas" href="/proyectos/mis-finanzas">Caso de referencia: Mis Finanzas <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+        <div class="servicio revelar">
+          <span class="servicio-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="16" x="4" y="4" rx="2"></rect><rect width="6" height="6" x="9" y="9" rx="1"></rect><path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2"></path></svg></span>
+          <h3>IA aplicada a hardware e IoT</h3>
+          <p>Integración de software con el entorno físico: control de acceso biométrico, sensores, cámaras con ESP32 y domótica, conectados a los datos del negocio.</p>
+          <div class="etiquetas"><span class="etiqueta">Arduino</span><span class="etiqueta">ESP32</span></div>
+        </div></div>
+        <div class="metodologia revelar">
+          <h3 class="metodologia-titulo" data-t="metodologia_titulo">Cómo convierto una idea en una solución</h3>
+          <ol id="lista-metodologia" class="pasos" style="--pasos: 5;">
+      <li class="paso">
+        <span class="paso-num">01</span>
+        <h4>Diagnóstico</h4>
+        <p>Análisis del proceso, los datos disponibles y los objetivos del negocio.</p>
+      </li>
+      <li class="paso">
+        <span class="paso-num">02</span>
+        <h4>Propuesta</h4>
+        <p>Alcance, arquitectura y cronograma definidos antes de iniciar el desarrollo.</p>
+      </li>
+      <li class="paso">
+        <span class="paso-num">03</span>
+        <h4>Desarrollo</h4>
+        <p>Entregas incrementales y verificables, con avances visibles en cada etapa.</p>
+      </li>
+      <li class="paso">
+        <span class="paso-num">04</span>
+        <h4>Puesta en marcha</h4>
+        <p>Implementación, documentación y acompañamiento en la adopción de la solución.</p>
+      </li>
+      <li class="paso">
+        <span class="paso-num">05</span>
+        <h4>Mejora continua</h4>
+        <p>Ajustes a partir del uso real y de la retroalimentación del cliente, hasta que la solución cumple su objetivo.</p>
+      </li></ol>
+        </div>
+        <div class="servicios-otro revelar">
+          <p data-t="servicios_otro">¿Su necesidad no aparece en la lista? Evalúo la viabilidad técnica de cada proyecto y propongo una solución a la medida.</p>
+          <a href="#contacto" class="boton"><span data-t="servicios_cotizar">Solicitar una propuesta</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-cabecera revelar">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-num">02</span><span data-t="nav_proyectos">Proyectos</span></p>
+            <h2 data-t="proyectos_titulo">Proyectos seleccionados</h2>
+            <p class="seccion-bajada" data-t="proyectos_bajada">Casos de estudio de soluciones diseñadas, desarrolladas y puestas en marcha de principio a fin: el problema, la solución, la arquitectura y los resultados.</p>
+          </div>
+          <div id="filtros" class="filtros" role="tablist"><button type="button" role="tab" data-f="*" aria-selected="true" class="activo">Todos<span>4</span></button><button type="button" role="tab" data-f="escritorio" aria-selected="false">Escritorio<span>1</span></button><button type="button" role="tab" data-f="web" aria-selected="false">Web<span>1</span></button><button type="button" role="tab" data-f="movil" aria-selected="false">Móvil<span>1</span></button><button type="button" role="tab" data-f="ia" aria-selected="false">IA y datos<span>1</span></button></div>
+        </div>
+        <div id="lista-proyectos" class="grilla">
+    <a class="tarjeta revelar grande" href="/proyectos/app-gimnasio">
+      <div class="portada"><img src="/img/gymapp/13-dashboards.png" alt="GymApp — Administración de gimnasio" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Escritorio</span><span class="chip estado"><span class="punto"></span>En producción</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><b class="tarjeta-num">01</b><time>septiembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>GymApp<span>Administración de gimnasio</span></h3>
+        <p>Sistema de escritorio en producción para la gestión integral de un gimnasio: membresías, control de acceso biométrico con apertura automática de puerta, punto de venta, inventario y caja.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>En producción, con más de 300 clientes registrados.</span></p>
+        <div class="etiquetas"><span class="etiqueta">Electron</span><span class="etiqueta">React</span><span class="etiqueta">SQLite</span><span class="etiqueta">Arduino</span><span class="etiqueta">+1</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
+    <a class="tarjeta revelar" href="/proyectos/pagina-gimnasio">
+      <div class="portada"><img src="/img/pagina-gym/portada.png" alt="Web de gimnasio con entrenamiento personalizado" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Prototipo</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><b class="tarjeta-num">02</b><time>septiembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Web de gimnasio con entrenamiento personalizado</h3>
+        <p>Plataforma web para un gimnasio con sitio comercial y área privada por roles, donde los entrenadores asignan rutinas, videos, mediciones y planes de alimentación a cada cliente.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Área privada con 4 roles de equipo y permisos por rol.</span></p>
+        <div class="etiquetas"><span class="etiqueta">Next.js</span><span class="etiqueta">React</span><span class="etiqueta">TypeScript</span><span class="etiqueta">Tailwind</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
+    <a class="tarjeta revelar" href="/proyectos/mis-finanzas">
+      <div class="portada"><img src="/img/mis-finanzas/portada.png" alt="Mis Finanzas — App de finanzas personales" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Móvil</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><b class="tarjeta-num">03</b><time>agosto de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Mis Finanzas<span>App de finanzas personales</span></h3>
+        <p>Aplicación Android para la gestión de finanzas personales —ingresos, gastos, tarjetas de crédito, préstamos y metas de ahorro— con almacenamiento exclusivamente local.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Todos los datos se quedan en el teléfono: funciona sin internet.</span></p>
+        <div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">Vite</span><span class="etiqueta">Capacitor</span><span class="etiqueta">Android</span><span class="etiqueta">+1</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
+    <a class="tarjeta revelar" href="/proyectos/reportes-con-ia">
+      <div class="portada"><img src="/img/reportes-ia/01-dashboard.png" alt="Reportes con IA — Informes y dashboards en una instrucción" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">IA y datos</span><span class="chip estado"><span class="punto"></span>En curso</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><b class="tarjeta-num">04</b><time>marzo de 2026</time></span></div>
+        <h3>Reportes con IA<span>Informes y dashboards en una instrucción</span></h3>
+        <p>Agentes de IA que generan, a partir de una única instrucción, informes completos en Power BI, Excel, PowerPoint y Datorama, y reducen el tiempo de elaboración de semanas a uno o dos días.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Informes completos en 1–2 días en lugar de 2 o 3 semanas.</span></p>
+        <div class="etiquetas"><span class="etiqueta">Claude</span><span class="etiqueta">Power BI</span><span class="etiqueta">Power Automate</span><span class="etiqueta">Datorama</span><span class="etiqueta">+4</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a></div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-cabecera revelar">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-num">03</span><span data-t="nav_experiencia">Experiencia</span></p>
+            <h2 data-t="experiencia_titulo">Experiencia y formación</h2>
+            <p class="seccion-bajada" data-t="experiencia_bajada">Trayectoria que integra ingeniería electrónica, infraestructura de redes y desarrollo de soluciones con inteligencia artificial.</p>
+          </div>
+        </div>
+        <div class="experiencia-grid">
+          <ol id="lista-experiencia" class="linea-tiempo">
+      <li class="hito revelar">
+        <time>Mar 2026 — Actualidad</time>
+        <h3>Consultor en Soluciones de Análisis de Datos con IA</h3>
+        <p class="hito-lugar">Consultor independiente · Cliente vinculado a una empresa de Estados Unidos</p>
+        <ul><li>Reducción del tiempo de elaboración de reportes y dashboards de <strong>2–3 semanas a 1–2 días</strong> mediante flujos de IA generativa.</li><li>Generación de informes completos a partir de <strong>una única instrucción</strong> (one-shot), en <strong>4 formatos</strong>: Excel, PowerPoint, Power BI y Datorama.</li><li>Desarrollo de agentes de IA que elaboran de forma programada los <strong>reportes semanales</strong> y proyectos específicos.</li><li>Integración de la API de Claude, Claude Code y Cowork con Power BI, y automatización de procesos con Power Automate y Azure.</li></ul>
+        <div class="etiquetas"><span class="etiqueta">Claude</span><span class="etiqueta">Power BI</span><span class="etiqueta">Power Automate</span><span class="etiqueta">Datorama</span><span class="etiqueta">Azure</span><span class="etiqueta">Excel</span><span class="etiqueta">SQL</span><span class="etiqueta">Python</span></div>
+      </li>
+      <li class="hito revelar">
+        <time>2026</time>
+        <h3>Desarrollador de Software a la Medida</h3>
+        <p class="hito-lugar">Proyectos independientes</p>
+        <ul><li>GymApp, <strong>en producción con más de 300 clientes registrados</strong>: membresías, punto de venta, inventario, caja y control de acceso biométrico con <strong>3 formas de entrada</strong> (huella, carnet o PIN) y apertura automática de puerta mediante Arduino Nano.</li><li>Plataforma web para gimnasio con sitio comercial y área privada con <strong>4 roles de equipo</strong> (desarrollador, administración, recepción y entrenadores) y acceso propio para cada cliente.</li><li>Mis Finanzas: aplicación Android de finanzas personales con <strong>7 módulos</strong>, análisis gráfico y recomendaciones automáticas; todos los datos se quedan en el teléfono.</li><li>Desarrollo asistido por IA (Claude Code) en todo el ciclo —diseño, implementación y pruebas—, con <strong>27 suites de pruebas automáticas</strong> en GymApp.</li></ul>
+        <div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">Electron</span><span class="etiqueta">Next.js</span><span class="etiqueta">TypeScript</span><span class="etiqueta">SQLite</span><span class="etiqueta">Android</span></div>
+      </li>
+      <li class="hito revelar">
+        <time>2020 — 2026</time>
+        <h3>Ingeniería Electrónica, Automatización y Redes</h3>
+        <p class="hito-lugar">Proyectos académicos e independientes</p>
+        <ul><li>Diseño y construcción de robots minisumo, amplificadores de audio y circuitos impresos (PCB).</li><li>Sistemas de domótica con interfaces web de control; prototipos IoT con ESP32, cámara, micrófono y sensores de temperatura, humedad y voltaje.</li><li>Instalación y configuración de redes: enrutadores y cableado estructurado.</li></ul>
+        <div class="etiquetas"><span class="etiqueta">Arduino</span><span class="etiqueta">ESP32</span><span class="etiqueta">PCB</span></div>
+      </li></ol>
+          <aside class="formacion revelar">
+            <h3 class="subtitulo" data-t="formacion">Formación académica</h3>
+            <ul id="lista-estudios" class="lista-formacion">
+    <li>
+      <span class="formacion-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg></span>
+      <div>
+        <strong>Ingeniería Electrónica</strong>
+        <span>Universidad de Cundinamarca</span>
+        <time>2020 — 2026</time>
+      </div>
+    </li>
+    <li>
+      <span class="formacion-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg></span>
+      <div>
+        <strong>Especialización en Infraestructura y Seguridad de Redes</strong>
+        <span>Universidad de Cundinamarca</span>
+        <time>2025 — 2026</time>
+      </div>
+    </li></ul>
+            <h3 class="subtitulo" data-t="certificaciones">Certificaciones</h3>
+            <ul id="lista-certificaciones" class="lista-formacion">
+    <li>
+      <span class="formacion-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></span>
+      <div>
+        <strong>AI Engineer</strong>
+        <span>Udemy · Platzi · Netzum</span>
+        <time>2026</time>
+      </div>
+    </li>
+    <li>
+      <span class="formacion-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></span>
+      <div>
+        <strong>Prompt Engineering</strong>
+        <span>Udemy · Platzi · Netzum</span>
+        <time>2026</time>
+      </div>
+    </li>
+    <li>
+      <span class="formacion-icono"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg></span>
+      <div>
+        <strong>Cursos de Claude y agentes</strong>
+        <span>Anthropic</span>
+        <time>2026</time>
+      </div>
+    </li></ul>
+            <div class="cv-tarjeta">
+              <h3 class="subtitulo" data-t="cv_titulo">Hoja de vida</h3>
+              <p data-t="cv_texto">Experiencia, proyectos, formación y habilidades en una sola página.</p>
+              <div class="cv-botones">
+                <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span data-t="cv_pdf">Descargar PDF</span></a>
+                <a href="/hoja-de-vida?lang=es" class="boton secundario" data-cv-ver="" target="_blank" rel="noopener"><span data-t="cv_ver">Ver en línea</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios" class="seccion" hidden="">
+      <div class="contenedor">
+        <div class="seccion-cabecera revelar">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-num"></span><span data-t="nav_testimonios">Testimonios</span></p>
+            <h2 data-t="testimonios_titulo">Lo que dicen quienes han trabajado conmigo</h2>
+          </div>
+        </div>
+        <div id="lista-testimonios" class="testimonios"></div>
+      </div>
+    </section>
+
+    <section id="blog" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-cabecera revelar">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-num">04</span><span data-t="nav_blog">Blog</span></p>
+            <h2 data-t="blog_titulo">Artículos técnicos</h2>
+            <p class="seccion-bajada" data-t="blog_bajada">Publicaciones sobre inteligencia artificial, automatización y desarrollo de software.</p>
+          </div>
+        </div>
+        <div id="lista-blog" class="lista-notas">
+      <a class="nota revelar" href="/blog/de-semanas-a-dias-reportes-con-ia">
+        <time>octubre de 2026</time>
+        <div>
+          <h3>De semanas a días: lo que cambia cuando la IA arma los reportes</h3>
+          <p>Cómo un flujo con IA generativa redujo la elaboración de reportes y dashboards de dos o tres semanas a uno o dos días, y qué hace falta para que funcione.</p>
+        </div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <a class="nota revelar" href="/blog/gymapp-de-excel-a-produccion">
+        <time>octubre de 2026</time>
+        <div>
+          <h3>GymApp: de hojas de Excel a un sistema en producción</h3>
+          <p>Las decisiones detrás del sistema que hoy administra un gimnasio con más de 300 clientes: funcionar sin internet, cifrar los datos y no fallar en silencio.</p>
+        </div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <a class="nota revelar" href="/blog/mis-finanzas-sin-internet">
+        <time>octubre de 2026</time>
+        <div>
+          <h3>Por qué Mis Finanzas no se conecta a internet</h3>
+          <p>Una app de finanzas personales que no hace ninguna petición de red: por qué tomé esa decisión y qué implicó en el diseño.</p>
+        </div>
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a></div>
+      </div>
+    </section>
+
+    <section id="sobre-mi" class="seccion">
+      <div class="contenedor">
+        <div class="seccion-cabecera revelar">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-num">05</span><span data-t="nav_sobre">Perfil</span></p>
+            <h2 data-t="sobre_titulo">Perfil profesional</h2>
+          </div>
+        </div>
+        <div class="sobre-grid">
+          <div class="perfil revelar">
+            <div id="avatar" class="avatar"><img src="/img/perfil.jpg" alt="Harold Andrey Martínez Cortés"></div>
+            <div>
+              <p class="perfil-nombre" data-sitio="nombre">Harold Andrey Martínez Cortés</p>
+              <p class="perfil-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
+              <p class="perfil-lugar"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg><span data-sitio="pais">Colombia</span></p>
+            </div>
+            <div class="perfil-acciones">
+              <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span data-t="descargar_cv">Descargar CV</span></a>
+              <a href="#contacto" class="boton secundario" data-t="contactame">Contacto</a>
+            </div>
+          </div>
+          <div>
+            <p class="sobre-intro revelar" data-sitio="sobreMiIntro">Mi camino empezó en la electrónica: robots minisumo, circuitos impresos y prototipos con sensores. Pasé por las redes y la seguridad, y hoy aplico la inteligencia artificial a procesos reales de negocio. Esa trayectoria me permite entender un problema completo —del dispositivo y la red hasta el dato y la decisión— y convertir el trabajo manual en sistemas rápidos, consistentes y escalables.</p>
+            <div id="sobre-partes" class="sobre-partes">
+      <div class="sobre-parte revelar">
+        <p class="sobre-parte-num">01</p>
+        <h3>Perfil</h3>
+        <p>Ingeniero Electrónico de la Universidad de Cundinamarca, especialista en Infraestructura y Seguridad de Redes, con certificaciones en AI Engineering y Prompt Engineering. Mi formación en hardware, redes y software me permite abordar cada proyecto con una visión integral, desde la captura del dato hasta la decisión de negocio.</p>
+      </div>
+      <div class="sobre-parte revelar">
+        <p class="sobre-parte-num">02</p>
+        <h3>Especialidad</h3>
+        <p>Me especializo en soluciones de inteligencia artificial aplicadas a procesos reales: generación automática de reportes, agentes que ejecutan tareas recurrentes y aplicaciones a la medida —sistemas de gestión, plataformas web y aplicaciones móviles—, incluida su integración con dispositivos físicos como sensores, cámaras y controles de acceso.</p>
+      </div>
+      <div class="sobre-parte revelar">
+        <p class="sobre-parte-num">03</p>
+        <h3>Metodología</h3>
+        <p>Cada proyecto parte de un diagnóstico del problema y avanza en entregas incrementales y verificables. Incorporo la IA como herramienta de ingeniería —Claude Code, Copilot y agentes propios— para reducir de forma significativa los tiempos de desarrollo sin comprometer la calidad, la seguridad ni la mantenibilidad.</p>
+      </div>
+      <div class="sobre-parte revelar">
+        <p class="sobre-parte-num">04</p>
+        <h3>Actualidad</h3>
+        <p>Desde marzo de 2026 me desempeño como consultor independiente en soluciones de análisis de datos con IA para un cliente vinculado a una empresa de Estados Unidos. Cuento con disponibilidad para nuevos proyectos y oportunidades laborales, en modalidad remota.</p>
+      </div></div>
+          </div>
+        </div>
+        <h3 class="subtitulo stack-titulo revelar" data-t="stack_titulo">Competencias técnicas</h3>
+        <div id="lista-stack" class="stack">
+      <div class="stack-grupo revelar">
+        <h4>IA y modelos de lenguaje</h4>
+        <div class="habilidades"><span class="habilidad">Claude (API, Code, Cowork)</span><span class="habilidad">ChatGPT</span><span class="habilidad">Gemini</span><span class="habilidad">Copilot</span><span class="habilidad">Ollama</span><span class="habilidad">OpenCode</span><span class="habilidad">OpenClaw</span><span class="habilidad">Prompt engineering</span><span class="habilidad">Agentes de IA</span></div>
+      </div>
+      <div class="stack-grupo revelar">
+        <h4>Datos y reportes</h4>
+        <div class="habilidades"><span class="habilidad">Power BI</span><span class="habilidad">Power Automate</span><span class="habilidad">Power Apps</span><span class="habilidad">Copilot Studio</span><span class="habilidad">Excel</span><span class="habilidad">PowerPoint</span><span class="habilidad">Datorama</span><span class="habilidad">SQL</span><span class="habilidad">Python</span><span class="habilidad">Azure</span></div>
+      </div>
+      <div class="stack-grupo revelar">
+        <h4>Desarrollo de software</h4>
+        <div class="habilidades"><span class="habilidad">JavaScript</span><span class="habilidad">TypeScript</span><span class="habilidad">HTML/CSS</span><span class="habilidad">React</span><span class="habilidad">Next.js</span><span class="habilidad">Node.js</span><span class="habilidad">Electron</span><span class="habilidad">Android Studio</span><span class="habilidad">Capacitor</span><span class="habilidad">SQLite</span></div>
+      </div>
+      <div class="stack-grupo revelar">
+        <h4>Herramientas y despliegue</h4>
+        <div class="habilidades"><span class="habilidad">Git</span><span class="habilidad">GitHub</span><span class="habilidad">Vercel</span><span class="habilidad">Supabase</span><span class="habilidad">Vite</span><span class="habilidad">Tailwind CSS</span></div>
+      </div>
+      <div class="stack-grupo revelar">
+        <h4>Electrónica e IoT</h4>
+        <div class="habilidades"><span class="habilidad">Arduino</span><span class="habilidad">ESP32</span><span class="habilidad">Sensores</span><span class="habilidad">Cámaras y audio</span><span class="habilidad">Diseño de PCB</span></div>
+      </div>
+      <div class="stack-grupo revelar">
+        <h4>Redes y seguridad</h4>
+        <div class="habilidades"><span class="habilidad">Infraestructura de redes</span><span class="habilidad">Seguridad de redes</span><span class="habilidad">Routers</span><span class="habilidad">Cableado estructurado</span></div>
+      </div></div>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion">
+      <div class="contenedor">
+        <div class="cta revelar">
+          <p class="eyebrow"><span class="eyebrow-num">06</span><span data-t="nav_contacto">Contacto</span></p>
+          <h2 data-t="contacto_titulo">Conversemos sobre su proyecto</h2>
+          <p class="cta-texto" data-t="contacto_texto">Automatización de reportes, sistemas de gestión, aplicaciones a la medida u oportunidades laborales: escríbame y le responderé a la brevedad.</p>
+          <div class="botones">
+            <a id="cta-whatsapp" class="boton" href="#" target="_blank" rel="noopener" hidden=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg><span data-t="escribir_whatsapp">Escribir por WhatsApp</span></a>
+            <a id="cta-correo" class="boton" href="mailto:2002.ha.mc@gmail.com?subject=Consulta%20desde%20su%20portafolio&amp;body=Hola%2C%20Andrey%3A%0A%0AQu%C3%A9%20necesito%3A%0A%0APlazo%20estimado%3A%0A%0APresupuesto%20aproximado%20(opcional)%3A%0A%0AGracias."><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg><span data-t="escribeme">Enviar un correo</span></a>
+            <button id="copiar-correo" class="boton secundario" type="button"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="14" height="14" rx="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span data-t="copiar_correo">Copiar correo</span></button>
+          </div>
+          <div id="enlaces-contacto" class="redes"><a class="enlace-red" href="https://github.com/HANDREYMARTINEZ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a><a class="enlace-red" href="https://www.linkedin.com/in/andreymartinezdata" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <div class="pie-marca">
+        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <p class="pie-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
+        <p class="pie-frase" data-t="pie_frase">Construyo soluciones con inteligencia artificial, automatización y datos para empresas y emprendimientos.</p>
+      </div>
+      <nav class="pie-columna" aria-labelledby="pie-t-nav">
+        <h3 id="pie-t-nav" data-t="pie_navegacion">Navegación</h3>
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/#contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="pie-columna">
+        <h3 data-t="pie_contacto">Contacto</h3>
+        <nav id="pie-redes" class="pie-redes"><a href="https://github.com/HANDREYMARTINEZ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a><a href="https://www.linkedin.com/in/andreymartinezdata" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a><a href="mailto:2002.ha.mc@gmail.com"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a></nav>
+      </div>
+      <div class="pie-columna">
+        <h3 data-t="cv_titulo">Hoja de vida</h3>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" data-cv="" download="" data-t="cv_pdf">Descargar PDF</a>
+        <a href="/hoja-de-vida?lang=es" data-cv-ver="" target="_blank" rel="noopener" data-t="cv_ver">Ver en línea</a>
+      </div>
+    </div>
+    <div class="contenedor pie-legal">
+      <p>© <span id="anio">2026</span> <span data-sitio="nombre">Harold Andrey Martínez Cortés</span> · <span data-t="derechos">Desarrollado en Colombia</span></p>
+      <a href="#" class="pie-arriba"><span data-t="arriba">Volver arriba</span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script src="/data/blog.js"></script>
+  <script src="/js/textos.js"></script>
+  <script src="/js/main.js"></script>
+
+
+
+
+
+
+</body>
+</html>

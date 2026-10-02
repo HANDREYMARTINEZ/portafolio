@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hoja de vida — Andrey Martínez</title>
+  <meta name="description" content="Hoja de vida de Harold Andrey Martínez Cortés, Ingeniero de IA y Automatización." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <!-- Hoja de vida generada con los mismos datos del sitio (data/config.js y data/proyectos.js).
+       Idioma: ?lang=es o ?lang=en. Los PDF de /cv se imprimen desde esta página. -->
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --acento: #2f52c9; --texto: #111827; --suave: #4b5563; --borde: #e5e7eb; --fondo-lat: #f3f5fa; }
+    html { background: #d9dde5; }
+    body { font-family: "Inter", system-ui, sans-serif; color: var(--texto); font-size: 9.1pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .hoja { width: 210mm; min-height: 297mm; margin: 24px auto; background: #fff; display: grid; grid-template-columns: minmax(0, 1fr) 70mm; box-shadow: 0 10px 40px rgb(0 0 0 / .15); }
+    @media print { html { background: #fff; } .hoja { margin: 0; box-shadow: none; } }
+    .principal { padding: 12mm 9mm 10mm 13mm; }
+    .lateral { padding: 12mm 8mm 8mm 8mm; background: var(--fondo-lat); }
+
+    header { display: flex; gap: 7mm; align-items: flex-start; }
+    header > div { flex: 1; min-width: 0; }
+    header h1 { font-size: 22pt; line-height: 1.1; font-weight: 800; letter-spacing: -.02em; }
+    header .rol { margin-top: 3pt; font-size: 11pt; font-weight: 600; color: var(--acento); }
+    header .perfil { margin-top: 9pt; color: var(--suave); }
+
+    h2 { font-size: 8.4pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--acento); margin: 11pt 0 6pt; padding-bottom: 3pt; border-bottom: 1.5px solid var(--borde); }
+    .lateral h2:first-child { margin-top: 0; }
+    .foto { flex-shrink: 0; width: 27mm; height: 27mm; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 0 0 1.5px var(--borde); }
+    .foto[hidden] { display: none; }
+
+    .item { margin-bottom: 7pt; break-inside: avoid; }
+    .item-cabecera { display: flex; justify-content: space-between; gap: 8pt; align-items: baseline; }
+    .item h3 { font-size: 10.2pt; font-weight: 700; }
+    .item .fecha { font-size: 8.4pt; color: var(--suave); white-space: nowrap; font-weight: 500; }
+    .item .lugar { font-size: 8.8pt; color: var(--suave); margin-top: 1pt; }
+    .item ul { margin: 4pt 0 0 11pt; }
+    .item li { margin-top: 2pt; }
+    .item li::marker { color: var(--acento); }
+    .item p.resumen { margin-top: 2pt; color: var(--suave); }
+    .item a { color: var(--acento); text-decoration: none; font-size: 8.4pt; }
+    .proyecto-linea { display: flex; align-items: baseline; gap: 6pt; margin-bottom: 4pt; }
+    .proyecto-linea h3 { font-size: 9.6pt; font-weight: 700; white-space: nowrap; }
+    .proyecto-linea span { flex: 1; min-width: 0; color: var(--suave); font-size: 8.4pt; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .proyecto-linea a { color: var(--acento); text-decoration: none; font-size: 8.4pt; white-space: nowrap; }
+
+    .contacto { list-style: none; display: flex; flex-direction: column; gap: 4pt; font-size: 8.4pt; }
+    .contacto span { display: block; font-size: 7.6pt; color: var(--suave); text-transform: uppercase; letter-spacing: .08em; }
+    .contacto a { color: var(--texto); text-decoration: none; overflow-wrap: anywhere; }
+    .estudio { margin-bottom: 5pt; break-inside: avoid; }
+    .estudio strong { display: block; font-size: 8.8pt; line-height: 1.3; }
+    .estudio span { display: block; font-size: 8pt; color: var(--suave); line-height: 1.35; }
+    .grupo { margin-bottom: 5pt; break-inside: avoid; }
+    .grupo strong { display: block; font-size: 8.8pt; margin-bottom: 1pt; }
+    .grupo p { font-size: 8pt; color: var(--suave); line-height: 1.38; }
+
+    /* En pantallas más angostas que una hoja A4 (794 px) se apila en una columna y las líneas largas se parten.
+       Va al final para ganarle a las reglas de arriba; no afecta la impresión del PDF. */
+    @media screen and (max-width: 840px) {
+      .hoja { width: auto; min-height: 0; margin: 0; grid-template-columns: minmax(0, 1fr); }
+      .principal, .lateral { padding: 28px 20px; }
+      .proyecto-linea { flex-wrap: wrap; }
+      .proyecto-linea h3, .proyecto-linea span { white-space: normal; }
+    }
+    @media screen and (max-width: 480px) {
+      header { flex-direction: column; gap: 14px; }
+      .item-cabecera { flex-direction: column; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="hoja">
+    <section class="principal">
+      <header>
+        <img id="cv-foto" class="foto" alt="Harold Andrey Martínez Cortés" src="/img/perfil.jpg">
+        <div>
+          <h1 id="cv-nombre">Harold Andrey Martínez Cortés</h1>
+          <p class="rol" id="cv-rol">Ingeniero de IA y Automatización</p>
+          <p class="perfil" id="cv-perfil">Diseño e implemento soluciones de inteligencia artificial que automatizan procesos, aceleran el análisis de datos y fortalecen la operación de empresas y emprendimientos: desde reportes generados por agentes de IA hasta sistemas a la medida para web, escritorio, móvil y hardware.</p>
+        </div>
+      </header>
+      <h2 id="t-experiencia">Experiencia</h2>
+      <div id="cv-experiencia">
+      <div class="item">
+        <div class="item-cabecera"><h3>Consultor en Soluciones de Análisis de Datos con IA</h3><span class="fecha">Mar 2026 — Actualidad</span></div>
+        <p class="lugar">Consultor independiente · Cliente vinculado a una empresa de Estados Unidos</p>
+        <ul><li>Reducción del tiempo de elaboración de reportes y dashboards de <strong>2–3 semanas a 1–2 días</strong> mediante flujos de IA generativa.</li><li>Generación de informes completos a partir de <strong>una única instrucción</strong> (one-shot), en <strong>4 formatos</strong>: Excel, PowerPoint, Power BI y Datorama.</li><li>Desarrollo de agentes de IA que elaboran de forma programada los <strong>reportes semanales</strong> y proyectos específicos.</li><li>Integración de la API de Claude, Claude Code y Cowork con Power BI, y automatización de procesos con Power Automate y Azure.</li></ul>
+      </div>
+      <div class="item">
+        <div class="item-cabecera"><h3>Desarrollador de Software a la Medida</h3><span class="fecha">2026</span></div>
+        <p class="lugar">Proyectos independientes</p>
+        <ul><li>GymApp, <strong>en producción con más de 300 clientes registrados</strong>: membresías, punto de venta, inventario, caja y control de acceso biométrico con <strong>3 formas de entrada</strong> (huella, carnet o PIN) y apertura automática de puerta mediante Arduino Nano.</li><li>Plataforma web para gimnasio con sitio comercial y área privada con <strong>4 roles de equipo</strong> (desarrollador, administración, recepción y entrenadores) y acceso propio para cada cliente.</li><li>Mis Finanzas: aplicación Android de finanzas personales con <strong>7 módulos</strong>, análisis gráfico y recomendaciones automáticas; todos los datos se quedan en el teléfono.</li><li>Desarrollo asistido por IA (Claude Code) en todo el ciclo —diseño, implementación y pruebas—, con <strong>27 suites de pruebas automáticas</strong> en GymApp.</li></ul>
+      </div>
+      <div class="item">
+        <div class="item-cabecera"><h3>Ingeniería Electrónica, Automatización y Redes</h3><span class="fecha">2020 — 2026</span></div>
+        <p class="lugar">Proyectos académicos e independientes</p>
+        <ul><li>Diseño y construcción de robots minisumo, amplificadores de audio y circuitos impresos (PCB).</li><li>Sistemas de domótica con interfaces web de control; prototipos IoT con ESP32, cámara, micrófono y sensores de temperatura, humedad y voltaje.</li><li>Instalación y configuración de redes: enrutadores y cableado estructurado.</li></ul>
+      </div></div>
+      <h2 id="t-proyectos">Proyectos destacados</h2>
+      <div id="cv-proyectos">
+      <div class="proyecto-linea">
+        <h3>Reportes con IA</h3>
+        <span>IA y datos</span>
+        <a href="https://andreymartinezportafolio.vercel.app/proyectos/reportes-con-ia">Ver proyecto ↗</a>
+      </div>
+      <div class="proyecto-linea">
+        <h3>Web de gimnasio con entrenamiento personalizado</h3>
+        <span>Plataforma web</span>
+        <a href="https://andreymartinezportafolio.vercel.app/proyectos/pagina-gimnasio">Ver proyecto ↗</a>
+      </div>
+      <div class="proyecto-linea">
+        <h3>GymApp</h3>
+        <span>Aplicación de escritorio</span>
+        <a href="https://andreymartinezportafolio.vercel.app/proyectos/app-gimnasio">Ver proyecto ↗</a>
+      </div>
+      <div class="proyecto-linea">
+        <h3>Mis Finanzas</h3>
+        <span>Aplicación móvil</span>
+        <a href="https://andreymartinezportafolio.vercel.app/proyectos/mis-finanzas">Ver proyecto ↗</a>
+      </div></div>
+    </section>
+    <aside class="lateral">
+      <h2 id="t-contacto">Contacto</h2>
+      <ul class="contacto" id="cv-contacto"><li><span>Ubicación</span>Colombia</li><li><span>Email</span><a href="mailto:2002.ha.mc@gmail.com">2002.ha.mc@gmail.com</a></li><li><span>LinkedIn</span><a href="https://www.linkedin.com/in/andreymartinezdata">/in/andreymartinezdata</a></li><li><span>GitHub</span><a href="https://github.com/HANDREYMARTINEZ">@HANDREYMARTINEZ</a></li><li><span>Portafolio</span><a href="https://andreymartinezportafolio.vercel.app">andreymartinezportafolio.vercel.app</a></li></ul>
+      <h2 id="t-formacion">Formación</h2>
+      <div id="cv-estudios"><div class="estudio"><strong>Ingeniería Electrónica</strong><span>Universidad de Cundinamarca</span><span>2020 — 2026</span></div><div class="estudio"><strong>Especialización en Infraestructura y Seguridad de Redes</strong><span>Universidad de Cundinamarca</span><span>2025 — 2026</span></div></div>
+      <h2 id="t-certificaciones">Certificaciones</h2>
+      <div id="cv-certificaciones"><div class="estudio"><strong>AI Engineer</strong><span>Udemy · Platzi · Netzum</span><span>2026</span></div><div class="estudio"><strong>Prompt Engineering</strong><span>Udemy · Platzi · Netzum</span><span>2026</span></div><div class="estudio"><strong>Cursos de Claude y agentes</strong><span>Anthropic</span><span>2026</span></div></div>
+      <h2 id="t-stack">Habilidades</h2>
+      <div id="cv-stack"><div class="grupo"><strong>IA y modelos de lenguaje</strong><p>Claude (API, Code, Cowork) · ChatGPT · Gemini · Copilot · Ollama · OpenCode · OpenClaw · Prompt engineering · Agentes de IA</p></div><div class="grupo"><strong>Datos y reportes</strong><p>Power BI · Power Automate · Power Apps · Copilot Studio · Excel · PowerPoint · Datorama · SQL · Python · Azure</p></div><div class="grupo"><strong>Desarrollo de software</strong><p>JavaScript · TypeScript · HTML/CSS · React · Next.js · Node.js · Electron · Android Studio · Capacitor · SQLite</p></div><div class="grupo"><strong>Herramientas y despliegue</strong><p>Git · GitHub · Vercel · Supabase · Vite · Tailwind CSS</p></div><div class="grupo"><strong>Electrónica e IoT</strong><p>Arduino · ESP32 · Sensores · Cámaras y audio · Diseño de PCB</p></div><div class="grupo"><strong>Redes y seguridad</strong><p>Infraestructura de redes · Seguridad de redes · Routers · Cableado estructurado</p></div></div>
+    </aside>
+  </main>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script>
+    const idioma = (() => {
+      const param = new URLSearchParams(location.search).get("lang");
+      if (param === "es" || param === "en") return param;
+      try { const g = localStorage.getItem("idioma"); if (g === "es" || g === "en") return g; } catch {}
+      return "es";
+    })();
+    const tr = (v) => (v && typeof v === "object" ? v[idioma] || v.es || "" : v || "");
+    const $ = (id) => document.getElementById(id);
+    const T = {
+      es: { experiencia: "Experiencia", proyectos: "Proyectos destacados", contacto: "Contacto", formacion: "Formación", certificaciones: "Certificaciones", stack: "Habilidades", ubicacion: "Ubicación", portafolio: "Portafolio", titulo: "Hoja de vida", ver: "Ver proyecto", tipo_ia: "IA y datos", tipo_web: "Plataforma web", tipo_escritorio: "Aplicación de escritorio", tipo_movil: "Aplicación móvil" },
+      en: { experiencia: "Experience", proyectos: "Selected projects", contacto: "Contact", formacion: "Education", certificaciones: "Certifications", stack: "Skills", ubicacion: "Location", portafolio: "Portfolio", titulo: "Resume", ver: "View project", tipo_ia: "AI & data", tipo_web: "Web platform", tipo_escritorio: "Desktop application", tipo_movil: "Mobile app" },
+    }[idioma];
+    const PORTAFOLIO = "https://andreymartinezportafolio.vercel.app";
+
+    document.documentElement.lang = idioma;
+    document.title = `${T.titulo} — ${SITIO.nombreCorto}`;
+    for (const clave of ["experiencia", "proyectos", "contacto", "formacion", "certificaciones", "stack"]) $("t-" + clave).textContent = T[clave];
+
+    $("cv-nombre").textContent = SITIO.nombre;
+    $("cv-rol").textContent = tr(SITIO.rol);
+    $("cv-perfil").textContent = tr(SITIO.frase);
+    if (SITIO.foto) Object.assign($("cv-foto"), { src: SITIO.foto, alt: SITIO.nombre, hidden: false });
+
+    $("cv-experiencia").innerHTML = SITIO.experiencia.map((x) => `
+      <div class="item">
+        <div class="item-cabecera"><h3>${tr(x.cargo)}</h3><span class="fecha">${tr(x.periodo)}</span></div>
+        <p class="lugar">${tr(x.lugar)}</p>
+        <ul>${(x.logros?.[idioma] || x.logros?.es || []).map((l) => `<li>${l}</li>`).join("")}</ul>
+      </div>`).join("");
+
+    // Los de IA primero y el resto del más reciente al más antiguo
+    const proyectos = [...PROYECTOS].sort((a, b) => b.fecha.localeCompare(a.fecha)).sort((a, b) => (b.tipo === "ia") - (a.tipo === "ia"));
+    $("cv-proyectos").innerHTML = proyectos.map((p) => `
+      <div class="proyecto-linea">
+        <h3>${tr(p.titulo).split(" — ")[0]}</h3>
+        <span>${T["tipo_" + p.tipo] || ""}</span>
+        <a href="${PORTAFOLIO}/proyectos/${p.slug}">${T.ver} ↗</a>
+      </div>`).join("");
+
+    const contacto = [
+      [T.ubicacion, tr(SITIO.pais)],
+      ["Email", `<a href="mailto:${SITIO.email}">${SITIO.email}</a>`],
+      SITIO.whatsapp && ["WhatsApp", `<a href="https://wa.me/${SITIO.whatsapp}">+${SITIO.whatsapp}</a>`],
+      ["LinkedIn", `<a href="${SITIO.linkedin}">${SITIO.linkedin.replace("https://www.linkedin.com", "")}</a>`],
+      ["GitHub", `<a href="${SITIO.github}">${SITIO.github.replace("https://github.com/", "@")}</a>`],
+      [T.portafolio, `<a href="${PORTAFOLIO}">${PORTAFOLIO.replace("https://", "")}</a>`],
+    ].filter(Boolean);
+    $("cv-contacto").innerHTML = contacto.map(([k, v]) => `<li><span>${k}</span>${v}</li>`).join("");
+
+    const estudio = (e) => `<div class="estudio"><strong>${tr(e.titulo)}</strong>${e.institucion ? `<span>${tr(e.institucion)}</span>` : ""}<span>${tr(e.periodo)}</span></div>`;
+    $("cv-estudios").innerHTML = SITIO.estudios.map(estudio).join("");
+    $("cv-certificaciones").innerHTML = SITIO.certificaciones.map(estudio).join("");
+    $("cv-stack").innerHTML = SITIO.stack.map((g) => `<div class="grupo"><strong>${tr(g.grupo)}</strong><p>${g.items.map(tr).join(" · ")}</p></div>`).join("");
+  </script>
+
+
+
+
+</body>
+</html>

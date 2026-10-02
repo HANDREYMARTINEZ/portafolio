@@ -1,0 +1,8 @@
+node_modules/
+.vercel/
+.DS_Store
+Thumbs.db
+
+# Notas y archivos privados (no se publican)
+CLAUDE.local.md
+borradores-blog.md

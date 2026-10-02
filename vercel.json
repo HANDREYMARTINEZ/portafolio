@@ -1,0 +1,13 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/proyectos/:slug",
+      "destination": "/proyecto"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog"
+    }
+  ]
+}

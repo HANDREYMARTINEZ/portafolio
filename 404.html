@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Página no encontrada — Andrey Martínez</title>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/estilos.css" />
+</head>
+<body>
+  <main class="contenedor error-404">
+    <p class="eyebrow">404</p>
+    <h1 id="titulo">Esta página no existe</h1>
+    <p id="texto" class="bajada">Puede que el enlace esté mal escrito o que la página haya cambiado de lugar.</p>
+    <div class="botones">
+      <a href="/" class="boton" id="inicio">Ir al inicio</a>
+      <a href="/#proyectos" class="boton secundario" id="proyectos">Ver proyectos</a>
+    </div>
+  </main>
+  <script>
+    // Página independiente: no carga main.js, solo traduce sus textos
+    try {
+      const guardado = localStorage.getItem("idioma");
+      const en = guardado ? guardado === "en" : (navigator.language || "").startsWith("en");
+      if (en) {
+        document.documentElement.lang = "en";
+        document.title = "Page not found — Andrey Martínez";
+        document.getElementById("titulo").textContent = "This page doesn't exist";
+        document.getElementById("texto").textContent = "The link may be mistyped, or the page may have moved.";
+        document.getElementById("inicio").textContent = "Go home";
+        document.getElementById("proyectos").textContent = "See projects";
+      }
+    } catch (e) {}
+  </script>
+</body>
+</html>

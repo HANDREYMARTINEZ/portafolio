@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto — Andrey Martínez</title>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/estilos.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="contenedor nav-interior">
+      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales">HM</span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <nav id="menu" class="menu">
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#blog" data-t="nav_blog" data-seccion="blog">Blog</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Sobre mí</a>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="menu-contacto" data-cv download data-t="descargar_cv">Descargar CV</a>
+        <a href="/#contacto" class="menu-contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-icono btn-tema" type="button" data-icono="tema"></button>
+        <button class="btn-idioma" type="button" aria-label="Switch to English"><span class="activo">ES</span><span>EN</span></button>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario nav-cta" data-cv download><i data-icono="descarga"></i><span>CV</span></a>
+        <a href="/#contacto" class="boton nav-cta"><span data-t="nav_contacto">Contacto</span><i data-icono="flecha"></i></a>
+        <button class="btn-icono btn-menu" type="button" data-icono="menu" aria-controls="menu" aria-expanded="false"></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <article id="detalle" class="detalle" data-tipo="proyecto"></article>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <div class="pie-marca">
+        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales">HM</span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <p class="pie-rol" data-sitio="rol"></p>
+        <p class="pie-frase" data-t="pie_frase"></p>
+      </div>
+      <nav class="pie-columna" aria-labelledby="pie-t-nav">
+        <h3 id="pie-t-nav" data-t="pie_navegacion"></h3>
+        <a href="/#servicios" data-t="nav_servicios"></a>
+        <a href="/#proyectos" data-t="nav_proyectos"></a>
+        <a href="/#experiencia" data-t="nav_experiencia"></a>
+        <a href="/#sobre-mi" data-t="nav_sobre"></a>
+        <a href="/#contacto" data-t="nav_contacto"></a>
+      </nav>
+      <div class="pie-columna">
+        <h3 data-t="pie_contacto"></h3>
+        <nav id="pie-redes" class="pie-redes"></nav>
+      </div>
+      <div class="pie-columna">
+        <h3 data-t="cv_titulo"></h3>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" data-cv download data-t="cv_pdf"></a>
+        <a href="/hoja-de-vida?lang=es" data-cv-ver target="_blank" rel="noopener" data-t="cv_ver"></a>
+      </div>
+    </div>
+    <div class="contenedor pie-legal">
+      <p>© <span id="anio"></span> <span data-sitio="nombre"></span> · <span data-t="derechos"></span></p>
+      <a href="#" class="pie-arriba"><span data-t="arriba"></span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script src="/data/blog.js"></script>
+  <script src="/js/textos.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

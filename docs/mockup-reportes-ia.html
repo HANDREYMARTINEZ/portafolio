@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 1000px; overflow: hidden; }
+  body { font-family: "Segoe UI", system-ui, sans-serif; color: #1f2430; background: #e9ecf2; }
+  .vista { display: none; width: 1600px; height: 1000px; position: relative; }
+  .marca-agua {
+    position: absolute; right: 18px; bottom: 14px; z-index: 5;
+    font-size: 15px; color: #6b7385; background: rgb(255 255 255 / .85); padding: 5px 12px; border-radius: 6px;
+    border: 1px solid #d6dbe5;
+  }
+
+  /* ---------- 1. Instrucción al agente ---------- */
+  #instruccion { background: #0f1420; color: #e6e9f0; padding: 56px 90px; }
+  .ventana { background: #161c2b; border: 1px solid #262f45; border-radius: 16px; height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+  .ventana-barra { display: flex; align-items: center; gap: 8px; padding: 14px 18px; border-bottom: 1px solid #262f45; background: #121827; }
+  .ventana-barra i { width: 12px; height: 12px; border-radius: 50%; background: #2d3854; }
+  .ventana-barra span { margin-left: 14px; font-size: 15px; color: #8d97ad; }
+  .chat { flex: 1; padding: 34px 44px; display: flex; flex-direction: column; gap: 26px; }
+  .msg-usuario { align-self: flex-end; max-width: 980px; background: #3656c9; color: #fff; padding: 20px 24px; border-radius: 16px 16px 4px 16px; font-size: 21px; line-height: 1.45; }
+  .quien { font-size: 14px; color: #8d97ad; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
+  .agente { max-width: 1080px; }
+  .pasos { list-style: none; display: flex; flex-direction: column; gap: 12px; background: #1b2336; border: 1px solid #262f45; border-radius: 14px; padding: 20px 24px; }
+  .pasos li { display: flex; align-items: center; gap: 14px; font-size: 19px; }
+  .pasos b { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #1f7a4d; color: #fff; font-size: 15px; }
+  .pasos small { color: #8d97ad; font-size: 16px; margin-left: auto; font-family: Consolas, monospace; }
+  .respuesta { margin-top: 18px; font-size: 20px; line-height: 1.5; color: #d5dae6; }
+  .respuesta strong { color: #7fe0a8; }
+  .adjuntos { display: flex; gap: 14px; margin-top: 16px; }
+  .adjunto { display: flex; align-items: center; gap: 12px; padding: 12px 18px; border-radius: 12px; background: #1b2336; border: 1px solid #2d3854; font-size: 17px; }
+  .adjunto i { width: 34px; height: 34px; border-radius: 8px; display: grid; place-items: center; font-style: normal; font-weight: 700; font-size: 13px; color: #fff; }
+
+  /* ---------- 2. Dashboard estilo Power BI ---------- */
+  #dashboard { background: #eaedf2; display: flex; }
+  .lateral { width: 64px; background: #252423; display: flex; flex-direction: column; align-items: center; padding-top: 18px; gap: 18px; }
+  .lateral i { width: 26px; height: 26px; border-radius: 6px; background: #3b3a39; }
+  .lateral i:first-child { background: #f2c811; }
+  .lienzo { flex: 1; padding: 26px 30px; display: grid; grid-template-rows: auto auto 1fr; gap: 18px; }
+  .cabecera { display: flex; align-items: flex-end; justify-content: space-between; }
+  .cabecera h1 { font-size: 30px; font-weight: 600; }
+  .cabecera p { color: #6b7385; font-size: 16px; margin-top: 2px; }
+  .filtros { display: flex; gap: 10px; }
+  .filtros span { background: #fff; border: 1px solid #d6dbe5; padding: 7px 14px; border-radius: 6px; font-size: 15px; color: #444; }
+  .kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+  .kpi { background: #fff; border-radius: 8px; padding: 16px 18px; box-shadow: 0 1px 3px rgb(0 0 0 / .08); border-top: 4px solid #3656c9; }
+  .kpi p { font-size: 14px; color: #6b7385; }
+  .kpi strong { display: block; font-size: 32px; font-weight: 600; margin: 4px 0 2px; }
+  .kpi span { font-size: 14px; color: #1f7a4d; font-weight: 600; }
+  .kpi span.baja { color: #1f7a4d; }
+  .graficas { display: grid; grid-template-columns: 1.35fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; }
+  .panel { background: #fff; border-radius: 8px; padding: 16px 20px; box-shadow: 0 1px 3px rgb(0 0 0 / .08); display: flex; flex-direction: column; }
+  .panel h2 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+  .panel svg { flex: 1; width: 100%; }
+  .linea { grid-row: span 2; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th { text-align: left; color: #6b7385; font-weight: 600; padding: 6px 8px; border-bottom: 2px solid #e1e5ec; }
+  td { padding: 7px 8px; border-bottom: 1px solid #eef1f5; }
+  td:not(:first-child), th:not(:first-child) { text-align: right; }
+
+  /* ---------- 3. Diapositiva ---------- */
+  #presentacion { background: #3a3f4b; padding: 60px 110px; }
+  .diapo { width: 100%; height: 100%; background: #fff; border-radius: 6px; box-shadow: 0 20px 60px rgb(0 0 0 / .4); display: grid; grid-template-columns: 1.1fr 1fr; overflow: hidden; }
+  .diapo-texto { padding: 60px 56px; display: flex; flex-direction: column; }
+  .diapo-texto small { color: #3656c9; font-weight: 700; letter-spacing: .12em; font-size: 15px; }
+  .diapo-texto h1 { font-size: 44px; line-height: 1.1; margin: 12px 0 30px; }
+  .hallazgo { display: flex; gap: 18px; margin-bottom: 24px; }
+  .hallazgo b { flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px; background: #e8edfb; color: #3656c9; display: grid; place-items: center; font-size: 20px; }
+  .hallazgo p { font-size: 20px; line-height: 1.45; color: #333; }
+  .hallazgo strong { color: #1f2430; }
+  .diapo-pie { margin-top: auto; font-size: 14px; color: #8b93a3; }
+  .diapo-grafica { background: #f4f6fb; padding: 50px 44px; display: flex; flex-direction: column; justify-content: center; }
+  .diapo-grafica h2 { font-size: 20px; margin-bottom: 18px; }
+</style>
+</head>
+<body>
+
+<!-- 1. Instrucción -->
+<section class="vista" id="instruccion">
+  <div class="ventana">
+    <div class="ventana-barra"><i></i><i></i><i></i><span>Agente de reportes · sesión semanal</span></div>
+    <div class="chat">
+      <div class="msg-usuario">
+        <div class="quien" style="color:#c9d4ff">Instrucción</div>
+        Genera el reporte semanal de campañas: KPIs, tendencia de conversiones de las últimas 8 semanas, rendimiento por canal y 3 hallazgos clave. Entrégalo en Power BI y en una presentación.
+      </div>
+      <div class="agente">
+        <div class="quien">Agente</div>
+        <ul class="pasos">
+          <li><b>✓</b>Conectado a la fuente de datos<small>8 semanas · 5 canales</small></li>
+          <li><b>✓</b>Datos limpiados y validados<small>0 filas con error</small></li>
+          <li><b>✓</b>KPIs calculados: inversión, CTR, conversiones y CPA<small>6 indicadores</small></li>
+          <li><b>✓</b>Dashboard actualizado en Power BI<small>4 visuales</small></li>
+          <li><b>✓</b>Presentación generada<small>5 diapositivas</small></li>
+        </ul>
+        <p class="respuesta">Listo. Las conversiones subieron <strong>13 %</strong> frente a la semana anterior (306 contra 270). Búsqueda aporta el 39 % del total y la campaña de video tiene el CPA más alto: recomiendo revisar su segmentación.</p>
+        <div class="adjuntos">
+          <div class="adjunto"><i style="background:#c9a100">BI</i>Reporte semanal.pbix</div>
+          <div class="adjunto"><i style="background:#c4471f">PPT</i>Resumen semana 8.pptx</div>
+          <div class="adjunto"><i style="background:#1f7a4d">XLS</i>Datos consolidados.xlsx</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="marca-agua">Ilustración · datos ficticios</p>
+</section>
+
+<!-- 2. Dashboard -->
+<section class="vista" id="dashboard">
+  <div class="lateral"><i></i><i></i><i></i><i></i></div>
+  <div class="lienzo">
+    <div class="cabecera">
+      <div>
+        <h1>Rendimiento de campañas</h1>
+        <p>Empresa Demo · actualizado por el agente de reportes</p>
+      </div>
+      <div class="filtros"><span>Últimas 8 semanas ▾</span><span>Todos los canales ▾</span></div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><p>Inversión</p><strong>$48,2 K</strong><span>▲ 6,1 %</span></div>
+      <div class="kpi"><p>Impresiones</p><strong>3,4 M</strong><span>▲ 4,8 %</span></div>
+      <div class="kpi"><p>Clics</p><strong>92,7 K</strong><span>▲ 7,2 %</span></div>
+      <div class="kpi"><p>CTR</p><strong>2,73 %</strong><span>▲ 0,06 pp</span></div>
+      <div class="kpi"><p>Conversiones</p><strong>1.846</strong><span>▲ 13,3 %</span></div>
+      <div class="kpi"><p>CPA</p><strong>$26,1</strong><span class="baja">▼ 4,2 %</span></div>
+    </div>
+    <div class="graficas">
+      <div class="panel linea">
+        <h2>Conversiones por semana</h2>
+        <svg viewBox="0 0 600 420" preserveAspectRatio="none">
+          <g stroke="#eef1f5" stroke-width="1">
+            <line x1="50" y1="40" x2="590" y2="40"/><line x1="50" y1="130" x2="590" y2="130"/>
+            <line x1="50" y1="220" x2="590" y2="220"/><line x1="50" y1="310" x2="590" y2="310"/>
+            <line x1="50" y1="380" x2="590" y2="380" stroke="#cfd5df"/>
+          </g>
+          <g font-size="14" fill="#6b7385" text-anchor="end">
+            <text x="42" y="45">320</text><text x="42" y="135">270</text><text x="42" y="225">220</text><text x="42" y="315">170</text>
+          </g>
+          <!-- y = 310 - (v - 170) * 1.8 -->
+          <path d="M80 292 L150 265 L220 238 L290 247 L360 198 L430 170 L500 130 L570 65 L570 380 L80 380 Z" fill="#3656c9" opacity=".12"/>
+          <polyline points="80,292 150,265 220,238 290,247 360,198 430,170 500,130 570,65" fill="none" stroke="#3656c9" stroke-width="4" stroke-linejoin="round"/>
+          <g fill="#3656c9">
+            <circle cx="80" cy="292" r="5"/><circle cx="150" cy="265" r="5"/><circle cx="220" cy="238" r="5"/><circle cx="290" cy="247" r="5"/><circle cx="360" cy="198" r="5"/><circle cx="430" cy="170" r="5"/><circle cx="500" cy="130" r="5"/><circle cx="570" cy="65" r="7"/>
+          </g>
+          <g font-size="13" fill="#1f2430" text-anchor="middle" font-weight="600">
+            <text x="80" y="278">180</text><text x="150" y="251">195</text><text x="220" y="224">210</text><text x="290" y="233">205</text><text x="360" y="184">232</text><text x="430" y="156">248</text><text x="500" y="116">270</text><text x="570" y="51">306</text>
+          </g>
+          <g font-size="14" fill="#6b7385" text-anchor="middle">
+            <text x="80" y="402">S1</text><text x="150" y="402">S2</text><text x="220" y="402">S3</text><text x="290" y="402">S4</text>
+            <text x="360" y="402">S5</text><text x="430" y="402">S6</text><text x="500" y="402">S7</text><text x="570" y="402">S8</text>
+          </g>
+        </svg>
+      </div>
+      <div class="panel">
+        <h2>Conversiones por canal</h2>
+        <svg viewBox="0 0 440 180">
+          <!-- escala: 712 → 300 px -->
+          <g font-size="14" fill="#1f2430">
+            <text x="0" y="22">Búsqueda</text><text x="0" y="57">Social</text><text x="0" y="92">Video</text><text x="0" y="127">Display</text><text x="0" y="162">Email</text>
+          </g>
+          <g fill="#3656c9">
+            <rect x="80" y="8" width="300" height="20" rx="3"/>
+            <rect x="80" y="43" width="210" height="20" rx="3" opacity=".85"/>
+            <rect x="80" y="78" width="120" height="20" rx="3" opacity=".7"/>
+            <rect x="80" y="113" width="93" height="20" rx="3" opacity=".6"/>
+            <rect x="80" y="148" width="55" height="20" rx="3" opacity=".5"/>
+          </g>
+          <g font-size="14" fill="#1f2430" font-weight="600">
+            <text x="388" y="23">712</text><text x="298" y="58">498</text><text x="208" y="93">284</text><text x="181" y="128">221</text><text x="143" y="163">131</text>
+          </g>
+        </svg>
+      </div>
+      <div class="panel">
+        <h2>Campañas principales</h2>
+        <table>
+          <tr><th>Campaña</th><th>Canal</th><th>Inversión</th><th>Conv.</th><th>CPA</th></tr>
+          <tr><td>Lanzamiento Q3</td><td>Búsqueda</td><td>$12,4 K</td><td>520</td><td>$23,8</td></tr>
+          <tr><td>Remarketing</td><td>Social</td><td>$8,1 K</td><td>331</td><td>$24,5</td></tr>
+          <tr><td>Marca</td><td>Video</td><td>$9,6 K</td><td>284</td><td>$33,8</td></tr>
+          <tr><td>Prospección</td><td>Display</td><td>$6,2 K</td><td>221</td><td>$28,1</td></tr>
+          <tr><td>Boletín</td><td>Email</td><td>$1,9 K</td><td>131</td><td>$14,5</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <p class="marca-agua">Ilustración · datos ficticios</p>
+</section>
+
+<!-- 3. Presentación -->
+<section class="vista" id="presentacion">
+  <div class="diapo">
+    <div class="diapo-texto">
+      <small>RESUMEN SEMANAL · SEMANA 8</small>
+      <h1>Las conversiones crecieron por cuarta semana seguida</h1>
+      <div class="hallazgo"><b>1</b><p><strong>+13 % en conversiones</strong> frente a la semana anterior: 306 contra 270.</p></div>
+      <div class="hallazgo"><b>2</b><p><strong>Búsqueda aporta el 39 %</strong> de las conversiones del periodo (712 de 1.846).</p></div>
+      <div class="hallazgo"><b>3</b><p><strong>Video tiene el CPA más alto</strong> ($33,8): conviene revisar la segmentación de la campaña de marca.</p></div>
+      <p class="diapo-pie">Generado automáticamente por el agente de reportes · Empresa Demo</p>
+    </div>
+    <div class="diapo-grafica">
+      <h2>Conversiones · últimas 4 semanas</h2>
+      <svg viewBox="0 0 400 300">
+        <line x1="20" y1="270" x2="390" y2="270" stroke="#cfd5df"/>
+        <!-- escala: 306 → 220 px -->
+        <g fill="#3656c9">
+          <rect x="40" y="103" width="60" height="167" rx="4" opacity=".45"/>
+          <rect x="130" y="92" width="60" height="178" rx="4" opacity=".55"/>
+          <rect x="220" y="76" width="60" height="194" rx="4" opacity=".7"/>
+          <rect x="310" y="50" width="60" height="220" rx="4"/>
+        </g>
+        <g font-size="16" text-anchor="middle" fill="#1f2430" font-weight="600">
+          <text x="70" y="94">232</text><text x="160" y="83">248</text><text x="250" y="67">270</text><text x="340" y="41">306</text>
+        </g>
+        <g font-size="15" text-anchor="middle" fill="#6b7385">
+          <text x="70" y="292">S5</text><text x="160" y="292">S6</text><text x="250" y="292">S7</text><text x="340" y="292">S8</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <p class="marca-agua">Ilustración · datos ficticios</p>
+</section>
+
+<script>
+  const id = location.hash.slice(1) || "dashboard";
+  document.getElementById(id).style.display = id === "dashboard" ? "flex" : "block";
+</script>
+</body>
+</html>

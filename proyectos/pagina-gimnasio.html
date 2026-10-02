@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web de gimnasio con entrenamiento personalizado — Andrey Martínez</title>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/estilos.css">
+<meta name="description" content="Plataforma web para un gimnasio con sitio comercial y área privada por roles, donde los entrenadores asignan rutinas, videos, mediciones y planes de alimentación a cada cliente."><link rel="canonical" href="https://andreymartinezportafolio.vercel.app/proyectos/pagina-gimnasio"><meta property="og:type" content="article"><meta property="og:site_name" content="H.A.M.C Soluciones en IA"><meta property="og:title" content="Web de gimnasio con entrenamiento personalizado — Andrey Martínez"><meta property="og:description" content="Plataforma web para un gimnasio con sitio comercial y área privada por roles, donde los entrenadores asignan rutinas, videos, mediciones y planes de alimentación a cada cliente."><meta property="og:url" content="https://andreymartinezportafolio.vercel.app/proyectos/pagina-gimnasio"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://andreymartinezportafolio.vercel.app/img/pagina-gym/portada.png"></head>
+<body>
+  <header class="nav">
+    <div class="contenedor nav-interior">
+      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <nav id="menu" class="menu">
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#blog" data-t="nav_blog" data-seccion="blog">Blog</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="menu-contacto" data-cv="" download="" data-t="descargar_cv">Descargar CV</a>
+        <a href="/#contacto" class="menu-contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-icono btn-tema" type="button" data-icono="tema" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema claro/oscuro"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"></path></svg></button>
+        <button class="btn-idioma" type="button" aria-label="Switch to English"><span class="activo">ES</span><span>EN</span></button>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario nav-cta" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span>CV</span></a>
+        <a href="/#contacto" class="boton nav-cta"><span data-t="nav_contacto">Contacto</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <button class="btn-icono btn-menu" type="button" data-icono="menu" aria-controls="menu" aria-expanded="false" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <article id="detalle" class="detalle" data-tipo="proyecto">
+    <a class="migas" href="/#proyectos"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg> Proyectos</a>
+    <header class="detalle-cabecera revelar">
+      <div class="chips"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Prototipo</span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+      <h1>Web de gimnasio con entrenamiento personalizado</h1>
+      <p class="bajada">Plataforma web para un gimnasio con sitio comercial y área privada por roles, donde los entrenadores asignan rutinas, videos, mediciones y planes de alimentación a cada cliente.</p>
+      <div class="botones"><a class="boton" href="https://web-handreymartinez.vercel.app" target="_blank" rel="noopener">Ver demostración <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div>
+    </header>
+    
+      <dl class="impacto revelar">
+        <div><dt>4</dt><dd>roles de equipo con permisos</dd></div><div><dt>1000</dt><dd>códigos de clase gratis por lote</dd></div><div><dt>1</dt><dd>capa de datos para todo el sitio</dd></div>
+      </dl>
+    <div class="marco revelar"><div class="marco-barra"><span></span><span></span><span></span></div><div class="marco-img"><img src="/img/pagina-gym/portada.png" alt="Web de gimnasio con entrenamiento personalizado" loading="lazy"></div></div>
+    <div class="detalle-grid">
+      <div class="contenido"><p>Plataforma web para un gimnasio de barrio en Bogotá, desarrollada junto a un cliente real y refinada en ciclos iterativos a partir de su retroalimentación. Tiene dos caras: una <strong>web pública</strong> que vende (planes, servicios, rutinas, clase gratis) y un <strong>área privada</strong> para el equipo y para los clientes con entrenamiento personalizado.</p>
+      <p><strong>Es un prototipo en revisión:</strong> el enlace de la demo funciona de punta a punta, pero los datos son de ejemplo y se guardan en el navegador de cada visitante. Nombre, precios y dirección son provisionales.</p>
+
+      <h2>El problema</h2>
+      <p>El gimnasio ya tenía su sistema de recepción (<a href="/proyectos/app-gimnasio">GymApp</a>), pero nada hacia afuera: quien preguntaba por precios, horarios o una clase de prueba lo hacía por WhatsApp, y los clientes con entrenador recibían la rutina en papel o en fotos sueltas.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Web pública:</strong> planes y precios, servicios, horario, bienestar, barra fit, preguntas frecuentes y contacto, con WhatsApp siempre a la mano en el celular.</li>
+        <li><strong>Rutinas generales:</strong> el visitante elige para quién es, cuántos días entrena y su objetivo, y ve qué hacer cada día con series y descansos.</li>
+        <li><strong>Clase gratis con códigos:</strong> quien la pide recibe un código de un lote de 1000 que vale 3 días; recepción lo marca como usado y el sistema frena a quien intenta repetir.</li>
+        <li><strong>Entrenamiento personalizado:</strong> el entrenador arma la ficha de cada cliente, sus medidas, valoraciones, rutina, plan de alimentación y pausas. Cada ejercicio puede llevar un video general o uno grabado solo para esa persona.</li>
+        <li><strong>Área del cliente:</strong> entra con su documento y un PIN, y ve su rutina con videos, su alimentación y su progreso.</li>
+        <li><strong>Equipo y permisos:</strong> desarrollador, administradores, recepción y entrenadores, cada uno con lo suyo. El acceso de un cliente nuevo se le envía por WhatsApp con un clic.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      
+    <figure class="arquitectura revelar">
+      
+        
+        <div class="arq-capa" style="--i:0">
+          <p class="arq-nombre"><span>01</span>Pantallas · Next.js 16</p>
+          
+            <div class="arq-nodo">
+              <strong>Web pública</strong>
+              <span>Planes, horario, rutinas y clase gratis</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Área privada</strong>
+              <span>Administración, recepción, entrenador y cliente</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:1">
+          <p class="arq-nombre"><span>02</span>Capa de datos · lib/api</p>
+          
+            <div class="arq-nodo">
+              <strong>Única puerta de entrada</strong>
+              <span>Toda lectura y escritura pasa por aquí</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Permisos por rol</strong>
+              <span>Cada rol ve solo lo suyo</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:2">
+          <p class="arq-nombre"><span>03</span>Almacenamiento</p>
+          
+            <div class="arq-nodo">
+              <strong>Hoy: datos locales</strong>
+              <span>Versionados con migraciones en el navegador</span>
+            </div>
+            <div class="arq-nodo futuro">
+              <strong>Mañana: base de datos</strong>
+              <span>Solo cambia lib/api, no las pantallas</span>
+            </div>
+        </div>
+    </figure>
+      <ul>
+        <li><strong>Next.js 16</strong> (App Router), <strong>React 19</strong>, <strong>TypeScript</strong> y <strong>Tailwind CSS 4</strong>.</li>
+        <li>Toda la lectura y escritura de datos pasa por una sola capa (<code>lib/api</code>), así que conectar una base de datos real solo cambia ese archivo, no las pantallas.</li>
+        <li>Base local versionada con migraciones, para que un cambio de datos no borre lo que el visitante ya tenía.</li>
+        <li>Los mapas musculares de las rutinas son SVG dibujados en código, sin imágenes de terceros.</li>
+        <li>Despliegue continuo en <strong>Vercel</strong> desde GitHub y un script propio que genera las capturas con Edge sin ventana.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li><strong>Prototipo funcionando de punta a punta</strong>, publicado en Vercel y ajustado iteración por iteración con los comentarios del cliente.</li>
+        <li>Cubre los dos frentes del gimnasio: la web pública que vende y el área privada donde cada cliente ve su rutina, sus videos y su alimentación.</li>
+        <li>Lista para crecer: como todos los datos pasan por <code>lib/api</code>, conectar una base de datos real no toca ninguna pantalla.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <p>Todas con datos de ejemplo, ninguna persona real.</p>
+      <div class="galeria">
+        <figure><a href="/img/pagina-gym/03-planes.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/03-planes.png" alt="Planes y precios" loading="lazy"></a><figcaption>Planes y precios</figcaption></figure>
+        <figure><a href="/img/pagina-gym/04-horarios.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/04-horarios.png" alt="Horario continuo" loading="lazy"></a><figcaption>Horario continuo</figcaption></figure>
+        <figure><a href="/img/pagina-gym/09-clase-gratis.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/09-clase-gratis.png" alt="Clase gratis con código" loading="lazy"></a><figcaption>Clase gratis con código</figcaption></figure>
+        <figure><a href="/img/pagina-gym/12-login.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/12-login.png" alt="Ingreso de clientes y equipo" loading="lazy"></a><figcaption>Ingreso de clientes y equipo</figcaption></figure>
+        <figure><a href="/img/pagina-gym/20-admin-solicitudes.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/20-admin-solicitudes.png" alt="Bandeja de solicitudes" loading="lazy"></a><figcaption>Bandeja de solicitudes</figcaption></figure>
+        <figure><a href="/img/pagina-gym/21-admin-clases-gratis.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/21-admin-clases-gratis.png" alt="Control de códigos de clase gratis" loading="lazy"></a><figcaption>Control de códigos de clase gratis</figcaption></figure>
+        <figure><a href="/img/pagina-gym/22-admin-equipo.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/22-admin-equipo.png" alt="Equipo y permisos" loading="lazy"></a><figcaption>Equipo y permisos</figcaption></figure>
+        <figure><a href="/img/pagina-gym/31-entrenador-ficha.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/31-entrenador-ficha.png" alt="Ficha del cliente" loading="lazy"></a><figcaption>Ficha del cliente</figcaption></figure>
+        <figure><a href="/img/pagina-gym/32-entrenador-medidas.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/32-entrenador-medidas.png" alt="Medidas y evolución" loading="lazy"></a><figcaption>Medidas y evolución</figcaption></figure>
+        <figure><a href="/img/pagina-gym/33-entrenador-rutina.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/33-entrenador-rutina.png" alt="Rutina asignada" loading="lazy"></a><figcaption>Rutina asignada</figcaption></figure>
+        <figure><a href="/img/pagina-gym/35-entrenador-cargar-video.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/35-entrenador-cargar-video.png" alt="Cargar video de un ejercicio" loading="lazy"></a><figcaption>Cargar video de un ejercicio</figcaption></figure>
+        <figure><a href="/img/pagina-gym/36-entrenador-alimentacion.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/36-entrenador-alimentacion.png" alt="Plan de alimentación" loading="lazy"></a><figcaption>Plan de alimentación</figcaption></figure>
+        <figure><a href="/img/pagina-gym/41b-cliente-rutina-videos.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/41b-cliente-rutina-videos.png" alt="El cliente ve su rutina con videos" loading="lazy"></a><figcaption>El cliente ve su rutina con videos</figcaption></figure>
+        <figure><a href="/img/pagina-gym/43-cliente-progreso.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/43-cliente-progreso.png" alt="Progreso del cliente" loading="lazy"></a><figcaption>Progreso del cliente</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/pagina-gym/51-movil-inicio.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/51-movil-inicio.png" alt="Inicio" loading="lazy"></a><figcaption>Inicio</figcaption></figure>
+        <figure><a href="/img/pagina-gym/52-movil-planes.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/52-movil-planes.png" alt="Planes" loading="lazy"></a><figcaption>Planes</figcaption></figure>
+        <figure><a href="/img/pagina-gym/53-movil-horarios.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/53-movil-horarios.png" alt="Horarios" loading="lazy"></a><figcaption>Horarios</figcaption></figure>
+        <figure><a href="/img/pagina-gym/50-movil-cliente-rutina.png" target="_blank" rel="noopener"><img src="/img/pagina-gym/50-movil-cliente-rutina.png" alt="Rutina del cliente" loading="lazy"></a><figcaption>Rutina del cliente</figcaption></figure>
+      </div></div>
+      <aside class="ficha">
+        <dl><div><dt>Fecha</dt><dd>septiembre de 2026</dd></div><div><dt>Tipo</dt><dd>Web</dd></div><div><dt>Estado</dt><dd><span class="chip estado"><span class="punto"></span>Prototipo</span></dd></div><div><dt>Desarrollo</dt><dd>Asistido por IA · Claude Code</dd></div><div><dt>Tecnologías</dt><dd><div class="etiquetas"><span class="etiqueta">Next.js</span><span class="etiqueta">React</span><span class="etiqueta">TypeScript</span><span class="etiqueta">Tailwind</span></div></dd></div></dl>
+        <div class="ficha-enlaces"><a class="boton" href="https://web-handreymartinez.vercel.app" target="_blank" rel="noopener">Ver demostración <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a></div>
+      </aside>
+    </div>
+    
+      <section class="otros">
+        <h2>Otros proyectos</h2>
+        <div class="grilla">
+    <a class="tarjeta revelar" href="/proyectos/app-gimnasio">
+      <div class="portada"><img src="/img/gymapp/13-dashboards.png" alt="GymApp — Administración de gimnasio" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Escritorio</span><span class="chip estado"><span class="punto"></span>En producción</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>septiembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>GymApp<span>Administración de gimnasio</span></h3>
+        <p>Sistema de escritorio en producción para la gestión integral de un gimnasio: membresías, control de acceso biométrico con apertura automática de puerta, punto de venta, inventario y caja.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>En producción, con más de 300 clientes registrados.</span></p>
+        <div class="etiquetas"><span class="etiqueta">Electron</span><span class="etiqueta">React</span><span class="etiqueta">SQLite</span><span class="etiqueta">Arduino</span><span class="etiqueta">+1</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
+    <a class="tarjeta revelar" href="/proyectos/mis-finanzas">
+      <div class="portada"><img src="/img/mis-finanzas/portada.png" alt="Mis Finanzas — App de finanzas personales" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Móvil</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>agosto de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Mis Finanzas<span>App de finanzas personales</span></h3>
+        <p>Aplicación Android para la gestión de finanzas personales —ingresos, gastos, tarjetas de crédito, préstamos y metas de ahorro— con almacenamiento exclusivamente local.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Todos los datos se quedan en el teléfono: funciona sin internet.</span></p>
+        <div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">Vite</span><span class="etiqueta">Capacitor</span><span class="etiqueta">Android</span><span class="etiqueta">+1</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a></div>
+      </section></article>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <div class="pie-marca">
+        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <p class="pie-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
+        <p class="pie-frase" data-t="pie_frase">Construyo soluciones con inteligencia artificial, automatización y datos para empresas y emprendimientos.</p>
+      </div>
+      <nav class="pie-columna" aria-labelledby="pie-t-nav">
+        <h3 id="pie-t-nav" data-t="pie_navegacion">Navegación</h3>
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/#contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="pie-columna">
+        <h3 data-t="pie_contacto">Contacto</h3>
+        <nav id="pie-redes" class="pie-redes"><a href="https://github.com/HANDREYMARTINEZ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a><a href="https://www.linkedin.com/in/andreymartinezdata" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a><a href="mailto:2002.ha.mc@gmail.com"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a></nav>
+      </div>
+      <div class="pie-columna">
+        <h3 data-t="cv_titulo">Hoja de vida</h3>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" data-cv="" download="" data-t="cv_pdf">Descargar PDF</a>
+        <a href="/hoja-de-vida?lang=es" data-cv-ver="" target="_blank" rel="noopener" data-t="cv_ver">Ver en línea</a>
+      </div>
+    </div>
+    <div class="contenedor pie-legal">
+      <p>© <span id="anio">2026</span> <span data-sitio="nombre">Harold Andrey Martínez Cortés</span> · <span data-t="derechos">Desarrollado en Colombia</span></p>
+      <a href="#" class="pie-arriba"><span data-t="arriba">Volver arriba</span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script src="/data/blog.js"></script>
+  <script src="/js/textos.js"></script>
+  <script src="/js/main.js"></script>
+
+
+</body></html>
+

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GymApp — Administración de gimnasio — Andrey Martínez</title>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/estilos.css">
+<meta name="description" content="Sistema de escritorio en producción para la gestión integral de un gimnasio: membresías, control de acceso biométrico con apertura automática de puerta, punto de venta, inventario y caja."><link rel="canonical" href="https://andreymartinezportafolio.vercel.app/proyectos/app-gimnasio"><meta property="og:type" content="article"><meta property="og:site_name" content="H.A.M.C Soluciones en IA"><meta property="og:title" content="GymApp — Administración de gimnasio — Andrey Martínez"><meta property="og:description" content="Sistema de escritorio en producción para la gestión integral de un gimnasio: membresías, control de acceso biométrico con apertura automática de puerta, punto de venta, inventario y caja."><meta property="og:url" content="https://andreymartinezportafolio.vercel.app/proyectos/app-gimnasio"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://andreymartinezportafolio.vercel.app/img/gymapp/13-dashboards.png"></head>
+<body>
+  <header class="nav">
+    <div class="contenedor nav-interior">
+      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <nav id="menu" class="menu">
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#blog" data-t="nav_blog" data-seccion="blog">Blog</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="menu-contacto" data-cv="" download="" data-t="descargar_cv">Descargar CV</a>
+        <a href="/#contacto" class="menu-contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-icono btn-tema" type="button" data-icono="tema" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema claro/oscuro"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"></path></svg></button>
+        <button class="btn-idioma" type="button" aria-label="Switch to English"><span class="activo">ES</span><span>EN</span></button>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario nav-cta" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span>CV</span></a>
+        <a href="/#contacto" class="boton nav-cta"><span data-t="nav_contacto">Contacto</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <button class="btn-icono btn-menu" type="button" data-icono="menu" aria-controls="menu" aria-expanded="false" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <article id="detalle" class="detalle" data-tipo="proyecto">
+    <a class="migas" href="/#proyectos"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg> Proyectos</a>
+    <header class="detalle-cabecera revelar">
+      <div class="chips"><span class="chip">Escritorio</span><span class="chip estado"><span class="punto"></span>En producción</span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+      <h1>GymApp — Administración de gimnasio</h1>
+      <p class="bajada">Sistema de escritorio en producción para la gestión integral de un gimnasio: membresías, control de acceso biométrico con apertura automática de puerta, punto de venta, inventario y caja.</p>
+      <div class="botones"><a class="boton secundario" href="https://github.com/HANDREYMARTINEZ/gymapp" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Ver código</a></div>
+    </header>
+    
+      <dl class="impacto revelar">
+        <div><dt>300+</dt><dd>clientes registrados</dd></div><div><dt>3</dt><dd>formas de entrar: huella, carnet o PIN</dd></div><div><dt>27</dt><dd>suites de pruebas automáticas</dd></div>
+      </dl>
+    <div class="marco revelar"><div class="marco-barra"><span></span><span></span><span></span></div><div class="marco-img"><img src="/img/gymapp/13-dashboards.png" alt="GymApp — Administración de gimnasio" loading="lazy"></div></div>
+    <div class="detalle-grid">
+      <div class="contenido"><p>Sistema de escritorio para la administración integral de un gimnasio en operación: clientes, membresías, control de acceso, punto de venta, inventario y caja. <strong>En producción desde septiembre de 2026</strong> en el equipo de recepción, con más de 300 clientes registrados.</p>
+      <p>Opera sin conexión a internet: la información reside en una base de datos SQLite local y los datos sensibles de los clientes se almacenan cifrados.</p>
+
+      <h2>El problema</h2>
+      <p>El gimnasio gestionaba pagos, vencimientos, cuentas por cobrar y ventas en hojas de Excel. No existía control de acceso y el cierre de caja se realizaba manualmente.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Clientes y membresías:</strong> ficha con foto, planes por días o por tiquetes, renovaciones, pausas y pagos a crédito (fiados).</li>
+        <li><strong>Control de acceso:</strong> kiosco a pantalla completa donde el cliente entra con huella, código de barras del carnet o PIN. Cada entrada queda registrada con su motivo.</li>
+        <li><strong>Puerta automática:</strong> un Arduino Nano con un relé abre el torniquete cuando el acceso es válido.</li>
+        <li><strong>Punto de venta, inventario y caja:</strong> productos con código de barras, entradas y salidas de mercancía, apertura y cierre por turno con cada medio de pago.</li>
+        <li><strong>Recordatorios por correo:</strong> aviso automático a quien está por vencer o ya venció, con frenos para no escribirle dos veces a nadie.</li>
+        <li><strong>Excel y respaldos:</strong> importación masiva de clientes, exportación del padrón y copias de seguridad con restauración verificada.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      
+    <figure class="arquitectura revelar">
+      
+        
+        <div class="arq-capa" style="--i:0">
+          <p class="arq-nombre"><span>01</span>Interfaz · React</p>
+          
+            <div class="arq-nodo">
+              <strong>Kiosco de entrada</strong>
+              <span>Pantalla completa: huella, carnet o PIN</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Mostrador</strong>
+              <span>Clientes, ventas, inventario y caja</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:1">
+          <p class="arq-nombre"><span>02</span>Núcleo · Electron</p>
+          
+            <div class="arq-nodo">
+              <strong>Reglas del negocio</strong>
+              <span>Acceso, membresías, fiados y caja por turno</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Seguridad</strong>
+              <span>Datos, fotos y huellas cifrados; Argon2</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Tareas</strong>
+              <span>Recordatorios por correo, respaldos y Excel</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:2">
+          <p class="arq-nombre"><span>03</span>Datos y hardware</p>
+          
+            <div class="arq-nodo">
+              <strong>SQLite</strong>
+              <span>better-sqlite3 con migraciones, sin internet</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Lector de huella</strong>
+              <span>DigitalPersona a través de un proceso .NET</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Puerta</strong>
+              <span>Arduino Nano + relé por puerto serie</span>
+            </div>
+        </div>
+    </figure>
+      <ul>
+        <li><strong>Electron + React</strong> para la interfaz y <strong>SQLite</strong> (better-sqlite3) con migraciones.</li>
+        <li><strong>Cifrado</strong> de datos sensibles, fotos y huellas; contraseñas con <strong>Argon2</strong>.</li>
+        <li>Un proceso aparte en <strong>.NET</strong> habla con el lector de huella DigitalPersona.</li>
+        <li><strong>Autodiagnóstico del lector:</strong> si detecta el dedo pero deja de entregar la huella, el kiosco lo avisa y pide entrar con PIN, en vez de fallar en silencio.</li>
+        <li>Firmware propio para <strong>Arduino Nano</strong> por puerto serie.</li>
+        <li>27 suites de pruebas automáticas que corren sobre Electron.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li><strong>En producción desde septiembre de 2026</strong> en el PC del mostrador, con más de 300 clientes registrados.</li>
+        <li>Lo que antes estaba repartido en hojas de Excel (pagos, vencimientos, deudas y ventas) quedó en un solo sistema.</li>
+        <li>La entrada quedó controlada: la puerta solo se abre con una membresía vigente y cada ingreso queda registrado con su motivo.</li>
+        <li>El cierre de caja por turno se arma solo, separado por medio de pago.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <p>Todas con datos de ejemplo, ningún cliente real.</p>
+      <div class="galeria">
+        <figure><a href="/img/gymapp/02-kiosco.png" target="_blank" rel="noopener"><img src="/img/gymapp/02-kiosco.png" alt="Kiosco de entrada" loading="lazy"></a><figcaption>Kiosco de entrada</figcaption></figure>
+        <figure><a href="/img/gymapp/03-clientes.png" target="_blank" rel="noopener"><img src="/img/gymapp/03-clientes.png" alt="Clientes, estados y quién debe" loading="lazy"></a><figcaption>Clientes, estados y quién debe</figcaption></figure>
+        <figure><a href="/img/gymapp/04-cliente-ficha.png" target="_blank" rel="noopener"><img src="/img/gymapp/04-cliente-ficha.png" alt="Ficha del cliente" loading="lazy"></a><figcaption>Ficha del cliente</figcaption></figure>
+        <figure><a href="/img/gymapp/04e-ficha-fiar.png" target="_blank" rel="noopener"><img src="/img/gymapp/04e-ficha-fiar.png" alt="Fiar una membresía" loading="lazy"></a><figcaption>Fiar una membresía</figcaption></figure>
+        <figure><a href="/img/gymapp/06-vender-carrito.png" target="_blank" rel="noopener"><img src="/img/gymapp/06-vender-carrito.png" alt="Punto de venta" loading="lazy"></a><figcaption>Punto de venta</figcaption></figure>
+        <figure><a href="/img/gymapp/07-caja.png" target="_blank" rel="noopener"><img src="/img/gymapp/07-caja.png" alt="Caja por turno" loading="lazy"></a><figcaption>Caja por turno</figcaption></figure>
+        <figure><a href="/img/gymapp/11-inventario.png" target="_blank" rel="noopener"><img src="/img/gymapp/11-inventario.png" alt="Inventario" loading="lazy"></a><figcaption>Inventario</figcaption></figure>
+        <figure><a href="/img/gymapp/13-dashboards.png" target="_blank" rel="noopener"><img src="/img/gymapp/13-dashboards.png" alt="Resumen del día" loading="lazy"></a><figcaption>Resumen del día</figcaption></figure>
+        <figure><a href="/img/gymapp/16b-configuracion-puerta.png" target="_blank" rel="noopener"><img src="/img/gymapp/16b-configuracion-puerta.png" alt="Puerta con Arduino" loading="lazy"></a><figcaption>Puerta con Arduino</figcaption></figure>
+        <figure><a href="/img/gymapp/16d-configuracion-recordatorios.png" target="_blank" rel="noopener"><img src="/img/gymapp/16d-configuracion-recordatorios.png" alt="Recordatorios por correo" loading="lazy"></a><figcaption>Recordatorios por correo</figcaption></figure>
+        <figure><a href="/img/gymapp/18-desarrollador.png" target="_blank" rel="noopener"><img src="/img/gymapp/18-desarrollador.png" alt="Panel de desarrollador" loading="lazy"></a><figcaption>Panel de desarrollador</figcaption></figure>
+      </div></div>
+      <aside class="ficha">
+        <dl><div><dt>Fecha</dt><dd>septiembre de 2026</dd></div><div><dt>Tipo</dt><dd>Escritorio</dd></div><div><dt>Estado</dt><dd><span class="chip estado"><span class="punto"></span>En producción</span></dd></div><div><dt>Desarrollo</dt><dd>Asistido por IA · Claude Code</dd></div><div><dt>Tecnologías</dt><dd><div class="etiquetas"><span class="etiqueta">Electron</span><span class="etiqueta">React</span><span class="etiqueta">SQLite</span><span class="etiqueta">Arduino</span><span class="etiqueta">.NET</span></div></dd></div></dl>
+        <div class="ficha-enlaces"><a class="boton secundario" href="https://github.com/HANDREYMARTINEZ/gymapp" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Ver código</a></div>
+      </aside>
+    </div>
+    
+      <section class="otros">
+        <h2>Otros proyectos</h2>
+        <div class="grilla">
+    <a class="tarjeta revelar" href="/proyectos/pagina-gimnasio">
+      <div class="portada"><img src="/img/pagina-gym/portada.png" alt="Web de gimnasio con entrenamiento personalizado" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Prototipo</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>septiembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Web de gimnasio con entrenamiento personalizado</h3>
+        <p>Plataforma web para un gimnasio con sitio comercial y área privada por roles, donde los entrenadores asignan rutinas, videos, mediciones y planes de alimentación a cada cliente.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Área privada con 4 roles de equipo y permisos por rol.</span></p>
+        <div class="etiquetas"><span class="etiqueta">Next.js</span><span class="etiqueta">React</span><span class="etiqueta">TypeScript</span><span class="etiqueta">Tailwind</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
+    <a class="tarjeta revelar" href="/proyectos/mis-finanzas">
+      <div class="portada"><img src="/img/mis-finanzas/portada.png" alt="Mis Finanzas — App de finanzas personales" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Móvil</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>agosto de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Mis Finanzas<span>App de finanzas personales</span></h3>
+        <p>Aplicación Android para la gestión de finanzas personales —ingresos, gastos, tarjetas de crédito, préstamos y metas de ahorro— con almacenamiento exclusivamente local.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Todos los datos se quedan en el teléfono: funciona sin internet.</span></p>
+        <div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">Vite</span><span class="etiqueta">Capacitor</span><span class="etiqueta">Android</span><span class="etiqueta">+1</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a></div>
+      </section></article>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <div class="pie-marca">
+        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <p class="pie-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
+        <p class="pie-frase" data-t="pie_frase">Construyo soluciones con inteligencia artificial, automatización y datos para empresas y emprendimientos.</p>
+      </div>
+      <nav class="pie-columna" aria-labelledby="pie-t-nav">
+        <h3 id="pie-t-nav" data-t="pie_navegacion">Navegación</h3>
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/#contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="pie-columna">
+        <h3 data-t="pie_contacto">Contacto</h3>
+        <nav id="pie-redes" class="pie-redes"><a href="https://github.com/HANDREYMARTINEZ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a><a href="https://www.linkedin.com/in/andreymartinezdata" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a><a href="mailto:2002.ha.mc@gmail.com"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a></nav>
+      </div>
+      <div class="pie-columna">
+        <h3 data-t="cv_titulo">Hoja de vida</h3>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" data-cv="" download="" data-t="cv_pdf">Descargar PDF</a>
+        <a href="/hoja-de-vida?lang=es" data-cv-ver="" target="_blank" rel="noopener" data-t="cv_ver">Ver en línea</a>
+      </div>
+    </div>
+    <div class="contenedor pie-legal">
+      <p>© <span id="anio">2026</span> <span data-sitio="nombre">Harold Andrey Martínez Cortés</span> · <span data-t="derechos">Desarrollado en Colombia</span></p>
+      <a href="#" class="pie-arriba"><span data-t="arriba">Volver arriba</span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script src="/data/blog.js"></script>
+  <script src="/js/textos.js"></script>
+  <script src="/js/main.js"></script>
+
+
+</body></html>
+
