@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Tarjeta para compartir</title>
+<!-- Fuente de img/og/portada.jpg (vista previa al compartir la portada en WhatsApp, LinkedIn, X).
+     La genera scripts/og.ps1 con Edge sin ventana a 1200×630. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #090d16; color: #e8ecf4; font-family: "Inter", sans-serif;
+    display: flex; align-items: center; gap: 64px; padding: 0 88px; position: relative;
+  }
+  /* Cuadrícula tenue y brillo azul, como el hero del sitio */
+  body::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgb(255 255 255 / .035) 1px, transparent 1px), linear-gradient(90deg, rgb(255 255 255 / .035) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  body::after {
+    content: ""; position: absolute; right: -160px; top: -200px; width: 720px; height: 720px; border-radius: 50%;
+    background: radial-gradient(circle, rgb(65 105 225 / .35), transparent 65%);
+  }
+  .foto { position: relative; z-index: 1; width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 6px solid #111726; box-shadow: 0 0 0 3px #4169e1; flex-shrink: 0; }
+  .texto { position: relative; z-index: 1; }
+  .marca { font-family: "JetBrains Mono", monospace; font-size: 24px; color: #6f8ff0; letter-spacing: .02em; }
+  h1 { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 66px; line-height: 1.05; letter-spacing: -.035em; margin-top: 18px; }
+  .rol { font-size: 32px; font-weight: 600; margin-top: 20px; }
+  .rol::after { content: ""; display: inline-block; width: 16px; height: 34px; margin-left: 8px; vertical-align: -5px; background: #6f8ff0; border-radius: 2px; }
+  .areas { font-size: 24px; color: #98a2b8; margin-top: 18px; }
+  .url { font-family: "JetBrains Mono", monospace; font-size: 20px; color: #98a2b8; margin-top: 34px; }
+</style>
+</head>
+<body>
+  <img class="foto" src="/img/perfil.jpg" alt="" />
+  <div class="texto">
+    <p class="marca">H.A.M.C Soluciones en IA</p>
+    <h1>Harold Andrey<br />Martínez Cortés</h1>
+    <p class="rol">Ingeniero de IA y Automatización</p>
+    <p class="areas">IA generativa · Agentes · Power BI · Software a la medida</p>
+    <p class="url">andreymartinezportafolio.vercel.app</p>
+  </div>
+</body>
+</html>

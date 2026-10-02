@@ -41,6 +41,10 @@ HTML/CSS/JS puros, sin build ni dependencias. `vercel.json` activa `cleanUrls` y
 
 `main.js` dibuja todo desde los datos, pero el HTML publicado ya trae ese contenido escrito (en español) para quien no ejecuta JavaScript. Lo genera `scripts/prerender.ps1` con Edge sin ventana (`--dump-dom`): reemplaza el `<body>` de `index.html` y `hoja-de-vida.html` (el `<head>` se edita a mano) y crea `proyectos/<slug>.html`, una página por proyecto con título, descripción, canonical y Open Graph propios (Vercel sirve ese archivo antes que la reescritura a `/proyecto`; `proyecto.html` queda como plantilla y respaldo). **Después de cambiar `data/*.js`, `js/textos.js` o el HTML, correr** `npx serve . -l 3000` y luego `.\scripts\prerender.ps1` desde PowerShell, y subir los archivos regenerados. Al editar el `<body>` de `index.html` a mano, lo que esté dentro de los contenedores que llena `main.js` se sobrescribe en la siguiente generación.
 
+## Imágenes para compartir enlaces
+
+WhatsApp descarta la vista previa si la imagen pesa mucho (~300 KB), así que `og:image` apunta a JPG livianos de 1200×630 en `img/og/`: `portada.jpg` (tarjeta de marca hecha desde `docs/og-portada.html`) y `<slug>.jpg` por proyecto y nota (recorte de su `imagen`; las de Reportes con IA se muestran completas para no perder la marca "Ilustración · datos ficticios"). Los genera `scripts/og.ps1` (con `npx serve . -l 3000` corriendo); correrlo al agregar un proyecto o nota, o al cambiar su imagen, y después `scripts/prerender.ps1`.
+
 ## Ver en local
 
 `npx serve .` en esta carpeta. El panel del navegador a veces no dibuja las capturas; para revisar el diseño sirven capturas de Edge sin ventana lanzadas desde PowerShell (desde Git Bash no escribe el archivo). Edge sin ventana no baja de ~500 px de ancho; a 500 px ya se ve el diseño de celular. Dentro de un `<iframe>` las transiciones salen a medias en la captura, así que es mejor capturar sin marco. Ojo: si `npx serve` encuentra el puerto ocupado arranca en otro al azar (lo dice su salida); revisar que no quede un servidor viejo sirviendo.

@@ -409,7 +409,15 @@ function pintarDetalle(articulo) {
   ponerMeta("property", "og:description", tr(p.resumen));
   ponerMeta("property", "og:url", canonica.href);
   ponerMeta("name", "twitter:card", "summary_large_image");
-  if (p.imagen) ponerMeta("property", "og:image", p.imagen.startsWith("http") ? p.imagen : SITIO.url + p.imagen);
+  // Imagen liviana de 1200×630 que genera scripts/og.ps1 (WhatsApp descarta las muy pesadas)
+  if (p.imagen) {
+    const imagenCompartir = `${SITIO.url}/img/og/${p.slug}.jpg`;
+    ponerMeta("property", "og:image", imagenCompartir);
+    ponerMeta("property", "og:image:type", "image/jpeg");
+    ponerMeta("property", "og:image:width", "1200");
+    ponerMeta("property", "og:image:height", "630");
+    ponerMeta("name", "twitter:image", imagenCompartir);
+  }
   const enlaces = [
     p.demo && `<a class="boton" href="${p.demo}" target="_blank" rel="noopener">${t("ver_demo")} ${ico("externo")}</a>`,
     p.codigo && `<a class="boton secundario" href="${p.codigo}" target="_blank" rel="noopener">${ico("github")} ${t("ver_codigo")}</a>`,
