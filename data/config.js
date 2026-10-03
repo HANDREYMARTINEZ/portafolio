@@ -262,8 +262,8 @@ const SITIO = {
         <p>The sales and management module has helped us save time, reduce errors and keep much more efficient control of our members' memberships, payments and attendance.</p>
         <p>Today our gym runs in a more organized and secure way, with a far more modern and professional image.</p>`,
       },
-      nombre: "Dueño del gimnasio",
-      cargo: { es: "Cliente de GymApp y de la web del gimnasio · Bogotá", en: "GymApp and gym website client · Bogotá" },
+      nombre: "David Ronderos",
+      cargo: { es: "Dueño del gimnasio · Cliente de GymApp y de la web del gimnasio · Bogotá", en: "Gym owner · GymApp and gym website client · Bogotá" },
       empresa: "",
       proyecto: "app-gimnasio",
     },
