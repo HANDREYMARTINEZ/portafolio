@@ -18,6 +18,157 @@
 
 const PROYECTOS = [
   {
+    slug: "hotel-suite-royal",
+    titulo: { es: "Hotel Suite Royal — Landing page bilingüe", en: "Hotel Suite Royal — Bilingual landing page" },
+    resumen: {
+      es: "Sitio web para un hotel 4 estrellas en Melgar (Tolima), en español e inglés, con galería filtrable, opiniones de huéspedes y reserva directa por WhatsApp con las fechas ya escritas en el mensaje.",
+      en: "Website for a 4-star hotel in Melgar (Tolima, Colombia), in Spanish and English, with a filterable gallery, guest reviews and direct booking over WhatsApp with the dates already filled into the message.",
+    },
+    fecha: "2026-10-03",
+    tipo: "web",
+    conIA: "Claude Code",
+    estado: { es: "Terminado", en: "Completed" },
+    etiquetas: ["HTML", "CSS", "JavaScript", "Vercel"],
+    resultado: { es: "Publicada en Vercel en español e inglés, con despliegue automático desde GitHub.", en: "Live on Vercel in Spanish and English, with automatic deployment from GitHub." },
+    cifras: [
+      { valor: "2", etiqueta: { es: "idiomas: español e inglés", en: "languages: Spanish and English" } },
+      { valor: "39", etiqueta: { es: "fotos en la galería, con filtros y visor", en: "photos in the gallery, with filters and a viewer" } },
+      { valor: "0", etiqueta: { es: "dependencias: HTML, CSS y JavaScript puros", en: "dependencies: plain HTML, CSS and JavaScript" } },
+    ],
+    arquitectura: [
+      {
+        capa: { es: "Páginas", en: "Pages" },
+        nodos: [
+          { titulo: { es: "Español", en: "Spanish" }, detalle: { es: "Página principal del sitio", en: "Main page of the site" } },
+          { titulo: { es: "Inglés · /en", en: "English · /en" }, detalle: { es: "Enlazadas con hreflang y selector ES | EN", en: "Linked with hreflang and an ES | EN switch" } },
+        ],
+      },
+      {
+        capa: { es: "Interacción · JavaScript", en: "Interaction · JavaScript" },
+        nodos: [
+          { titulo: { es: "Reserva", en: "Booking" }, detalle: { es: "Valida las fechas y arma el mensaje de WhatsApp", en: "Validates dates and composes the WhatsApp message" } },
+          { titulo: { es: "Galería y visor", en: "Gallery & viewer" }, detalle: { es: "Filtros, teclado y deslizamiento en el celular", en: "Filters, keyboard and swipe on mobile" } },
+          { titulo: { es: "Textos por idioma", en: "Per-language text" }, detalle: { es: "Un solo script que lee el idioma de la página", en: "A single script that reads the page language" } },
+        ],
+      },
+      {
+        capa: { es: "Publicación", en: "Hosting" },
+        nodos: [
+          { titulo: "GitHub", detalle: { es: "Código y control de versiones", en: "Source code and version control" } },
+          { titulo: "Vercel", detalle: { es: "Despliegue automático, URLs limpias y caché de imágenes", en: "Automatic deploys, clean URLs and image caching" } },
+        ],
+      },
+    ],
+    imagen: "/img/hotel-suite-royal/portada.jpg",
+    demo: "https://hotel-suite-royal.vercel.app",
+    codigo: "https://github.com/HANDREYMARTINEZ/hotel-suite-royal",
+    contenido: {
+      es: `<p>Landing page para el Hotel Suite Royal, un hotel 4 estrellas en Melgar (Tolima), destino de descanso de clima cálido cercano a Bogotá. Se diseñó con un estilo editorial inspirado en cadenas hoteleras de lujo y se publicó en español e inglés. La desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>Las fotos, la calificación (8,3 sobre 10) y el número de opiniones (688) provienen de la ficha pública del hotel en Booking.com.</p>
+
+      <h2>El problema</h2>
+      <p>Un hotel que vende principalmente a través de plataformas de reservas paga una comisión por cada huésped y tiene poco control sobre cómo se presenta. El objetivo era un canal propio: una página que transmitiera la calidad del hotel, mostrara con claridad habitaciones y servicios, y llevara al visitante a reservar directamente con el hotel.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Portada a pantalla completa:</strong> carrusel de fotos con la piscina en la azotea, calificación de los huéspedes y llamado a reservar.</li>
+        <li><strong>Reserva directa por WhatsApp:</strong> el visitante elige fechas, número de adultos y tipo de habitación; la página valida las fechas y abre WhatsApp con el mensaje ya redactado.</li>
+        <li><strong>Habitaciones y experiencias:</strong> Doble, Triple y Familiar con medidas y camas, habitaciones con jacuzzi, las dos piscinas y el restaurante.</li>
+        <li><strong>Galería:</strong> 39 fotos con filtros (habitaciones, piscinas, espacios, fachada) y un visor que se maneja con el teclado o deslizando el dedo.</li>
+        <li><strong>Opiniones y ubicación:</strong> calificación por categoría, mapa, distancias a los principales atractivos y normas del hotel.</li>
+        <li><strong>Versión en inglés</strong> con su propia dirección (<code>/en</code>) para huéspedes extranjeros.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>HTML, CSS y JavaScript</strong> sin frameworks ni dependencias: carga rápida y nada que compilar.</li>
+        <li>Diseño con variables de color y tipografía (Cormorant Garamond y Manrope), adaptable a celular, tableta y escritorio.</li>
+        <li>Accesibilidad: navegación con teclado, foco visible, textos alternativos, etiquetas para lectores de pantalla y respeto por la preferencia de reducir el movimiento.</li>
+        <li>SEO: descripción y vista previa para compartir en cada idioma, y etiquetas <code>hreflang</code> entre las dos versiones.</li>
+        <li>Publicada en <strong>Vercel</strong> con despliegue automático desde <strong>GitHub</strong>.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>Sitio publicado y funcionando en dos idiomas, en el celular y en el computador.</li>
+        <li>Cada cambio que se sube a GitHub se publica automáticamente.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/hotel-suite-royal/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/01-inicio.jpg" alt="Portada con la piscina en la azotea" loading="lazy" /></a><figcaption>Portada con la piscina en la azotea</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/02-el-hotel.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/02-el-hotel.jpg" alt="Presentación del hotel" loading="lazy" /></a><figcaption>Presentación del hotel</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/03-habitaciones.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/03-habitaciones.jpg" alt="Habitaciones" loading="lazy" /></a><figcaption>Habitaciones</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/04-jacuzzi.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/04-jacuzzi.jpg" alt="Habitaciones con jacuzzi" loading="lazy" /></a><figcaption>Habitaciones con jacuzzi</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/05-experiencias.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/05-experiencias.jpg" alt="Experiencias" loading="lazy" /></a><figcaption>Experiencias</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/06-servicios.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/06-servicios.jpg" alt="Servicios incluidos" loading="lazy" /></a><figcaption>Servicios incluidos</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/07-galeria.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/07-galeria.jpg" alt="Galería con filtros" loading="lazy" /></a><figcaption>Galería con filtros</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/08-opiniones.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/08-opiniones.jpg" alt="Opiniones de los huéspedes" loading="lazy" /></a><figcaption>Opiniones de los huéspedes</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/09-reserva.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/09-reserva.jpg" alt="Llamado a reservar y pie de página" loading="lazy" /></a><figcaption>Llamado a reservar y pie de página</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/hotel-suite-royal/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/20-movil-inicio.jpg" alt="Portada y reserva" loading="lazy" /></a><figcaption>Portada y reserva</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/21-movil-habitaciones.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/21-movil-habitaciones.jpg" alt="Habitaciones" loading="lazy" /></a><figcaption>Habitaciones</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/22-movil-galeria.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/22-movil-galeria.jpg" alt="Galería" loading="lazy" /></a><figcaption>Galería</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/23-movil-opiniones.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/23-movil-opiniones.jpg" alt="Opiniones" loading="lazy" /></a><figcaption>Opiniones</figcaption></figure>
+      </div>`,
+      en: `<p>Landing page for Hotel Suite Royal, a 4-star hotel in Melgar (Tolima, Colombia), a warm-weather getaway near Bogotá. It was designed in an editorial style inspired by luxury hotel brands and published in Spanish and English. I built it with the help of artificial intelligence (Claude Code).</p>
+      <p>The photos, the rating (8.3 out of 10) and the number of reviews (688) come from the hotel's public listing on Booking.com.</p>
+
+      <h2>The problem</h2>
+      <p>A hotel that sells mainly through booking platforms pays a commission on every guest and has little control over how it is presented. The goal was a channel of its own: a page that conveys the hotel's quality, clearly shows rooms and amenities, and leads visitors to book directly with the hotel.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Full-screen hero:</strong> a photo carousel featuring the rooftop pool, the guest rating and a call to book.</li>
+        <li><strong>Direct booking over WhatsApp:</strong> visitors choose dates, number of adults and room type; the page validates the dates and opens WhatsApp with the message already written.</li>
+        <li><strong>Rooms and experiences:</strong> Double, Triple and Family rooms with sizes and beds, jacuzzi rooms, both pools and the restaurant.</li>
+        <li><strong>Gallery:</strong> 39 photos with filters (rooms, pools, spaces, exterior) and a viewer that works with the keyboard or by swiping.</li>
+        <li><strong>Reviews and location:</strong> scores by category, a map, distances to the main attractions and the hotel's policies.</li>
+        <li><strong>English version</strong> at its own address (<code>/en</code>) for international guests.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>HTML, CSS and JavaScript</strong> with no frameworks or dependencies: fast to load and nothing to build.</li>
+        <li>Design based on color and type tokens (Cormorant Garamond and Manrope), responsive across phone, tablet and desktop.</li>
+        <li>Accessibility: keyboard navigation, visible focus, alt text, screen-reader labels and support for the reduced-motion preference.</li>
+        <li>SEO: description and share preview in each language, plus <code>hreflang</code> tags between the two versions.</li>
+        <li>Hosted on <strong>Vercel</strong> with automatic deployment from <strong>GitHub</strong>.</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>The site is live and working in two languages, on phones and desktops.</li>
+        <li>Every change pushed to GitHub is published automatically.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <p>Spanish version shown.</p>
+      <div class="galeria">
+        <figure><a href="/img/hotel-suite-royal/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/01-inicio.jpg" alt="Hero with the rooftop pool" loading="lazy" /></a><figcaption>Hero with the rooftop pool</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/02-el-hotel.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/02-el-hotel.jpg" alt="About the hotel" loading="lazy" /></a><figcaption>About the hotel</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/03-habitaciones.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/03-habitaciones.jpg" alt="Rooms" loading="lazy" /></a><figcaption>Rooms</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/04-jacuzzi.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/04-jacuzzi.jpg" alt="Jacuzzi rooms" loading="lazy" /></a><figcaption>Jacuzzi rooms</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/05-experiencias.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/05-experiencias.jpg" alt="Experiences" loading="lazy" /></a><figcaption>Experiences</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/06-servicios.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/06-servicios.jpg" alt="Included amenities" loading="lazy" /></a><figcaption>Included amenities</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/07-galeria.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/07-galeria.jpg" alt="Gallery with filters" loading="lazy" /></a><figcaption>Gallery with filters</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/08-opiniones.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/08-opiniones.jpg" alt="Guest reviews" loading="lazy" /></a><figcaption>Guest reviews</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/09-reserva.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/09-reserva.jpg" alt="Booking call to action and footer" loading="lazy" /></a><figcaption>Booking call to action and footer</figcaption></figure>
+      </div>
+      <h3>On mobile</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/hotel-suite-royal/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/20-movil-inicio.jpg" alt="Hero and booking" loading="lazy" /></a><figcaption>Hero and booking</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/21-movil-habitaciones.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/21-movil-habitaciones.jpg" alt="Rooms" loading="lazy" /></a><figcaption>Rooms</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/22-movil-galeria.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/22-movil-galeria.jpg" alt="Gallery" loading="lazy" /></a><figcaption>Gallery</figcaption></figure>
+        <figure><a href="/img/hotel-suite-royal/23-movil-opiniones.jpg" target="_blank" rel="noopener"><img src="/img/hotel-suite-royal/23-movil-opiniones.jpg" alt="Reviews" loading="lazy" /></a><figcaption>Reviews</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
     slug: "hotel-pms",
     titulo: { es: "Hotel PMS — Administración hotelera", en: "Hotel PMS — Hotel management" },
     resumen: {
