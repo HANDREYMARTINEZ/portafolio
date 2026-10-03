@@ -141,6 +141,23 @@ const tarjetaHTML = (p, { num, grande } = {}) => {
 };
 
 // ---------- Textos de la interfaz y datos personales ----------
+// Botón flotante que abre el chat de WhatsApp con el mensaje inicial (solo si hay número)
+function pintarWhatsappFlotante() {
+  let boton = $("wa-flotante");
+  if (!SITIO.whatsapp) return boton?.remove();
+  if (!boton) {
+    boton = document.createElement("a");
+    boton.id = "wa-flotante";
+    boton.className = "wa-flotante";
+    boton.target = "_blank";
+    boton.rel = "noopener";
+    document.body.append(boton);
+  }
+  boton.href = `https://wa.me/${SITIO.whatsapp}?text=${encodeURIComponent(t("whatsapp_mensaje"))}`;
+  boton.setAttribute("aria-label", t("escribir_whatsapp"));
+  boton.innerHTML = `${ico("whatsapp")}<span>WhatsApp</span>`;
+}
+
 function pintarComun() {
   document.documentElement.lang = idioma;
   document.querySelectorAll("[data-t]").forEach((el) => (el.textContent = t(el.dataset.t)));
@@ -161,6 +178,7 @@ function pintarComun() {
   // El blog se oculta del menú mientras no tenga notas
   document.querySelectorAll('[data-seccion="blog"]').forEach((a) => (a.hidden = !PUBLICACIONES.length));
   pintarBotonTema();
+  pintarWhatsappFlotante();
   $("anio").textContent = new Date().getFullYear();
   const pieRedes = $("pie-redes");
   if (pieRedes) {

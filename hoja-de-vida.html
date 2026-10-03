@@ -19,8 +19,8 @@
     body { font-family: "Inter", system-ui, sans-serif; color: var(--texto); font-size: 9.1pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .hoja { width: 210mm; min-height: 297mm; margin: 24px auto; background: #fff; display: grid; grid-template-columns: minmax(0, 1fr) 70mm; box-shadow: 0 10px 40px rgb(0 0 0 / .15); }
     @media print { html { background: #fff; } .hoja { margin: 0; box-shadow: none; } }
-    .principal { padding: 12mm 9mm 10mm 13mm; }
-    .lateral { padding: 12mm 8mm 8mm 8mm; background: var(--fondo-lat); }
+    .principal { padding: 10mm 9mm 8mm 13mm; }
+    .lateral { padding: 10mm 8mm 8mm 8mm; background: var(--fondo-lat); }
 
     header { display: flex; gap: 7mm; align-items: flex-start; }
     header > div { flex: 1; min-width: 0; }
@@ -28,22 +28,22 @@
     header .rol { margin-top: 3pt; font-size: 11pt; font-weight: 600; color: var(--acento); }
     header .perfil { margin-top: 9pt; color: var(--suave); }
 
-    h2 { font-size: 8.4pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--acento); margin: 11pt 0 6pt; padding-bottom: 3pt; border-bottom: 1.5px solid var(--borde); }
+    h2 { font-size: 8.4pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--acento); margin: 10pt 0 6pt; padding-bottom: 3pt; border-bottom: 1.5px solid var(--borde); }
     .lateral h2:first-child { margin-top: 0; }
     .foto { flex-shrink: 0; width: 27mm; height: 27mm; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 0 0 1.5px var(--borde); }
     .foto[hidden] { display: none; }
 
-    .item { margin-bottom: 7pt; break-inside: avoid; }
+    .item { margin-bottom: 6pt; break-inside: avoid; }
     .item-cabecera { display: flex; justify-content: space-between; gap: 8pt; align-items: baseline; }
     .item h3 { font-size: 10.2pt; font-weight: 700; }
     .item .fecha { font-size: 8.4pt; color: var(--suave); white-space: nowrap; font-weight: 500; }
     .item .lugar { font-size: 8.8pt; color: var(--suave); margin-top: 1pt; }
     .item ul { margin: 4pt 0 0 11pt; }
-    .item li { margin-top: 2pt; }
+    .item li { margin-top: 1.5pt; }
     .item li::marker { color: var(--acento); }
     .item p.resumen { margin-top: 2pt; color: var(--suave); }
     .item a { color: var(--acento); text-decoration: none; font-size: 8.4pt; }
-    .proyecto-linea { display: flex; align-items: baseline; gap: 6pt; margin-bottom: 4pt; }
+    .proyecto-linea { display: flex; align-items: baseline; gap: 6pt; margin-bottom: 3pt; }
     .proyecto-linea h3 { font-size: 9.6pt; font-weight: 700; white-space: nowrap; }
     .proyecto-linea span { flex: 1; min-width: 0; color: var(--suave); font-size: 8.4pt; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .proyecto-linea a { color: var(--acento); text-decoration: none; font-size: 8.4pt; white-space: nowrap; }
@@ -135,7 +135,7 @@
     </section>
     <aside class="lateral">
       <h2 id="t-contacto">Contacto</h2>
-      <ul class="contacto" id="cv-contacto"><li><span>Ubicación</span>Colombia</li><li><span>Email</span><a href="mailto:2002.ha.mc@gmail.com">2002.ha.mc@gmail.com</a></li><li><span>LinkedIn</span><a href="https://www.linkedin.com/in/andreymartinezdata">/in/andreymartinezdata</a></li><li><span>GitHub</span><a href="https://github.com/HANDREYMARTINEZ">@HANDREYMARTINEZ</a></li><li><span>Portafolio</span><a href="https://andreymartinezportafolio.vercel.app">andreymartinezportafolio.vercel.app</a></li></ul>
+      <ul class="contacto" id="cv-contacto"><li><span>Ubicación</span>Colombia</li><li><span>Email</span><a href="mailto:2002.ha.mc@gmail.com">2002.ha.mc@gmail.com</a></li><li><span>WhatsApp</span><a href="https://wa.me/573227179287">+573227179287</a></li><li><span>LinkedIn</span><a href="https://www.linkedin.com/in/andreymartinezdata">/in/andreymartinezdata</a></li><li><span>GitHub</span><a href="https://github.com/HANDREYMARTINEZ">@HANDREYMARTINEZ</a></li><li><span>Portafolio</span><a href="https://andreymartinezportafolio.vercel.app">andreymartinezportafolio.vercel.app</a></li></ul>
       <h2 id="t-formacion">Formación</h2>
       <div id="cv-estudios"><div class="estudio"><strong>Ingeniería Electrónica</strong><span>Universidad de Cundinamarca</span><span>2020 — 2026</span></div><div class="estudio"><strong>Especialización en Infraestructura y Seguridad de Redes</strong><span>Universidad de Cundinamarca</span><span>2025 — 2026</span></div></div>
       <h2 id="t-certificaciones">Certificaciones</h2>
@@ -202,6 +202,10 @@
     $("cv-certificaciones").innerHTML = SITIO.certificaciones.map(estudio).join("");
     $("cv-stack").innerHTML = SITIO.stack.map((g) => `<div class="grupo"><strong>${tr(g.grupo)}</strong><p>${g.items.map(tr).join(" · ")}</p></div>`).join("");
   </script>
+
+
+
+
 
 
 

@@ -51,7 +51,7 @@ const SITIO = {
   github: "https://github.com/HANDREYMARTINEZ",
   linkedin: "https://www.linkedin.com/in/andreymartinezdata",
   // WhatsApp Business: número con código de país, sin "+" ni espacios, ej. "573001234567"
-  whatsapp: "",
+  whatsapp: "573227179287",
 
   // ---------- Cifras de la portada (solo datos reales) ----------
   cifras: [
@@ -249,7 +249,25 @@ const SITIO = {
 
   // ---------- Testimonios (solo reales y con permiso; la sección se oculta mientras esté vacía) ----------
   // Plantilla: { texto: { es, en }, nombre, cargo: { es, en }, empresa, proyecto (slug opcional del caso de estudio) }
-  testimonios: [],
+  testimonios: [
+    {
+      // Fragmentos del testimonio completo que envió el dueño del gimnasio (2026-10-03)
+      texto: {
+        es: `<p>Después de probar diferentes alternativas para la administración de nuestro gimnasio, puedo decir con total seguridad que esta ha sido la mejor inversión que hemos realizado.</p>
+        <p>El sistema de huellas funciona de manera impecable, con una velocidad y precisión sorprendentes, permitiendo un control de acceso seguro, moderno y completamente automatizado.</p>
+        <p>El módulo de ventas y administración nos ha permitido ahorrar tiempo, reducir errores y tener un control mucho más eficiente de las membresías, pagos y asistencia de nuestros usuarios.</p>
+        <p>Hoy nuestro gimnasio opera de manera más organizada, más segura y con una imagen mucho más tecnológica y profesional.</p>`,
+        en: `<p>After trying different options to run our gym, I can say with complete confidence that this has been the best investment we have made.</p>
+        <p>The fingerprint system works flawlessly, with surprising speed and accuracy, giving us secure, modern and fully automated access control.</p>
+        <p>The sales and management module has helped us save time, reduce errors and keep much more efficient control of our members' memberships, payments and attendance.</p>
+        <p>Today our gym runs in a more organized and secure way, with a far more modern and professional image.</p>`,
+      },
+      nombre: "Dueño del gimnasio",
+      cargo: { es: "Cliente de GymApp y de la web del gimnasio · Bogotá", en: "GymApp and gym website client · Bogotá" },
+      empresa: "",
+      proyecto: "app-gimnasio",
+    },
+  ],
 
   // ---------- Formación (institucion vacía = no se muestra) ----------
   estudios: [
