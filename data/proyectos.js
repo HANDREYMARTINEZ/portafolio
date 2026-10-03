@@ -18,6 +18,171 @@
 
 const PROYECTOS = [
   {
+    slug: "hotel-pms",
+    titulo: { es: "Hotel PMS — Administración hotelera", en: "Hotel PMS — Hotel management" },
+    resumen: {
+      es: "Sistema web de gestión hotelera (PMS) para un hotel pequeño en Colombia: reservas en línea de tiempo, check-in y check-out por pasos, cuenta del huésped, inventario, limpieza desde el celular, postventa y reportes legales TRA y SIRE.",
+      en: "Web-based property management system (PMS) for a small hotel in Colombia: timeline bookings, step-by-step check-in and check-out, guest folio, inventory, housekeeping from the phone, post-stay follow-up and TRA/SIRE regulatory reports.",
+    },
+    fecha: "2026-10-03",
+    tipo: "web",
+    conIA: "Claude Code",
+    estado: { es: "En curso", en: "Ongoing" },
+    etiquetas: ["React", "Node.js", "Express", "SQLite", "Vite", "PDFKit", "ExcelJS"],
+    resultado: { es: "13 módulos operativos; el siguiente paso es el módulo de reservas en línea.", en: "13 working modules; the next step is the online booking module." },
+    cifras: [
+      { valor: "13", etiqueta: { es: "módulos, de reservas a reportes legales", en: "modules, from bookings to regulatory reports" } },
+      { valor: "3", etiqueta: { es: "roles con permisos: administración, recepción y limpieza", en: "roles with permissions: admin, front desk and housekeeping" } },
+      { valor: "5", etiqueta: { es: "pasos de check-in: huésped, acompañantes, vehículo, pago y confirmación", en: "check-in steps: guest, companions, vehicle, payment and confirmation" } },
+    ],
+    arquitectura: [
+      {
+        capa: { es: "Interfaz · React + Vite", en: "Interface · React + Vite" },
+        nodos: [
+          { titulo: { es: "Recepción", en: "Front desk" }, detalle: { es: "Calendario, check-in/out, cuenta y ventas", en: "Calendar, check-in/out, folio and sales" } },
+          { titulo: { es: "Vista móvil", en: "Mobile view" }, detalle: { es: "Limpieza y operación desde el celular", en: "Housekeeping and operations from the phone" } },
+        ],
+      },
+      {
+        capa: { es: "Servidor · Node + Express", en: "Server · Node + Express" },
+        nodos: [
+          { titulo: { es: "Motor de reservas", en: "Booking engine" }, detalle: { es: "Disponibilidad y tarifas por temporada, fin de semana y estadía larga", en: "Availability and rates by season, weekend and long stay" } },
+          { titulo: { es: "Cuenta y auditoría", en: "Folio & audit" }, detalle: { es: "Cargos, pagos, anulaciones con motivo y registro por usuario", en: "Charges, payments, voids with reason and per-user log" } },
+          { titulo: { es: "Reportes", en: "Reports" }, detalle: { es: "PDF, Excel, TRA y archivo plano SIRE", en: "PDF, Excel, TRA and SIRE flat file" } },
+        ],
+      },
+      {
+        capa: { es: "Datos e integraciones", en: "Data & integrations" },
+        nodos: [
+          { titulo: "SQLite", detalle: { es: "Módulo nativo node:sqlite, sin compilación", en: "Native node:sqlite module, no build step" } },
+          { titulo: { es: "Facturación electrónica", en: "E-invoicing" }, detalle: { es: "Adaptadores para proveedor tecnológico", en: "Adapters for a certified provider" }, futuro: true },
+          { titulo: { es: "Reservas en línea", en: "Online booking" }, detalle: { es: "Mismo motor de disponibilidad", en: "Same availability engine" }, futuro: true },
+        ],
+      },
+    ],
+    imagen: "/img/hotel-pms/portada.png",
+    demo: "",
+    codigo: "https://github.com/HANDREYMARTINEZ/hotel-pms",
+    contenido: {
+      es: `<p>Proyecto en desarrollo: un panel de administración para un hotel de aproximadamente diez habitaciones en Colombia, pensado para un equipo de una a tres personas que con frecuencia trabaja desde el celular. Lo desarrollo con apoyo de inteligencia artificial (Claude Code), en español y con valores en pesos colombianos.</p>
+      <p><strong>Las capturas de esta página usan datos ficticios:</strong> el hotel, los huéspedes y las cifras no son reales.</p>
+
+      <h2>El problema</h2>
+      <p>En un hotel pequeño la operación suele repartirse entre cuadernos, hojas de cálculo y mensajes de WhatsApp: las reservas, los anticipos, el estado de limpieza de cada habitación y los consumos de los huéspedes no quedan en un solo lugar. A esto se suman las obligaciones legales en Colombia, como la Tarjeta de Registro Hotelero (TRA) y el reporte a Migración Colombia (SIRE) de los huéspedes extranjeros, que exigen capturar datos específicos en cada ingreso.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Inicio del día:</strong> ocupación, llegadas, salidas, habitaciones por limpiar, ingresos por método de pago y alertas (salidas vencidas, posibles no show, stock bajo, reclamos abiertos y movimientos sin reportar a SIRE).</li>
+        <li><strong>Reservas:</strong> calendario tipo línea de tiempo (habitaciones por días), creación desde una celda libre, anticipos, origen de la reserva (presencial, teléfono, WhatsApp, agencia o plataforma externa), modificación, cancelación con motivo y no show con penalidad.</li>
+        <li><strong>Check-in por pasos:</strong> huésped, acompañantes, vehículo y parqueadero, pago y confirmación; reconoce huéspedes ya registrados por su documento.</li>
+        <li><strong>Cuenta del huésped:</strong> las noches se cargan una a una y se reajustan solas si cambian las fechas, la habitación o la hora real de salida; servicios y consumos se cargan a la habitación; recibo en PDF.</li>
+        <li><strong>Tarifas:</strong> precio base por tipo, temporadas, recargo de fin de semana y descuento por estadía larga, con un simulador noche por noche.</li>
+        <li><strong>Exención de IVA:</strong> para extranjeros no residentes, con los documentos de soporte guardados en la ficha del huésped.</li>
+        <li><strong>Inventario y ventas:</strong> punto de venta directo o con cargo a la habitación, entradas, salidas, ajustes por conteo y alerta de stock bajo.</li>
+        <li><strong>Limpieza:</strong> vista para el celular con acciones directas (empezar, lista, reportar daño); al hacer check-out la habitación pasa sola a limpieza.</li>
+        <li><strong>Postventa:</strong> encuesta de satisfacción enviada por WhatsApp o correo y seguimiento de comentarios y reclamos.</li>
+        <li><strong>Reportes y cumplimiento:</strong> ocupación, tarifa promedio (ADR), RevPAR, ingresos, ventas por producto y origen de reservas, exportables a Excel y PDF; datos de la TRA en Excel y archivo plano para el cargue en SIRE.</li>
+        <li><strong>Roles y auditoría:</strong> administración, recepción y limpieza; cada cobro, anulación y cancelación queda registrado con el usuario y la hora.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>React</strong> con <strong>Vite</strong> en la interfaz, diseñada primero para el celular: barra de navegación inferior en el teléfono y menú lateral en el escritorio.</li>
+        <li><strong>Node.js</strong> con <strong>Express</strong> y <strong>SQLite</strong> mediante el módulo nativo <code>node:sqlite</code>, de modo que la instalación no requiere compilar dependencias.</li>
+        <li>Un único motor de disponibilidad y tarifas, compartido por recepción y por el futuro módulo de reservas en línea, que ya contempla reservas pendientes con retención temporal del inventario.</li>
+        <li>El estado de cada habitación (ocupada o reservada) se calcula a partir de las reservas, para que nunca quede desincronizado.</li>
+        <li>Recibos y reportes en PDF con <strong>PDFKit</strong> y exportaciones a Excel con <strong>ExcelJS</strong>.</li>
+        <li>Facturación electrónica preparada mediante adaptadores para conectar el proveedor tecnológico que elija el hotel.</li>
+      </ul>
+
+      <h2>Estado actual</h2>
+      <ul>
+        <li>Los trece módulos funcionan de extremo a extremo y el código está publicado en GitHub.</li>
+        <li><strong>Próximos pasos:</strong> el módulo de reservas en línea para huéspedes (se activará desde Configuración), la conexión con un proveedor de facturación electrónica y la validación del formato SIRE con la guía vigente de Migración Colombia antes de la puesta en marcha.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <p>Datos ficticios: el hotel, los huéspedes y las cifras no son reales.</p>
+      <div class="galeria">
+        <figure><a href="/img/hotel-pms/01-inicio.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/01-inicio.png" alt="Inicio del día con ocupación, llegadas y alertas" loading="lazy" /></a><figcaption>Inicio del día: ocupación, llegadas, salidas y alertas</figcaption></figure>
+        <figure><a href="/img/hotel-pms/02-reservas-calendario.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/02-reservas-calendario.png" alt="Calendario de reservas por habitación y día" loading="lazy" /></a><figcaption>Calendario de reservas por habitación y día</figcaption></figure>
+        <figure><a href="/img/hotel-pms/03-habitaciones.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/03-habitaciones.png" alt="Habitaciones por estado con colores" loading="lazy" /></a><figcaption>Habitaciones por estado</figcaption></figure>
+        <figure><a href="/img/hotel-pms/06-nueva-reserva.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/06-nueva-reserva.png" alt="Nueva reserva con disponibilidad y precio" loading="lazy" /></a><figcaption>Nueva reserva con disponibilidad y precio</figcaption></figure>
+        <figure><a href="/img/hotel-pms/05-checkin.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/05-checkin.png" alt="Check-in por pasos" loading="lazy" /></a><figcaption>Check-in por pasos</figcaption></figure>
+        <figure><a href="/img/hotel-pms/04-cuenta-huesped.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/04-cuenta-huesped.png" alt="Cuenta del huésped con exención de IVA" loading="lazy" /></a><figcaption>Cuenta de un huésped extranjero exento de IVA</figcaption></figure>
+        <figure><a href="/img/hotel-pms/07-checkout.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/07-checkout.png" alt="Check-out con salida anticipada" loading="lazy" /></a><figcaption>Check-out con salida anticipada recalculada</figcaption></figure>
+        <figure><a href="/img/hotel-pms/08-ventas.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/08-ventas.png" alt="Punto de venta" loading="lazy" /></a><figcaption>Punto de venta: pago directo o cargo a la habitación</figcaption></figure>
+        <figure><a href="/img/hotel-pms/09-tarifas.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/09-tarifas.png" alt="Tarifas por temporada, fin de semana y estadía larga" loading="lazy" /></a><figcaption>Tarifas por temporada, fin de semana y estadía larga</figcaption></figure>
+        <figure><a href="/img/hotel-pms/10-reportes.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/10-reportes.png" alt="Reportes de ocupación e ingresos" loading="lazy" /></a><figcaption>Reportes exportables a Excel y PDF</figcaption></figure>
+        <figure><a href="/img/hotel-pms/11-sire.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/11-sire.png" alt="Movimientos de extranjeros para SIRE" loading="lazy" /></a><figcaption>Movimientos de extranjeros para el reporte SIRE</figcaption></figure>
+      </div>
+      <div class="galeria movil">
+        <figure><a href="/img/hotel-pms/20-movil-inicio.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/20-movil-inicio.png" alt="Inicio en el celular" loading="lazy" /></a><figcaption>Inicio en el celular</figcaption></figure>
+        <figure><a href="/img/hotel-pms/21-movil-limpieza.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/21-movil-limpieza.png" alt="Limpieza en el celular" loading="lazy" /></a><figcaption>Limpieza</figcaption></figure>
+        <figure><a href="/img/hotel-pms/22-movil-calendario.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/22-movil-calendario.png" alt="Calendario en el celular" loading="lazy" /></a><figcaption>Calendario</figcaption></figure>
+      </div>`,
+      en: `<p>A project in progress: an admin panel for a hotel of about ten rooms in Colombia, built for a team of one to three people who often work from their phones. I am developing it with the help of artificial intelligence (Claude Code), in Spanish and with amounts in Colombian pesos.</p>
+      <p><strong>The screenshots on this page use fictitious data:</strong> the hotel, the guests and the figures are not real.</p>
+
+      <h2>The problem</h2>
+      <p>In a small hotel, operations are usually spread across notebooks, spreadsheets and WhatsApp messages: bookings, deposits, each room's housekeeping status and guest consumption never end up in one place. On top of that come Colombia's legal requirements, such as the Hotel Registration Card (TRA) and the report to Migración Colombia (SIRE) for foreign guests, which require specific data at every check-in.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Daily overview:</strong> occupancy, arrivals, departures, rooms to clean, income by payment method and alerts (overdue departures, likely no-shows, low stock, open complaints and movements not yet reported to SIRE).</li>
+        <li><strong>Bookings:</strong> timeline calendar (rooms by day), booking from an empty cell, deposits, booking source (walk-in, phone, WhatsApp, agency or online travel platform), changes, cancellation with a reason and no-show with a penalty.</li>
+        <li><strong>Step-by-step check-in:</strong> guest, companions, vehicle and parking, payment and confirmation; returning guests are recognized by their ID document.</li>
+        <li><strong>Guest folio:</strong> nights are posted one by one and readjust automatically when dates, room or the actual departure change; services and items are charged to the room; PDF receipt.</li>
+        <li><strong>Rates:</strong> base price per room type, seasons, weekend surcharge and long-stay discount, with a night-by-night simulator.</li>
+        <li><strong>VAT exemption:</strong> for non-resident foreigners, with the supporting documents stored in the guest's profile.</li>
+        <li><strong>Inventory and sales:</strong> point of sale with direct payment or room charge, stock in, stock out, count adjustments and low-stock alerts.</li>
+        <li><strong>Housekeeping:</strong> phone-friendly view with direct actions (start, done, report damage); on check-out the room moves to housekeeping automatically.</li>
+        <li><strong>Post-stay:</strong> satisfaction survey sent via WhatsApp or email, and follow-up of comments and complaints.</li>
+        <li><strong>Reports and compliance:</strong> occupancy, average daily rate (ADR), RevPAR, revenue, sales by product and booking source, exportable to Excel and PDF; TRA data in Excel and a flat file for SIRE upload.</li>
+        <li><strong>Roles and audit trail:</strong> admin, front desk and housekeeping; every payment, void and cancellation is logged with the user and time.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>React</strong> with <strong>Vite</strong> on the front end, designed mobile-first: bottom navigation bar on phones and a sidebar on desktop.</li>
+        <li><strong>Node.js</strong> with <strong>Express</strong> and <strong>SQLite</strong> through the native <code>node:sqlite</code> module, so installation needs no native compilation.</li>
+        <li>A single availability and rate engine, shared by the front desk and the future online booking module, which already supports pending bookings that hold inventory for a limited time.</li>
+        <li>Each room's status (occupied or reserved) is derived from the bookings, so it can never get out of sync.</li>
+        <li>PDF receipts and reports with <strong>PDFKit</strong> and Excel exports with <strong>ExcelJS</strong>.</li>
+        <li>Electronic invoicing prepared through adapters to connect whichever certified provider the hotel chooses.</li>
+      </ul>
+
+      <h2>Current status</h2>
+      <ul>
+        <li>All thirteen modules work end to end, and the code is published on GitHub.</li>
+        <li><strong>Next steps:</strong> the online booking module for guests (to be switched on from Settings), the connection to an electronic invoicing provider, and validating the SIRE format against Migración Colombia's current guide before go-live.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <p>Fictitious data: the hotel, the guests and the figures are not real.</p>
+      <div class="galeria">
+        <figure><a href="/img/hotel-pms/01-inicio.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/01-inicio.png" alt="Daily overview with occupancy, arrivals and alerts" loading="lazy" /></a><figcaption>Daily overview: occupancy, arrivals, departures and alerts</figcaption></figure>
+        <figure><a href="/img/hotel-pms/02-reservas-calendario.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/02-reservas-calendario.png" alt="Booking calendar by room and day" loading="lazy" /></a><figcaption>Booking calendar by room and day</figcaption></figure>
+        <figure><a href="/img/hotel-pms/03-habitaciones.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/03-habitaciones.png" alt="Rooms by status, color-coded" loading="lazy" /></a><figcaption>Rooms by status</figcaption></figure>
+        <figure><a href="/img/hotel-pms/06-nueva-reserva.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/06-nueva-reserva.png" alt="New booking with availability and price" loading="lazy" /></a><figcaption>New booking with availability and price</figcaption></figure>
+        <figure><a href="/img/hotel-pms/05-checkin.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/05-checkin.png" alt="Step-by-step check-in" loading="lazy" /></a><figcaption>Step-by-step check-in</figcaption></figure>
+        <figure><a href="/img/hotel-pms/04-cuenta-huesped.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/04-cuenta-huesped.png" alt="Guest folio with VAT exemption" loading="lazy" /></a><figcaption>Folio of a VAT-exempt foreign guest</figcaption></figure>
+        <figure><a href="/img/hotel-pms/07-checkout.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/07-checkout.png" alt="Check-out with early departure" loading="lazy" /></a><figcaption>Check-out with a recalculated early departure</figcaption></figure>
+        <figure><a href="/img/hotel-pms/08-ventas.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/08-ventas.png" alt="Point of sale" loading="lazy" /></a><figcaption>Point of sale: direct payment or room charge</figcaption></figure>
+        <figure><a href="/img/hotel-pms/09-tarifas.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/09-tarifas.png" alt="Rates by season, weekend and long stay" loading="lazy" /></a><figcaption>Rates by season, weekend and long stay</figcaption></figure>
+        <figure><a href="/img/hotel-pms/10-reportes.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/10-reportes.png" alt="Occupancy and revenue reports" loading="lazy" /></a><figcaption>Reports exportable to Excel and PDF</figcaption></figure>
+        <figure><a href="/img/hotel-pms/11-sire.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/11-sire.png" alt="Foreign guest movements for SIRE" loading="lazy" /></a><figcaption>Foreign guest movements for the SIRE report</figcaption></figure>
+      </div>
+      <div class="galeria movil">
+        <figure><a href="/img/hotel-pms/20-movil-inicio.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/20-movil-inicio.png" alt="Overview on the phone" loading="lazy" /></a><figcaption>Overview on the phone</figcaption></figure>
+        <figure><a href="/img/hotel-pms/21-movil-limpieza.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/21-movil-limpieza.png" alt="Housekeeping on the phone" loading="lazy" /></a><figcaption>Housekeeping</figcaption></figure>
+        <figure><a href="/img/hotel-pms/22-movil-calendario.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/22-movil-calendario.png" alt="Calendar on the phone" loading="lazy" /></a><figcaption>Calendar</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
     slug: "reportes-con-ia",
     titulo: { es: "Reportes con IA — Informes y dashboards en una instrucción", en: "AI Reports — Reports and dashboards from one instruction" },
     resumen: {

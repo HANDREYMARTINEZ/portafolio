@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel PMS — Administración hotelera — Andrey Martínez</title>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/estilos.css">
+<meta name="description" content="Sistema web de gestión hotelera (PMS) para un hotel pequeño en Colombia: reservas en línea de tiempo, check-in y check-out por pasos, cuenta del huésped, inventario, limpieza desde el celular, postventa y reportes legales TRA y SIRE."><link rel="canonical" href="https://andreymartinezportafolio.vercel.app/proyectos/hotel-pms"><meta property="og:type" content="article"><meta property="og:site_name" content="H.A.M.C Soluciones en IA"><meta property="og:title" content="Hotel PMS — Administración hotelera — Andrey Martínez"><meta property="og:description" content="Sistema web de gestión hotelera (PMS) para un hotel pequeño en Colombia: reservas en línea de tiempo, check-in y check-out por pasos, cuenta del huésped, inventario, limpieza desde el celular, postventa y reportes legales TRA y SIRE."><meta property="og:url" content="https://andreymartinezportafolio.vercel.app/proyectos/hotel-pms"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://andreymartinezportafolio.vercel.app/img/og/hotel-pms.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="https://andreymartinezportafolio.vercel.app/img/og/hotel-pms.jpg"></head>
+<body>
+  <header class="nav">
+    <div class="contenedor nav-interior">
+      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <nav id="menu" class="menu">
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#blog" data-t="nav_blog" data-seccion="blog">Blog</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="menu-contacto" data-cv="" download="" data-t="descargar_cv">Descargar CV</a>
+        <a href="/#contacto" class="menu-contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-icono btn-tema" type="button" data-icono="tema" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema claro/oscuro"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"></path></svg></button>
+        <button class="btn-idioma" type="button" aria-label="Switch to English"><span class="activo">ES</span><span>EN</span></button>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario nav-cta" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span>CV</span></a>
+        <a href="/#contacto" class="boton nav-cta"><span data-t="nav_contacto">Contacto</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <button class="btn-icono btn-menu" type="button" data-icono="menu" aria-controls="menu" aria-expanded="false" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <article id="detalle" class="detalle" data-tipo="proyecto">
+    <a class="migas" href="/#proyectos"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg> Proyectos</a>
+    <header class="detalle-cabecera revelar">
+      <div class="chips"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>En curso</span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+      <h1>Hotel PMS — Administración hotelera</h1>
+      <p class="bajada">Sistema web de gestión hotelera (PMS) para un hotel pequeño en Colombia: reservas en línea de tiempo, check-in y check-out por pasos, cuenta del huésped, inventario, limpieza desde el celular, postventa y reportes legales TRA y SIRE.</p>
+      <div class="botones"><a class="boton secundario" href="https://github.com/HANDREYMARTINEZ/hotel-pms" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Ver código</a></div>
+    </header>
+    
+      <dl class="impacto revelar">
+        <div><dt>13</dt><dd>módulos, de reservas a reportes legales</dd></div><div><dt>3</dt><dd>roles con permisos: administración, recepción y limpieza</dd></div><div><dt>5</dt><dd>pasos de check-in: huésped, acompañantes, vehículo, pago y confirmación</dd></div>
+      </dl>
+    <div class="marco revelar"><div class="marco-barra"><span></span><span></span><span></span></div><div class="marco-img"><img src="/img/hotel-pms/portada.png" alt="Hotel PMS — Administración hotelera" loading="lazy"></div></div>
+    <div class="detalle-grid">
+      <div class="contenido"><p>Proyecto en desarrollo: un panel de administración para un hotel de aproximadamente diez habitaciones en Colombia, pensado para un equipo de una a tres personas que con frecuencia trabaja desde el celular. Lo desarrollo con apoyo de inteligencia artificial (Claude Code), en español y con valores en pesos colombianos.</p>
+      <p><strong>Las capturas de esta página usan datos ficticios:</strong> el hotel, los huéspedes y las cifras no son reales.</p>
+
+      <h2>El problema</h2>
+      <p>En un hotel pequeño la operación suele repartirse entre cuadernos, hojas de cálculo y mensajes de WhatsApp: las reservas, los anticipos, el estado de limpieza de cada habitación y los consumos de los huéspedes no quedan en un solo lugar. A esto se suman las obligaciones legales en Colombia, como la Tarjeta de Registro Hotelero (TRA) y el reporte a Migración Colombia (SIRE) de los huéspedes extranjeros, que exigen capturar datos específicos en cada ingreso.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Inicio del día:</strong> ocupación, llegadas, salidas, habitaciones por limpiar, ingresos por método de pago y alertas (salidas vencidas, posibles no show, stock bajo, reclamos abiertos y movimientos sin reportar a SIRE).</li>
+        <li><strong>Reservas:</strong> calendario tipo línea de tiempo (habitaciones por días), creación desde una celda libre, anticipos, origen de la reserva (presencial, teléfono, WhatsApp, agencia o plataforma externa), modificación, cancelación con motivo y no show con penalidad.</li>
+        <li><strong>Check-in por pasos:</strong> huésped, acompañantes, vehículo y parqueadero, pago y confirmación; reconoce huéspedes ya registrados por su documento.</li>
+        <li><strong>Cuenta del huésped:</strong> las noches se cargan una a una y se reajustan solas si cambian las fechas, la habitación o la hora real de salida; servicios y consumos se cargan a la habitación; recibo en PDF.</li>
+        <li><strong>Tarifas:</strong> precio base por tipo, temporadas, recargo de fin de semana y descuento por estadía larga, con un simulador noche por noche.</li>
+        <li><strong>Exención de IVA:</strong> para extranjeros no residentes, con los documentos de soporte guardados en la ficha del huésped.</li>
+        <li><strong>Inventario y ventas:</strong> punto de venta directo o con cargo a la habitación, entradas, salidas, ajustes por conteo y alerta de stock bajo.</li>
+        <li><strong>Limpieza:</strong> vista para el celular con acciones directas (empezar, lista, reportar daño); al hacer check-out la habitación pasa sola a limpieza.</li>
+        <li><strong>Postventa:</strong> encuesta de satisfacción enviada por WhatsApp o correo y seguimiento de comentarios y reclamos.</li>
+        <li><strong>Reportes y cumplimiento:</strong> ocupación, tarifa promedio (ADR), RevPAR, ingresos, ventas por producto y origen de reservas, exportables a Excel y PDF; datos de la TRA en Excel y archivo plano para el cargue en SIRE.</li>
+        <li><strong>Roles y auditoría:</strong> administración, recepción y limpieza; cada cobro, anulación y cancelación queda registrado con el usuario y la hora.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      
+    <figure class="arquitectura revelar">
+      
+        
+        <div class="arq-capa" style="--i:0">
+          <p class="arq-nombre"><span>01</span>Interfaz · React + Vite</p>
+          
+            <div class="arq-nodo">
+              <strong>Recepción</strong>
+              <span>Calendario, check-in/out, cuenta y ventas</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Vista móvil</strong>
+              <span>Limpieza y operación desde el celular</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:1">
+          <p class="arq-nombre"><span>02</span>Servidor · Node + Express</p>
+          
+            <div class="arq-nodo">
+              <strong>Motor de reservas</strong>
+              <span>Disponibilidad y tarifas por temporada, fin de semana y estadía larga</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Cuenta y auditoría</strong>
+              <span>Cargos, pagos, anulaciones con motivo y registro por usuario</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Reportes</strong>
+              <span>PDF, Excel, TRA y archivo plano SIRE</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:2">
+          <p class="arq-nombre"><span>03</span>Datos e integraciones</p>
+          
+            <div class="arq-nodo">
+              <strong>SQLite</strong>
+              <span>Módulo nativo node:sqlite, sin compilación</span>
+            </div>
+            <div class="arq-nodo futuro">
+              <strong>Facturación electrónica</strong>
+              <span>Adaptadores para proveedor tecnológico</span>
+            </div>
+            <div class="arq-nodo futuro">
+              <strong>Reservas en línea</strong>
+              <span>Mismo motor de disponibilidad</span>
+            </div>
+        </div>
+    </figure>
+      <ul>
+        <li><strong>React</strong> con <strong>Vite</strong> en la interfaz, diseñada primero para el celular: barra de navegación inferior en el teléfono y menú lateral en el escritorio.</li>
+        <li><strong>Node.js</strong> con <strong>Express</strong> y <strong>SQLite</strong> mediante el módulo nativo <code>node:sqlite</code>, de modo que la instalación no requiere compilar dependencias.</li>
+        <li>Un único motor de disponibilidad y tarifas, compartido por recepción y por el futuro módulo de reservas en línea, que ya contempla reservas pendientes con retención temporal del inventario.</li>
+        <li>El estado de cada habitación (ocupada o reservada) se calcula a partir de las reservas, para que nunca quede desincronizado.</li>
+        <li>Recibos y reportes en PDF con <strong>PDFKit</strong> y exportaciones a Excel con <strong>ExcelJS</strong>.</li>
+        <li>Facturación electrónica preparada mediante adaptadores para conectar el proveedor tecnológico que elija el hotel.</li>
+      </ul>
+
+      <h2>Estado actual</h2>
+      <ul>
+        <li>Los trece módulos funcionan de extremo a extremo y el código está publicado en GitHub.</li>
+        <li><strong>Próximos pasos:</strong> el módulo de reservas en línea para huéspedes (se activará desde Configuración), la conexión con un proveedor de facturación electrónica y la validación del formato SIRE con la guía vigente de Migración Colombia antes de la puesta en marcha.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <p>Datos ficticios: el hotel, los huéspedes y las cifras no son reales.</p>
+      <div class="galeria">
+        <figure><a href="/img/hotel-pms/01-inicio.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/01-inicio.png" alt="Inicio del día con ocupación, llegadas y alertas" loading="lazy"></a><figcaption>Inicio del día: ocupación, llegadas, salidas y alertas</figcaption></figure>
+        <figure><a href="/img/hotel-pms/02-reservas-calendario.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/02-reservas-calendario.png" alt="Calendario de reservas por habitación y día" loading="lazy"></a><figcaption>Calendario de reservas por habitación y día</figcaption></figure>
+        <figure><a href="/img/hotel-pms/03-habitaciones.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/03-habitaciones.png" alt="Habitaciones por estado con colores" loading="lazy"></a><figcaption>Habitaciones por estado</figcaption></figure>
+        <figure><a href="/img/hotel-pms/06-nueva-reserva.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/06-nueva-reserva.png" alt="Nueva reserva con disponibilidad y precio" loading="lazy"></a><figcaption>Nueva reserva con disponibilidad y precio</figcaption></figure>
+        <figure><a href="/img/hotel-pms/05-checkin.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/05-checkin.png" alt="Check-in por pasos" loading="lazy"></a><figcaption>Check-in por pasos</figcaption></figure>
+        <figure><a href="/img/hotel-pms/04-cuenta-huesped.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/04-cuenta-huesped.png" alt="Cuenta del huésped con exención de IVA" loading="lazy"></a><figcaption>Cuenta de un huésped extranjero exento de IVA</figcaption></figure>
+        <figure><a href="/img/hotel-pms/07-checkout.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/07-checkout.png" alt="Check-out con salida anticipada" loading="lazy"></a><figcaption>Check-out con salida anticipada recalculada</figcaption></figure>
+        <figure><a href="/img/hotel-pms/08-ventas.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/08-ventas.png" alt="Punto de venta" loading="lazy"></a><figcaption>Punto de venta: pago directo o cargo a la habitación</figcaption></figure>
+        <figure><a href="/img/hotel-pms/09-tarifas.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/09-tarifas.png" alt="Tarifas por temporada, fin de semana y estadía larga" loading="lazy"></a><figcaption>Tarifas por temporada, fin de semana y estadía larga</figcaption></figure>
+        <figure><a href="/img/hotel-pms/10-reportes.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/10-reportes.png" alt="Reportes de ocupación e ingresos" loading="lazy"></a><figcaption>Reportes exportables a Excel y PDF</figcaption></figure>
+        <figure><a href="/img/hotel-pms/11-sire.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/11-sire.png" alt="Movimientos de extranjeros para SIRE" loading="lazy"></a><figcaption>Movimientos de extranjeros para el reporte SIRE</figcaption></figure>
+      </div>
+      <div class="galeria movil">
+        <figure><a href="/img/hotel-pms/20-movil-inicio.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/20-movil-inicio.png" alt="Inicio en el celular" loading="lazy"></a><figcaption>Inicio en el celular</figcaption></figure>
+        <figure><a href="/img/hotel-pms/21-movil-limpieza.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/21-movil-limpieza.png" alt="Limpieza en el celular" loading="lazy"></a><figcaption>Limpieza</figcaption></figure>
+        <figure><a href="/img/hotel-pms/22-movil-calendario.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/22-movil-calendario.png" alt="Calendario en el celular" loading="lazy"></a><figcaption>Calendario</figcaption></figure>
+      </div></div>
+      <aside class="ficha">
+        <dl><div><dt>Fecha</dt><dd>octubre de 2026</dd></div><div><dt>Tipo</dt><dd>Web</dd></div><div><dt>Estado</dt><dd><span class="chip estado"><span class="punto"></span>En curso</span></dd></div><div><dt>Desarrollo</dt><dd>Asistido por IA · Claude Code</dd></div><div><dt>Tecnologías</dt><dd><div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">Node.js</span><span class="etiqueta">Express</span><span class="etiqueta">SQLite</span><span class="etiqueta">Vite</span><span class="etiqueta">PDFKit</span><span class="etiqueta">ExcelJS</span></div></dd></div></dl>
+        <div class="ficha-enlaces"><a class="boton secundario" href="https://github.com/HANDREYMARTINEZ/hotel-pms" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Ver código</a></div>
+      </aside>
+    </div>
+    
+      <section class="otros">
+        <h2>Otros proyectos</h2>
+        <div class="grilla">
+    <a class="tarjeta revelar" href="/proyectos/pagina-gimnasio">
+      <div class="portada"><img src="/img/pagina-gym/portada.png" alt="Web de gimnasio con entrenamiento personalizado" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Prototipo</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>septiembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Web de gimnasio con entrenamiento personalizado</h3>
+        <p>Plataforma web para un gimnasio con sitio comercial y área privada por roles, donde los entrenadores asignan rutinas, videos, mediciones y planes de alimentación a cada cliente.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Área privada con 4 roles de equipo y permisos por rol.</span></p>
+        <div class="etiquetas"><span class="etiqueta">Next.js</span><span class="etiqueta">React</span><span class="etiqueta">TypeScript</span><span class="etiqueta">Tailwind</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
+    <a class="tarjeta revelar" href="/proyectos/app-gimnasio">
+      <div class="portada"><img src="/img/gymapp/13-dashboards.png" alt="GymApp — Administración de gimnasio" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Escritorio</span><span class="chip estado"><span class="punto"></span>En producción</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>septiembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>GymApp<span>Administración de gimnasio</span></h3>
+        <p>Sistema de escritorio en producción para la gestión integral de un gimnasio: membresías, control de acceso biométrico con apertura automática de puerta, punto de venta, inventario y caja.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>En producción, con más de 300 clientes registrados.</span></p>
+        <div class="etiquetas"><span class="etiqueta">Electron</span><span class="etiqueta">React</span><span class="etiqueta">SQLite</span><span class="etiqueta">Arduino</span><span class="etiqueta">+1</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a></div>
+      </section></article>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <div class="pie-marca">
+        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <p class="pie-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
+        <p class="pie-frase" data-t="pie_frase">Construyo soluciones con inteligencia artificial, automatización y datos para empresas y emprendimientos.</p>
+      </div>
+      <nav class="pie-columna" aria-labelledby="pie-t-nav">
+        <h3 id="pie-t-nav" data-t="pie_navegacion">Navegación</h3>
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/#contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="pie-columna">
+        <h3 data-t="pie_contacto">Contacto</h3>
+        <nav id="pie-redes" class="pie-redes"><a href="https://github.com/HANDREYMARTINEZ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a><a href="https://www.linkedin.com/in/andreymartinezdata" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a><a href="mailto:2002.ha.mc@gmail.com"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a></nav>
+      </div>
+      <div class="pie-columna">
+        <h3 data-t="cv_titulo">Hoja de vida</h3>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" data-cv="" download="" data-t="cv_pdf">Descargar PDF</a>
+        <a href="/hoja-de-vida?lang=es" data-cv-ver="" target="_blank" rel="noopener" data-t="cv_ver">Ver en línea</a>
+      </div>
+    </div>
+    <div class="contenedor pie-legal">
+      <p>© <span id="anio">2026</span> <span data-sitio="nombre">Harold Andrey Martínez Cortés</span> · <span data-t="derechos">Desarrollado en Colombia</span></p>
+      <a href="#" class="pie-arriba"><span data-t="arriba">Volver arriba</span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script src="/data/blog.js"></script>
+  <script src="/js/textos.js"></script>
+  <script src="/js/main.js"></script>
+
+
+</body></html>
+
