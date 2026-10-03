@@ -61,11 +61,11 @@ const PROYECTOS = [
       },
     ],
     imagen: "/img/hotel-pms/portada.png",
-    demo: "",
+    demo: "https://hotel-pms-beryl.vercel.app",
     codigo: "https://github.com/HANDREYMARTINEZ/hotel-pms",
     contenido: {
       es: `<p>Proyecto en desarrollo: un panel de administración para un hotel de aproximadamente diez habitaciones en Colombia, pensado para un equipo de una a tres personas que con frecuencia trabaja desde el celular. Lo desarrollo con apoyo de inteligencia artificial (Claude Code), en español y con valores en pesos colombianos.</p>
-      <p><strong>Las capturas de esta página usan datos ficticios:</strong> el hotel, los huéspedes y las cifras no son reales.</p>
+      <p><strong>Las capturas de esta página usan datos ficticios:</strong> el hotel, los huéspedes y las cifras no son reales. Puede probar la <a href="https://hotel-pms-beryl.vercel.app" target="_blank" rel="noopener">demostración en línea</a>: elija un rol en la pantalla de ingreso; los datos se reinician periódicamente.</p>
 
       <h2>El problema</h2>
       <p>En un hotel pequeño la operación suele repartirse entre cuadernos, hojas de cálculo y mensajes de WhatsApp: las reservas, los anticipos, el estado de limpieza de cada habitación y los consumos de los huéspedes no quedan en un solo lugar. A esto se suman las obligaciones legales en Colombia, como la Tarjeta de Registro Hotelero (TRA) y el reporte a Migración Colombia (SIRE) de los huéspedes extranjeros, que exigen capturar datos específicos en cada ingreso.</p>
@@ -123,7 +123,7 @@ const PROYECTOS = [
         <figure><a href="/img/hotel-pms/22-movil-calendario.png" target="_blank" rel="noopener"><img src="/img/hotel-pms/22-movil-calendario.png" alt="Calendario en el celular" loading="lazy" /></a><figcaption>Calendario</figcaption></figure>
       </div>`,
       en: `<p>A project in progress: an admin panel for a hotel of about ten rooms in Colombia, built for a team of one to three people who often work from their phones. I am developing it with the help of artificial intelligence (Claude Code), in Spanish and with amounts in Colombian pesos.</p>
-      <p><strong>The screenshots on this page use fictitious data:</strong> the hotel, the guests and the figures are not real.</p>
+      <p><strong>The screenshots on this page use fictitious data:</strong> the hotel, the guests and the figures are not real. You can try the <a href="https://hotel-pms-beryl.vercel.app" target="_blank" rel="noopener">live demo</a>: pick a role on the sign-in screen; the data resets periodically.</p>
 
       <h2>The problem</h2>
       <p>In a small hotel, operations are usually spread across notebooks, spreadsheets and WhatsApp messages: bookings, deposits, each room's housekeeping status and guest consumption never end up in one place. On top of that come Colombia's legal requirements, such as the Hotel Registration Card (TRA) and the report to Migración Colombia (SIRE) for foreign guests, which require specific data at every check-in.</p>
