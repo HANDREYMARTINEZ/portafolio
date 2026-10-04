@@ -4,13 +4,13 @@
 //
 //  Variables de entorno en Vercel (Settings → Environment Variables):
 //    GEMINI_API_KEY  clave de Google AI Studio (obligatoria)
-//    GEMINI_MODELO   opcional, por defecto "gemini-2.5-flash"
+//    GEMINI_MODELO   opcional, por defecto "gemini-3.5-flash-lite"
 //
 //  No guarda nada: el navegador envía la conversación completa en cada mensaje.
 //  Si falla, responde con error y el chat sigue con preguntas fijas.
 // ============================================================
 
-const MODELO = process.env.GEMINI_MODELO || "gemini-2.5-flash";
+const MODELO = process.env.GEMINI_MODELO || "gemini-3.5-flash-lite";
 const MAX_MENSAJES = 24;   // turnos que se aceptan por conversación
 const MAX_LARGO = 600;     // caracteres por mensaje del visitante
 const LIMITE_POR_IP = 40;  // mensajes por IP cada hora (por instancia, de mejor esfuerzo)
@@ -118,18 +118,16 @@ module.exports = async (req, res) => {
         systemInstruction: { parts: [{ text: `${INSTRUCCIONES}\n\nIdioma de la conversación: ${idioma === "en" ? "inglés" : "español"}.` }] },
         contents: contenidos,
         generationConfig: {
-          temperature: 0.5,
-          maxOutputTokens: 700,
+          maxOutputTokens: 2048, // incluye el razonamiento del modelo
           responseMimeType: "application/json",
           responseSchema: ESQUEMA,
-          thinkingConfig: { thinkingBudget: 0 },
         },
       }),
       signal: AbortSignal.timeout(20_000),
     });
     if (!r.ok) {
       console.error("Gemini", r.status, (await r.text()).slice(0, 300));
-      return responder(res, 502, { error: r.status === 429 ? "cuota" : "modelo" });
+      return responder(res, 502, { error: r.status === 429 ? "cuota" : "modelo", estado: r.status });
     }
     const json = await r.json();
     const salida = JSON.parse(json.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("") || "{}");
