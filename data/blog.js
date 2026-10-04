@@ -7,6 +7,80 @@
 
 const PUBLICACIONES = [
   {
+    slug: "asistente-de-contacto-con-ia",
+    titulo: {
+      es: "Un asistente con IA que recibe a los clientes antes que yo",
+      en: "An AI assistant that greets clients before I do",
+    },
+    resumen: {
+      es: "Cómo construí, sin costo y sin poner en riesgo mi WhatsApp, un asistente que conversa con quien visita mi portafolio y me entrega un resumen de lo que necesita.",
+      en: "How I built, at no cost and without risking my WhatsApp number, an assistant that talks with portfolio visitors and hands me a summary of what they need.",
+    },
+    fecha: "2026-10-04",
+    etiquetas: ["IA", "Gemini", "Automatización"],
+    imagen: "/img/asistente/conversacion.png",
+    contenido: {
+      es: `<p>Cuando alguien me escribe por un proyecto, la primera conversación casi siempre es la misma: qué tipo de negocio tiene, qué necesita, cómo lo resuelve hoy, cuántas personas lo usarían, para cuándo lo quiere. Son preguntas necesarias, pero si las hago yo, el cliente espera mi respuesta para cada una y el contexto llega por partes.</p>
+<p>Quería que esa primera etapa ocurriera de inmediato, a cualquier hora, y que al abrir el chat yo ya tuviera todo el panorama. Con una condición: hacerlo gratis y sin arriesgar mi número de WhatsApp.</p>
+<h2>Por qué no un bot dentro de WhatsApp</h2>
+<p>La primera idea fue un bot que respondiera directamente en WhatsApp. Al revisarlo aparecieron tres caminos, y ninguno cumplía las condiciones:</p>
+<ul>
+<li><strong>La API oficial de Meta</strong> es segura, pero para usar el mismo número en la aplicación y en el bot a la vez exige ser proveedor tecnológico verificado o contratar un intermediario de pago. La alternativa era un número nuevo, y atender a los clientes desde un buzón web en lugar de WhatsApp.</li>
+<li><strong>Los intermediarios</strong> resuelven todo, pero cobran una mensualidad.</li>
+<li><strong>Las librerías no oficiales</strong> que manejan WhatsApp Web son gratuitas, pero van contra las condiciones del servicio y pueden provocar el bloqueo del número. Descartadas desde el principio.</li>
+</ul>
+<h2>La solución: el asistente vive en el portafolio</h2>
+<p>En lugar de llevar la IA a WhatsApp, la puse antes de WhatsApp. El botón "Escríbame" del portafolio abre un chat en el que un asistente se presenta, entiende lo que el visitante necesita y le hace una o dos preguntas por turno, adaptadas a su caso. Al terminar le muestra un resumen ordenado y un botón que abre WhatsApp con ese resumen ya escrito: el visitante solo toca enviar.</p>
+<p>A mí me llega un mensaje con el nombre, el negocio, la necesidad, cómo lo maneja hoy, los usuarios, la plataforma, el plazo y el presupuesto. Quien no quiera responder preguntas tiene siempre a la vista un enlace para escribirme directamente.</p>
+<h2>Cómo está hecho</h2>
+<ul>
+<li><strong>Interfaz:</strong> HTML, CSS y JavaScript sin dependencias, en español e inglés y con tema claro y oscuro, como el resto del sitio.</li>
+<li><strong>IA:</strong> Google Gemini en su plan gratuito, a través de una función de Vercel que guarda la clave fuera del código público. El modelo responde en un formato estructurado: el mensaje para el visitante y los datos que ya reunió.</li>
+<li><strong>Reglas del asistente:</strong> trato formal, preguntas cortas, nunca da precios ni promete plazos, no pide datos sensibles y redirige con amabilidad cualquier tema ajeno al proyecto.</li>
+<li><strong>Protección del plan gratuito:</strong> solo acepta peticiones desde el propio portafolio y limita los mensajes por conversación y por visitante.</li>
+<li><strong>Sin depender de la IA:</strong> si el modelo no responde o se agota la cuota, el chat continúa con preguntas fijas y entrega el mismo resumen. El visitante nunca se queda sin respuesta.</li>
+<li><strong>Privacidad:</strong> el servidor no guarda las conversaciones; viven solo en la pestaña del navegador del visitante.</li>
+</ul>
+<h2>Lo que aprendí</h2>
+<ul>
+<li>La mejor integración no siempre es la más directa: mover la IA un paso antes resolvió el costo y el riesgo de una sola vez.</li>
+<li>Las instrucciones del modelo se ajustan probándolas con conversaciones reales. En las primeras pruebas el asistente volvía a saludar y cerraba la conversación sin pedir el nombre; dos reglas más claras lo corrigieron.</li>
+<li>Los modelos cambian: el que elegí al principio ya no estaba disponible para cuentas nuevas. Dejar el modelo como una configuración, y tener un plan B sin IA, evitó que eso afectara a los visitantes.</li>
+</ul>
+<p><em>La imagen muestra una conversación de ejemplo con datos ficticios.</em> Puede probar el asistente ahora mismo con el botón "Escríbame" o aquí:</p>
+<p><button type="button" class="boton" data-asistente>Probar el asistente</button></p>`,
+      en: `<p>When someone contacts me about a project, the first conversation is almost always the same: what kind of business they run, what they need, how they handle it today, how many people would use it, when they need it. These questions are necessary, but if I ask them myself, the client waits for my reply on each one and the context arrives in pieces.</p>
+<p>I wanted that first stage to happen instantly, at any hour, so that by the time I open the chat I already have the full picture. With one condition: doing it for free and without putting my WhatsApp number at risk.</p>
+<h2>Why not a bot inside WhatsApp</h2>
+<p>The first idea was a bot replying directly on WhatsApp. Looking into it, three paths appeared, and none met the conditions:</p>
+<ul>
+<li><strong>Meta's official API</strong> is safe, but using the same number in the app and in the bot at the same time requires being a verified tech provider or paying an intermediary. The alternative was a new number, and serving clients from a web inbox instead of WhatsApp.</li>
+<li><strong>Intermediaries</strong> solve everything, but charge a monthly fee.</li>
+<li><strong>Unofficial libraries</strong> that drive WhatsApp Web are free, but they break the terms of service and can get the number banned. Ruled out from the start.</li>
+</ul>
+<h2>The solution: the assistant lives in the portfolio</h2>
+<p>Instead of bringing AI into WhatsApp, I placed it before WhatsApp. The portfolio's "Message me" button opens a chat where an assistant introduces itself, understands what the visitor needs and asks one or two questions per turn, tailored to the case. At the end it shows a tidy summary and a button that opens WhatsApp with that summary already written: the visitor just taps send.</p>
+<p>I receive a message with the name, business, need, current process, users, platform, timeline and budget. Anyone who would rather not answer questions always has a link to message me directly.</p>
+<h2>How it is built</h2>
+<ul>
+<li><strong>Interface:</strong> dependency-free HTML, CSS and JavaScript, in Spanish and English with light and dark themes, like the rest of the site.</li>
+<li><strong>AI:</strong> Google Gemini on its free tier, through a Vercel function that keeps the key out of the public code. The model replies in a structured format: the message for the visitor and the data gathered so far.</li>
+<li><strong>Assistant rules:</strong> formal tone, short questions, never quotes prices or promises timelines, never asks for sensitive data and politely redirects any off-topic conversation.</li>
+<li><strong>Protecting the free tier:</strong> it only accepts requests from the portfolio itself and limits messages per conversation and per visitor.</li>
+<li><strong>Not depending on AI:</strong> if the model does not respond or the quota runs out, the chat continues with fixed questions and delivers the same summary. Visitors are never left without an answer.</li>
+<li><strong>Privacy:</strong> the server does not store conversations; they live only in the visitor's browser tab.</li>
+</ul>
+<h2>What I learned</h2>
+<ul>
+<li>The best integration is not always the most direct one: moving the AI one step earlier solved cost and risk at once.</li>
+<li>Model instructions are tuned by testing them with real conversations. In the first tests the assistant greeted twice and closed the conversation without asking for a name; two clearer rules fixed it.</li>
+<li>Models change: the one I first chose was no longer available to new accounts. Keeping the model as a setting, plus a no-AI fallback, kept that from affecting visitors.</li>
+</ul>
+<p><em>The image shows a sample conversation with fictitious data.</em> You can try the assistant right now with the "Message me" button or here:</p>
+<p><button type="button" class="boton" data-asistente>Try the assistant</button></p>`,
+    },
+  },
+  {
     slug: "de-semanas-a-dias-reportes-con-ia",
     titulo: {
       es: "De semanas a días: lo que cambia cuando la IA arma los reportes",

@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Fuente de la imagen de la nota "asistente-de-contacto-con-ia" (img/asistente/conversacion.png):
+     abre la portada con el asistente y una conversación de ejemplo con datos ficticios.
+     Captura (PowerShell, con npx serve . -l 3000 corriendo):
+     msedge --headless=new --hide-scrollbars --window-size=1280,720 --virtual-time-budget=5000 --screenshot=F:\portafolio\img\asistente\conversacion.png "http://localhost:3000/docs/captura-asistente" -->
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Captura del asistente</title>
+  <style>html, body { margin: 0; overflow: hidden; background: #090d16; } iframe { width: 1280px; height: 720px; border: 0; display: block; }</style>
+</head>
+<body>
+  <script>
+    // Las páginas del mismo origen en una pestaña comparten sessionStorage: el iframe abre esta conversación
+    sessionStorage.setItem("asistente", JSON.stringify({
+      fijo: false, listo: true, pendiente: null,
+      mensajes: [
+        { rol: "visitante", texto: "Hola, me interesa una aplicación para el control de inventario de mi cafetería." },
+        { rol: "asistente", texto: "Excelente, una aplicación de inventario le ayudará a controlar insumos y evitar faltantes. ¿Me indica su nombre?" },
+        { rol: "visitante", texto: "Laura, de la cafetería El Grano. Hoy lo llevamos en cuaderno y Excel; seríamos 3 personas, desde el celular." },
+        { rol: "asistente", texto: "Mucho gusto, Laura. ¿Para cuándo la necesita y tiene un presupuesto aproximado?" },
+        { rol: "visitante", texto: "En un mes. El presupuesto aún no lo tengo claro." },
+        { rol: "asistente", texto: "Gracias, Laura. Abajo encontrará el resumen para enviárselo a Andrey por WhatsApp." },
+      ],
+      datos: {
+        nombre: "Laura (Cafetería El Grano)",
+        negocio: "Cafetería",
+        necesidad: "App de inventario con alertas de insumos",
+        situacionActual: "Cuaderno y Excel",
+        usuarios: "3 personas",
+        plataforma: "Celular",
+        plazo: "1 mes",
+        presupuesto: "Por definir",
+      },
+    }));
+    try { localStorage.setItem("idioma", "es"); localStorage.setItem("tema", "dark"); } catch (e) {}
+  </script>
+  <iframe src="/" onload="this.contentWindow.abrirAsistente(); this.contentDocument.activeElement.blur()"></iframe>
+</body>
+</html>

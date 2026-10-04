@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un asistente con IA que recibe a los clientes antes que yo — Andrey Martínez</title>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/estilos.css">
+<meta name="description" content="Cómo construí, sin costo y sin poner en riesgo mi WhatsApp, un asistente que conversa con quien visita mi portafolio y me entrega un resumen de lo que necesita."><link rel="canonical" href="https://andreymartinezportafolio.vercel.app/blog/asistente-de-contacto-con-ia"><meta property="og:type" content="article"><meta property="og:site_name" content="H.A.M.C Soluciones en IA"><meta property="og:title" content="Un asistente con IA que recibe a los clientes antes que yo — Andrey Martínez"><meta property="og:description" content="Cómo construí, sin costo y sin poner en riesgo mi WhatsApp, un asistente que conversa con quien visita mi portafolio y me entrega un resumen de lo que necesita."><meta property="og:url" content="https://andreymartinezportafolio.vercel.app/blog/asistente-de-contacto-con-ia"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://andreymartinezportafolio.vercel.app/img/og/asistente-de-contacto-con-ia.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="https://andreymartinezportafolio.vercel.app/img/og/asistente-de-contacto-con-ia.jpg"></head>
+<body>
+  <header class="nav">
+    <div class="contenedor nav-interior">
+      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <nav id="menu" class="menu">
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#blog" data-t="nav_blog" data-seccion="blog">Blog</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="menu-contacto" data-cv="" download="" data-t="descargar_cv">Descargar CV</a>
+        <a href="/#contacto" class="menu-contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-icono btn-tema" type="button" data-icono="tema" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema claro/oscuro"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"></path></svg></button>
+        <button class="btn-idioma" type="button" aria-label="Switch to English"><span class="activo">ES</span><span>EN</span></button>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario nav-cta" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span>CV</span></a>
+        <a href="/#contacto" class="boton nav-cta"><span data-t="nav_contacto">Contacto</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <button class="btn-icono btn-menu" type="button" data-icono="menu" aria-controls="menu" aria-expanded="false" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <article id="detalle" class="detalle" data-tipo="blog">
+    <a class="migas" href="/#blog"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg> Blog</a>
+    <header class="detalle-cabecera revelar">
+      <div class="chips"></div>
+      <h1>Un asistente con IA que recibe a los clientes antes que yo</h1>
+      <p class="bajada">Cómo construí, sin costo y sin poner en riesgo mi WhatsApp, un asistente que conversa con quien visita mi portafolio y me entrega un resumen de lo que necesita.</p>
+      
+    </header>
+    
+    <div class="marco revelar"><div class="marco-barra"><span></span><span></span><span></span></div><div class="marco-img"><img src="/img/asistente/conversacion.png" alt="Un asistente con IA que recibe a los clientes antes que yo" loading="lazy"></div></div>
+    <div class="detalle-grid">
+      <div class="contenido"><p>Cuando alguien me escribe por un proyecto, la primera conversación casi siempre es la misma: qué tipo de negocio tiene, qué necesita, cómo lo resuelve hoy, cuántas personas lo usarían, para cuándo lo quiere. Son preguntas necesarias, pero si las hago yo, el cliente espera mi respuesta para cada una y el contexto llega por partes.</p>
+<p>Quería que esa primera etapa ocurriera de inmediato, a cualquier hora, y que al abrir el chat yo ya tuviera todo el panorama. Con una condición: hacerlo gratis y sin arriesgar mi número de WhatsApp.</p>
+<h2>Por qué no un bot dentro de WhatsApp</h2>
+<p>La primera idea fue un bot que respondiera directamente en WhatsApp. Al revisarlo aparecieron tres caminos, y ninguno cumplía las condiciones:</p>
+<ul>
+<li><strong>La API oficial de Meta</strong> es segura, pero para usar el mismo número en la aplicación y en el bot a la vez exige ser proveedor tecnológico verificado o contratar un intermediario de pago. La alternativa era un número nuevo, y atender a los clientes desde un buzón web en lugar de WhatsApp.</li>
+<li><strong>Los intermediarios</strong> resuelven todo, pero cobran una mensualidad.</li>
+<li><strong>Las librerías no oficiales</strong> que manejan WhatsApp Web son gratuitas, pero van contra las condiciones del servicio y pueden provocar el bloqueo del número. Descartadas desde el principio.</li>
+</ul>
+<h2>La solución: el asistente vive en el portafolio</h2>
+<p>En lugar de llevar la IA a WhatsApp, la puse antes de WhatsApp. El botón "Escríbame" del portafolio abre un chat en el que un asistente se presenta, entiende lo que el visitante necesita y le hace una o dos preguntas por turno, adaptadas a su caso. Al terminar le muestra un resumen ordenado y un botón que abre WhatsApp con ese resumen ya escrito: el visitante solo toca enviar.</p>
+<p>A mí me llega un mensaje con el nombre, el negocio, la necesidad, cómo lo maneja hoy, los usuarios, la plataforma, el plazo y el presupuesto. Quien no quiera responder preguntas tiene siempre a la vista un enlace para escribirme directamente.</p>
+<h2>Cómo está hecho</h2>
+<ul>
+<li><strong>Interfaz:</strong> HTML, CSS y JavaScript sin dependencias, en español e inglés y con tema claro y oscuro, como el resto del sitio.</li>
+<li><strong>IA:</strong> Google Gemini en su plan gratuito, a través de una función de Vercel que guarda la clave fuera del código público. El modelo responde en un formato estructurado: el mensaje para el visitante y los datos que ya reunió.</li>
+<li><strong>Reglas del asistente:</strong> trato formal, preguntas cortas, nunca da precios ni promete plazos, no pide datos sensibles y redirige con amabilidad cualquier tema ajeno al proyecto.</li>
+<li><strong>Protección del plan gratuito:</strong> solo acepta peticiones desde el propio portafolio y limita los mensajes por conversación y por visitante.</li>
+<li><strong>Sin depender de la IA:</strong> si el modelo no responde o se agota la cuota, el chat continúa con preguntas fijas y entrega el mismo resumen. El visitante nunca se queda sin respuesta.</li>
+<li><strong>Privacidad:</strong> el servidor no guarda las conversaciones; viven solo en la pestaña del navegador del visitante.</li>
+</ul>
+<h2>Lo que aprendí</h2>
+<ul>
+<li>La mejor integración no siempre es la más directa: mover la IA un paso antes resolvió el costo y el riesgo de una sola vez.</li>
+<li>Las instrucciones del modelo se ajustan probándolas con conversaciones reales. En las primeras pruebas el asistente volvía a saludar y cerraba la conversación sin pedir el nombre; dos reglas más claras lo corrigieron.</li>
+<li>Los modelos cambian: el que elegí al principio ya no estaba disponible para cuentas nuevas. Dejar el modelo como una configuración, y tener un plan B sin IA, evitó que eso afectara a los visitantes.</li>
+</ul>
+<p><em>La imagen muestra una conversación de ejemplo con datos ficticios.</em> Puede probar el asistente ahora mismo con el botón "Escríbame" o aquí:</p>
+<p><button type="button" class="boton" data-asistente="">Probar el asistente</button></p></div>
+      <aside class="ficha">
+        <dl><div><dt>Fecha</dt><dd>octubre de 2026</dd></div><div><dt>Temas</dt><dd><div class="etiquetas"><span class="etiqueta">IA</span><span class="etiqueta">Gemini</span><span class="etiqueta">Automatización</span></div></dd></div></dl>
+        
+      </aside>
+    </div>
+    </article>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <div class="pie-marca">
+        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <p class="pie-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
+        <p class="pie-frase" data-t="pie_frase">Construyo soluciones con inteligencia artificial, automatización y datos para empresas y emprendimientos.</p>
+      </div>
+      <nav class="pie-columna" aria-labelledby="pie-t-nav">
+        <h3 id="pie-t-nav" data-t="pie_navegacion">Navegación</h3>
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/#contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="pie-columna">
+        <h3 data-t="pie_contacto">Contacto</h3>
+        <nav id="pie-redes" class="pie-redes"><a href="https://github.com/HANDREYMARTINEZ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a><a href="https://www.linkedin.com/in/andreymartinezdata" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a><a href="https://wa.me/573227179287" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>WhatsApp</a><a href="mailto:2002.ha.mc@gmail.com"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a></nav>
+      </div>
+      <div class="pie-columna">
+        <h3 data-t="cv_titulo">Hoja de vida</h3>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" data-cv="" download="" data-t="cv_pdf">Descargar PDF</a>
+        <a href="/hoja-de-vida?lang=es" data-cv-ver="" target="_blank" rel="noopener" data-t="cv_ver">Ver en línea</a>
+      </div>
+    </div>
+    <div class="contenedor pie-legal">
+      <p>© <span id="anio">2026</span> <span data-sitio="nombre">Harold Andrey Martínez Cortés</span> · <span data-t="derechos">Desarrollado en Colombia</span></p>
+      <a href="#" class="pie-arriba"><span data-t="arriba">Volver arriba</span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script src="/data/blog.js"></script>
+  <script src="/js/textos.js"></script>
+  <script src="/js/main.js"></script>
+
+
+</body></html>
+

@@ -780,6 +780,9 @@ function abrirAsistente() {
   pintarAsistente();
   asistente.hidden = false;
   document.body.classList.add("asistente-abierto");
+  // Oculto no tiene altura: bajar hasta el último mensaje ahora que se ve
+  const lista = asistente.querySelector(".asis-mensajes");
+  lista.scrollTop = lista.scrollHeight;
   if (matchMedia("(pointer: fine)").matches) asistente.querySelector(charla.listo ? ".asis-cerrar" : "textarea").focus();
 }
 
