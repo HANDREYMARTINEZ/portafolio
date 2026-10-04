@@ -43,6 +43,9 @@ function Volcar([string]$ruta) {
       'class="' + ($clases -join ' ') + '"'
     })
   $html = $html -replace ' class=""', ''
+  # El botón flotante y el asistente los crea main.js al cargar: si quedan escritos, se duplican
+  $html = [regex]::Replace($html, '(?s)<a id="wa-flotante".*?</a>', '')
+  $html = [regex]::Replace($html, '(?s)<section class="asistente".*?</section>', '')
   return $html
 }
 

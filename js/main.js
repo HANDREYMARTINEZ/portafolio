@@ -52,6 +52,8 @@ const RUTAS = {
   chispa: '<path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>',
   descarga: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/>',
   tendencia: '<path d="M22 7 13.5 15.5 8.5 10.5 2 17"/><path d="M16 7h6v6"/>',
+  enviar: '<path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>',
+  reiniciar: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
   estrella: '<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>',
 };
 const ico = (nombre) =>
@@ -141,7 +143,8 @@ const tarjetaHTML = (p, { num, grande } = {}) => {
 };
 
 // ---------- Textos de la interfaz y datos personales ----------
-// Botón flotante que abre el chat de WhatsApp con el mensaje inicial (solo si hay número)
+// Botón flotante que abre el asistente de contacto (solo si hay número de WhatsApp).
+// Es un enlace a WhatsApp para que funcione aun sin JavaScript; el clic se intercepta abajo.
 function pintarWhatsappFlotante() {
   let boton = $("wa-flotante");
   if (!SITIO.whatsapp) return boton?.remove();
@@ -154,8 +157,8 @@ function pintarWhatsappFlotante() {
     document.body.append(boton);
   }
   boton.href = `https://wa.me/${SITIO.whatsapp}?text=${encodeURIComponent(t("whatsapp_mensaje"))}`;
-  boton.setAttribute("aria-label", t("escribir_whatsapp"));
-  boton.innerHTML = `${ico("whatsapp")}<span>WhatsApp</span>`;
+  boton.setAttribute("aria-label", t("asis_titulo"));
+  boton.innerHTML = `${ico("whatsapp")}<span>${t("asis_flotante")}</span>`;
 }
 
 function pintarComun() {
@@ -179,6 +182,7 @@ function pintarComun() {
   document.querySelectorAll('[data-seccion="blog"]').forEach((a) => (a.hidden = !PUBLICACIONES.length));
   pintarBotonTema();
   pintarWhatsappFlotante();
+  if (asistente) pintarAsistente();
   $("anio").textContent = new Date().getFullYear();
   const pieRedes = $("pie-redes");
   if (pieRedes) {
@@ -324,6 +328,7 @@ function pintarContacto() {
   $("cta-whatsapp").hidden = !SITIO.whatsapp;
   if (SITIO.whatsapp) $("cta-whatsapp").href = `https://wa.me/${SITIO.whatsapp}?text=${encodeURIComponent(t("whatsapp_mensaje"))}`;
   $("cta-correo").classList.toggle("secundario", !!SITIO.whatsapp);
+  document.querySelectorAll("[data-asistente]").forEach((b) => (b.hidden = !SITIO.whatsapp));
   $("enlaces-contacto").innerHTML = enlacesContacto()
     .filter(([icono]) => icono !== "correo" && icono !== "whatsapp")
     .map(([icono, nombre, url]) => `<a class="enlace-red" href="${url}" target="_blank" rel="noopener">${ico(icono)}${nombre}</a>`)
@@ -549,6 +554,245 @@ function cerrarVisor() {
   document.body.classList.remove("sin-scroll");
 }
 
+// ---------- Asistente de contacto ----------
+// Conversa con el visitante (IA en /api/asistente) para reunir lo que necesita y arma un
+// resumen que él mismo envía por WhatsApp. Si la IA no responde, sigue con preguntas fijas.
+// La conversación se guarda solo en la pestaña (sessionStorage) para no perderla al cambiar de página.
+const CAMPOS_ASISTENTE = ["nombre", "negocio", "necesidad", "situacionActual", "usuarios", "plataforma", "plazo", "presupuesto", "notas"];
+const PREGUNTAS_FIJAS = ["necesidad", "negocio", "situacionActual", "usuarios", "plazo", "presupuesto", "nombre"];
+const MAX_TURNOS = 12;
+
+const charlaNueva = () => ({ mensajes: [], datos: {}, listo: false, fijo: false, pendiente: null });
+let charla = (() => {
+  try {
+    const guardada = JSON.parse(sessionStorage.getItem("asistente"));
+    if (Array.isArray(guardada?.mensajes)) return { ...charlaNueva(), ...guardada };
+  } catch {}
+  return charlaNueva();
+})();
+let asistente = null;
+let esperando = false;
+
+function guardarCharla() {
+  try { sessionStorage.setItem("asistente", JSON.stringify(charla)); } catch {}
+}
+
+const enlaceWhatsapp = (texto) => `https://wa.me/${SITIO.whatsapp}?text=${encodeURIComponent(texto)}`;
+
+// Mensaje que llega a WhatsApp: los datos reunidos, o el saludo de siempre si no hay ninguno
+function textoResumen() {
+  const lineas = CAMPOS_ASISTENTE.filter((c) => charla.datos[c]).map((c) => `*${t("asis_c_" + c)}:* ${charla.datos[c]}`);
+  return lineas.length ? `${t("asis_wa_inicio")}\n\n${lineas.join("\n")}` : t("whatsapp_mensaje");
+}
+
+function crearAsistente() {
+  asistente = document.createElement("section");
+  asistente.className = "asistente";
+  asistente.hidden = true;
+  asistente.setAttribute("role", "dialog");
+  asistente.innerHTML = `
+    <header class="asis-cabeza">
+      <span class="asis-avatar">${SITIO.foto ? `<img src="${SITIO.foto}" alt="" />` : ico("robot")}</span>
+      <div class="asis-titulo"><strong></strong><span><span class="punto"></span><span class="asis-estado"></span></span></div>
+      <button type="button" class="asis-btn asis-reiniciar">${ico("reiniciar")}</button>
+      <button type="button" class="asis-btn asis-cerrar">${ico("cerrar")}</button>
+    </header>
+    <div class="asis-mensajes" aria-live="polite"></div>
+    <form class="asis-form">
+      <textarea rows="1" maxlength="600"></textarea>
+      <button type="submit" class="asis-enviar">${ico("enviar")}</button>
+    </form>
+    <div class="asis-pie">
+      <a class="asis-directo" target="_blank" rel="noopener">${ico("whatsapp")}<span></span></a>
+      <p class="asis-privacidad"></p>
+    </div>`;
+  document.body.append(asistente);
+
+  const campo = asistente.querySelector("textarea");
+  asistente.querySelector(".asis-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    enviarAlAsistente(campo.value);
+  });
+  campo.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      enviarAlAsistente(campo.value);
+    }
+  });
+  campo.addEventListener("input", () => {
+    campo.style.height = "auto";
+    campo.style.height = Math.min(campo.scrollHeight, 120) + "px";
+  });
+
+  asistente.addEventListener("click", (e) => {
+    if (e.target.closest(".asis-cerrar")) return cerrarAsistente();
+    if (e.target.closest(".asis-reiniciar")) {
+      if (esperando) return;
+      charla = charlaNueva();
+      guardarCharla();
+      return pintarAsistente();
+    }
+    const opcion = e.target.closest(".asis-opcion");
+    if (opcion) return enviarAlAsistente(opcion.textContent);
+    if (e.target.closest(".asis-seguir")) {
+      charla.listo = false;
+      charla.mensajes.push({ rol: "asistente", texto: t("asis_seguir_msg"), local: true });
+      guardarCharla();
+      pintarAsistente();
+      campo.focus();
+      return;
+    }
+    if (e.target.closest(".asis-enviar-wa")) {
+      // Se deja abrir el enlace y luego se confirma en el chat
+      setTimeout(() => {
+        if (charla.mensajes.some((m) => m.enviado)) return;
+        charla.mensajes.push({ rol: "asistente", texto: t("asis_enviado"), local: true, enviado: true });
+        guardarCharla();
+        pintarAsistente();
+      }, 300);
+    }
+  });
+}
+
+function pintarAsistente() {
+  const q = (sel) => asistente.querySelector(sel);
+  asistente.setAttribute("aria-label", t("asis_titulo"));
+  q(".asis-titulo strong").textContent = t("asis_titulo");
+  q(".asis-estado").textContent = t("asis_estado");
+  q(".asis-reiniciar").setAttribute("aria-label", t("asis_reiniciar"));
+  q(".asis-reiniciar").title = t("asis_reiniciar");
+  q(".asis-cerrar").setAttribute("aria-label", t("cerrar"));
+  q("textarea").placeholder = t("asis_escribir");
+  q("textarea").setAttribute("aria-label", t("asis_escribir"));
+  q(".asis-enviar").setAttribute("aria-label", t("asis_enviar"));
+  q(".asis-directo span").textContent = t("asis_directo");
+  q(".asis-directo").href = enlaceWhatsapp(textoResumen());
+  q(".asis-privacidad").textContent = t("asis_privacidad");
+  q(".asis-form").hidden = charla.listo;
+  q("textarea").disabled = esperando;
+  q(".asis-enviar").disabled = esperando;
+
+  const lista = q(".asis-mensajes");
+  lista.replaceChildren();
+  const burbuja = (rol, texto) => {
+    const div = document.createElement("div");
+    div.className = `asis-msg ${rol === "visitante" ? "asis-visitante" : "asis-bot"}`;
+    div.textContent = texto;
+    lista.append(div);
+    return div;
+  };
+  burbuja("asistente", t("asis_saludo"));
+  if (!charla.mensajes.length) {
+    const opciones = document.createElement("div");
+    opciones.className = "asis-opciones";
+    opciones.innerHTML = ["asis_op1", "asis_op2", "asis_op3", "asis_op4"]
+      .map((k) => `<button type="button" class="asis-opcion">${t(k)}</button>`).join("");
+    lista.append(opciones);
+  }
+  charla.mensajes.forEach((m) => burbuja(m.rol, m.texto));
+  if (esperando) burbuja("asistente", "").classList.add("asis-escribiendo");
+
+  if (charla.listo) {
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "asis-resumen";
+    tarjeta.innerHTML = `
+      <p class="asis-resumen-titulo">${t("asis_resumen")}</p>
+      <dl></dl>
+      <a class="boton asis-enviar-wa" target="_blank" rel="noopener">${ico("whatsapp")}<span>${t("asis_enviar_wa")}</span></a>
+      <button type="button" class="asis-seguir">${t("asis_seguir")}</button>`;
+    const dl = tarjeta.querySelector("dl");
+    CAMPOS_ASISTENTE.filter((c) => charla.datos[c]).forEach((c) => {
+      const dt = document.createElement("dt");
+      const dd = document.createElement("dd");
+      dt.textContent = t("asis_c_" + c);
+      dd.textContent = charla.datos[c];
+      dl.append(dt, dd);
+    });
+    tarjeta.querySelector(".asis-enviar-wa").href = enlaceWhatsapp(textoResumen());
+    lista.append(tarjeta);
+  }
+  lista.scrollTop = lista.scrollHeight;
+}
+
+// Pide la siguiente respuesta a la IA; devuelve null si no hay respuesta útil
+async function preguntarIA() {
+  try {
+    const r = await fetch("/api/asistente", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        idioma,
+        mensajes: charla.mensajes.filter((m) => !m.local).map(({ rol, texto }) => ({ rol, texto })),
+      }),
+      signal: AbortSignal.timeout?.(25000),
+    });
+    if (!r.ok) return null;
+    const respuesta = await r.json();
+    return respuesta?.mensaje ? respuesta : null;
+  } catch {
+    return null;
+  }
+}
+
+// Sin IA: guarda la respuesta en el dato que se preguntó y pasa al siguiente que falte
+function siguientePreguntaFija(texto) {
+  const datos = charla.datos;
+  if (charla.pendiente) datos[charla.pendiente] = texto;
+  else if (!datos.necesidad) datos.necesidad = texto;
+  else datos.notas = [datos.notas, texto].filter(Boolean).join(" · ");
+  charla.pendiente = PREGUNTAS_FIJAS.find((c) => !datos[c]) || null;
+  return charla.pendiente
+    ? { mensaje: t("asis_p_" + charla.pendiente), listo: false }
+    : { mensaje: t("asis_p_fin"), listo: true };
+}
+
+async function enviarAlAsistente(texto) {
+  texto = String(texto || "").trim().slice(0, 600);
+  if (!texto || esperando) return;
+  const campo = asistente.querySelector("textarea");
+  campo.value = "";
+  campo.style.height = "auto";
+  charla.mensajes.push({ rol: "visitante", texto });
+  charla.listo = false;
+  esperando = true;
+  pintarAsistente();
+
+  let respuesta = charla.fijo ? null : await preguntarIA();
+  if (respuesta) {
+    for (const [c, v] of Object.entries(respuesta.datos || {})) {
+      if (CAMPOS_ASISTENTE.includes(c) && v) charla.datos[c] = String(v);
+    }
+  } else {
+    charla.fijo = true;
+    respuesta = siguientePreguntaFija(texto);
+  }
+  const turnos = charla.mensajes.filter((m) => m.rol === "visitante").length;
+  charla.mensajes.push({ rol: "asistente", texto: respuesta.mensaje });
+  charla.listo = respuesta.listo || turnos >= MAX_TURNOS;
+  esperando = false;
+  guardarCharla();
+  pintarAsistente();
+  if (!charla.listo && matchMedia("(pointer: fine)").matches) campo.focus();
+}
+
+function abrirAsistente() {
+  if (!asistente) crearAsistente();
+  pintarAsistente();
+  asistente.hidden = false;
+  document.body.classList.add("asistente-abierto");
+  if (matchMedia("(pointer: fine)").matches) asistente.querySelector(charla.listo ? ".asis-cerrar" : "textarea").focus();
+}
+
+function cerrarAsistente() {
+  asistente.hidden = true;
+  document.body.classList.remove("asistente-abierto");
+  $("wa-flotante")?.focus();
+}
+
+addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && asistente && !asistente.hidden) cerrarAsistente();
+});
+
 // ---------- Arranque ----------
 function pintarTodo() {
   pintarComun();
@@ -571,6 +815,13 @@ function pintarTodo() {
 
 document.addEventListener("click", (e) => {
   const cabecera = document.querySelector(".nav");
+
+  // Botón flotante y botón "Contar mi proyecto": abren el asistente (Ctrl+clic sigue yendo a WhatsApp)
+  if (e.target.closest("#wa-flotante, [data-asistente]") && !e.ctrlKey && !e.metaKey && SITIO.whatsapp) {
+    e.preventDefault();
+    abrirAsistente();
+    return;
+  }
 
   if (e.target.closest(".btn-idioma")) {
     idioma = idioma === "es" ? "en" : "es";
