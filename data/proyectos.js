@@ -493,7 +493,7 @@ const PROYECTOS = [
         nodos: [
           { titulo: "SQLite", detalle: { es: "better-sqlite3 con migraciones, sin internet", en: "better-sqlite3 with migrations, offline" } },
           { titulo: { es: "Lector de huella", en: "Fingerprint reader" }, detalle: { es: "DigitalPersona a través de un proceso .NET", en: "DigitalPersona through a .NET process" } },
-          { titulo: { es: "Puerta", en: "Door" }, detalle: { es: "Arduino Nano + relé por puerto serie", en: "Arduino Nano + relay over serial port" } },
+          { titulo: { es: "Puerta", en: "Door" }, detalle: { es: "Arduino Nano + relé por puerto serie, hacia el controlador del electroimán", en: "Arduino Nano + relay over serial port, into the electromagnetic lock controller" } },
         ],
       },
     ],
@@ -511,7 +511,7 @@ const PROYECTOS = [
       <ul>
         <li><strong>Clientes y membresías:</strong> ficha con foto, planes por días o por tiquetes, renovaciones, pausas y pagos a crédito (fiados).</li>
         <li><strong>Control de acceso:</strong> kiosco a pantalla completa donde el cliente entra con huella, código de barras del carnet o PIN. Cada entrada queda registrada con su motivo.</li>
-        <li><strong>Puerta automática:</strong> un Arduino Nano con un relé abre el torniquete cuando el acceso es válido.</li>
+        <li><strong>Puerta automática:</strong> cuando el acceso es válido, un Arduino Nano con un relé le da la orden al controlador del electroimán y la puerta se suelta unos segundos. Ya está probada de punta a punta; falta montarla en la entrada.</li>
         <li><strong>Punto de venta, inventario y caja:</strong> productos con código de barras, entradas y salidas de mercancía, apertura y cierre por turno con cada medio de pago.</li>
         <li><strong>Recordatorios por correo:</strong> aviso automático a quien está por vencer o ya venció, con frenos para no escribirle dos veces a nadie.</li>
         <li><strong>Excel y respaldos:</strong> importación masiva de clientes, exportación del padrón y copias de seguridad con restauración verificada.</li>
@@ -532,7 +532,7 @@ const PROYECTOS = [
       <ul>
         <li><strong>En producción desde septiembre de 2026</strong> en el PC del mostrador, con más de 300 clientes registrados.</li>
         <li>Lo que antes estaba repartido en hojas de Excel (pagos, vencimientos, deudas y ventas) quedó en un solo sistema.</li>
-        <li>La entrada quedó controlada: la puerta solo se abre con una membresía vigente y cada ingreso queda registrado con su motivo.</li>
+        <li>La entrada quedó controlada: cada ingreso queda registrado con su motivo, y la puerta, una vez montada, solo se abrirá con un acceso válido.</li>
         <li>El cierre de caja por turno se arma solo, separado por medio de pago.</li>
       </ul>
 
@@ -561,7 +561,7 @@ const PROYECTOS = [
       <ul>
         <li><strong>Clients and memberships:</strong> profile with photo, day-based or ticket-based plans, renewals, pauses and payments on credit.</li>
         <li><strong>Access control:</strong> full-screen kiosk where clients check in with fingerprint, membership-card barcode or PIN. Every entry is logged with its reason.</li>
-        <li><strong>Automatic door:</strong> an Arduino Nano with a relay opens the turnstile when access is valid.</li>
+        <li><strong>Automatic door:</strong> when access is valid, an Arduino Nano with a relay signals the electromagnetic lock controller and the door releases for a few seconds. Fully tested end to end; mounting it at the entrance is still pending.</li>
         <li><strong>Point of sale, inventory and cash register:</strong> barcode products, stock in and out, shift opening and closing with every payment method.</li>
         <li><strong>Email reminders:</strong> automatic notice to members about to expire or already expired, with safeguards so nobody gets written twice.</li>
         <li><strong>Excel and backups:</strong> bulk client import, roster export and backups with verified restore.</li>
@@ -582,7 +582,7 @@ const PROYECTOS = [
       <ul>
         <li><strong>In production since September 2026</strong> on the front-desk PC, with more than 300 registered clients.</li>
         <li>What used to be spread across Excel sheets (payments, expirations, debts and sales) now lives in a single system.</li>
-        <li>The entrance is under control: the door only opens for an active membership, and every entry is logged with its reason.</li>
+        <li>The entrance is under control: every entry is logged with its reason, and once mounted, the door will only open for valid access.</li>
         <li>The per-shift cash count is built automatically, split by payment method.</li>
       </ul>
 
