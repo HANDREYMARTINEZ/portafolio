@@ -524,6 +524,7 @@ const PROYECTOS = [
         <li><strong>Cifrado</strong> de datos sensibles, fotos y huellas; contraseñas con <strong>Argon2</strong>.</li>
         <li>Un proceso aparte en <strong>.NET</strong> habla con el lector de huella DigitalPersona.</li>
         <li><strong>Autodiagnóstico del lector:</strong> si detecta el dedo pero deja de entregar la huella, el kiosco lo avisa y pide entrar con PIN, en vez de fallar en silencio.</li>
+        <li><strong>Acceso de mantenimiento con huella:</strong> el panel técnico se abre con la huella del desarrollador, guardada cifrada y aparte de la de los clientes para que nunca abra la puerta; la frase secreta queda como respaldo.</li>
         <li>Firmware propio para <strong>Arduino Nano</strong> por puerto serie.</li>
         <li>27 suites de pruebas automáticas que corren sobre Electron.</li>
       </ul>
@@ -574,6 +575,7 @@ const PROYECTOS = [
         <li><strong>Encryption</strong> of sensitive data, photos and fingerprints; passwords with <strong>Argon2</strong>.</li>
         <li>A separate <strong>.NET</strong> process talks to the DigitalPersona fingerprint reader.</li>
         <li><strong>Reader self-check:</strong> if it senses the finger but stops delivering the fingerprint, the kiosk says so and asks for the PIN instead of failing silently.</li>
+        <li><strong>Fingerprint maintenance access:</strong> the technical panel opens with the developer's fingerprint, stored encrypted and apart from the clients' so it never opens the door; the secret passphrase remains as a fallback.</li>
         <li>Custom <strong>Arduino Nano</strong> firmware over serial port.</li>
         <li>27 automated test suites running on Electron.</li>
       </ul>
