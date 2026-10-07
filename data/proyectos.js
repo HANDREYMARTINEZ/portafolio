@@ -512,7 +512,7 @@ const PROYECTOS = [
         <li><strong>Clientes y membresías:</strong> ficha con foto, planes por días o por tiquetes, renovaciones, pausas y pagos a crédito (fiados).</li>
         <li><strong>Control de acceso:</strong> kiosco a pantalla completa donde el cliente entra con huella, código de barras del carnet o PIN. Cada entrada queda registrada con su motivo.</li>
         <li><strong>Puerta automática:</strong> cuando el acceso es válido, un Arduino Nano con un relé le da la orden al controlador del electroimán y la puerta se suelta unos segundos. Ya está probada de punta a punta; falta montarla en la entrada.</li>
-        <li><strong>Punto de venta, inventario y caja:</strong> productos con código de barras, entradas y salidas de mercancía, apertura y cierre por turno con cada medio de pago.</li>
+        <li><strong>Punto de venta, inventario y caja:</strong> productos con código de barras, entradas y salidas de mercancía, apertura y cierre por turno. Cada cobro entra a la caja con su medio (efectivo, QR, Llave, Nequi, tarjeta) y al cerrar se ve cuánto entró por cada uno; el arqueo cuenta solo el efectivo.</li>
         <li><strong>Recordatorios por correo:</strong> aviso automático a quien está por vencer o ya venció, con frenos para no escribirle dos veces a nadie.</li>
         <li><strong>Excel y respaldos:</strong> importación masiva de clientes, exportación del padrón y copias de seguridad con restauración verificada.</li>
       </ul>
@@ -562,7 +562,7 @@ const PROYECTOS = [
         <li><strong>Clients and memberships:</strong> profile with photo, day-based or ticket-based plans, renewals, pauses and payments on credit.</li>
         <li><strong>Access control:</strong> full-screen kiosk where clients check in with fingerprint, membership-card barcode or PIN. Every entry is logged with its reason.</li>
         <li><strong>Automatic door:</strong> when access is valid, an Arduino Nano with a relay signals the electromagnetic lock controller and the door releases for a few seconds. Fully tested end to end; mounting it at the entrance is still pending.</li>
-        <li><strong>Point of sale, inventory and cash register:</strong> barcode products, stock in and out, shift opening and closing with every payment method.</li>
+        <li><strong>Point of sale, inventory and cash register:</strong> barcode products, stock in and out, shift opening and closing. Every payment enters the register with its method (cash, QR, bank transfer, Nequi, card) and the closing view shows how much came in through each one; the cash count only includes cash.</li>
         <li><strong>Email reminders:</strong> automatic notice to members about to expire or already expired, with safeguards so nobody gets written twice.</li>
         <li><strong>Excel and backups:</strong> bulk client import, roster export and backups with verified restore.</li>
       </ul>
