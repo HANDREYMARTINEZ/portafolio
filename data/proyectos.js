@@ -511,7 +511,7 @@ const PROYECTOS = [
       <ul>
         <li><strong>Clientes y membresías:</strong> ficha con foto, planes por días o por tiquetes, renovaciones, pausas y pagos a crédito (fiados).</li>
         <li><strong>Control de acceso:</strong> kiosco a pantalla completa donde el cliente entra con huella, código de barras del carnet o PIN. Cada entrada queda registrada con su motivo.</li>
-        <li><strong>Kiosco en la segunda pantalla:</strong> con dos monitores, el kiosco se abre a pantalla completa en el de los clientes (un botón o F2) mientras recepción sigue vendiendo en el otro. Los dos comparten el mismo lector de huella: cada huella cuenta una sola entrada y se muestra en ambos.</li>
+        <li><strong>Kiosco en la segunda pantalla:</strong> con dos monitores, el kiosco se abre a pantalla completa en el de los clientes (un botón o F2) mientras recepción sigue vendiendo en el otro. Los dos comparten el mismo lector de huella: cada huella cuenta una sola entrada y se muestra en ambos. Con tres o más monitores se elige en cuál sale (con un botón que numera cada pantalla), y si se conecta o desconecta alguno el kiosco se recoloca solo, sin tapar nunca la pantalla de recepción.</li>
         <li><strong>Puerta automática:</strong> cuando el acceso es válido, un Arduino Nano con un relé le da la orden al controlador del electroimán y la puerta se suelta unos segundos. Ya está probada de punta a punta; falta montarla en la entrada.</li>
         <li><strong>Punto de venta, inventario y caja:</strong> productos con código de barras, entradas y salidas de mercancía, apertura y cierre por turno. Cada cobro entra a la caja con su medio (efectivo, QR, Llave, Nequi, tarjeta) y al cerrar se ve cuánto entró por cada uno; el arqueo cuenta solo el efectivo.</li>
         <li><strong>Recordatorios por correo:</strong> aviso automático a quien está por vencer o ya venció, con frenos para no escribirle dos veces a nadie.</li>
@@ -527,7 +527,7 @@ const PROYECTOS = [
         <li><strong>Autodiagnóstico del lector:</strong> si detecta el dedo pero deja de entregar la huella, el kiosco lo avisa y pide entrar con PIN, en vez de fallar en silencio.</li>
         <li><strong>Acceso de mantenimiento con huella:</strong> el panel técnico se abre con la huella del desarrollador, guardada cifrada y aparte de la de los clientes para que nunca abra la puerta; la frase secreta queda como respaldo.</li>
         <li>Firmware propio para <strong>Arduino Nano</strong> por puerto serie.</li>
-        <li>28 suites de pruebas automáticas que corren sobre Electron.</li>
+        <li>29 suites de pruebas automáticas que corren sobre Electron.</li>
       </ul>
 
       <h2>Resultado</h2>
@@ -563,7 +563,7 @@ const PROYECTOS = [
       <ul>
         <li><strong>Clients and memberships:</strong> profile with photo, day-based or ticket-based plans, renewals, pauses and payments on credit.</li>
         <li><strong>Access control:</strong> full-screen kiosk where clients check in with fingerprint, membership-card barcode or PIN. Every entry is logged with its reason.</li>
-        <li><strong>Kiosk on a second screen:</strong> with two monitors, the kiosk opens full screen on the one facing clients (a button or F2) while the front desk keeps selling on the other. Both share the same fingerprint reader: each fingerprint counts as one entry and shows on both.</li>
+        <li><strong>Kiosk on a second screen:</strong> with two monitors, the kiosk opens full screen on the one facing clients (a button or F2) while the front desk keeps selling on the other. Both share the same fingerprint reader: each fingerprint counts as one entry and shows on both. With three or more monitors you pick which one it uses (a button numbers each screen), and if a monitor is plugged in or unplugged the kiosk moves on its own, never covering the front-desk screen.</li>
         <li><strong>Automatic door:</strong> when access is valid, an Arduino Nano with a relay signals the electromagnetic lock controller and the door releases for a few seconds. Fully tested end to end; mounting it at the entrance is still pending.</li>
         <li><strong>Point of sale, inventory and cash register:</strong> barcode products, stock in and out, shift opening and closing. Every payment enters the register with its method (cash, QR, bank transfer, Nequi, card) and the closing view shows how much came in through each one; the cash count only includes cash.</li>
         <li><strong>Email reminders:</strong> automatic notice to members about to expire or already expired, with safeguards so nobody gets written twice.</li>
@@ -579,7 +579,7 @@ const PROYECTOS = [
         <li><strong>Reader self-check:</strong> if it senses the finger but stops delivering the fingerprint, the kiosk says so and asks for the PIN instead of failing silently.</li>
         <li><strong>Fingerprint maintenance access:</strong> the technical panel opens with the developer's fingerprint, stored encrypted and apart from the clients' so it never opens the door; the secret passphrase remains as a fallback.</li>
         <li>Custom <strong>Arduino Nano</strong> firmware over serial port.</li>
-        <li>28 automated test suites running on Electron.</li>
+        <li>29 automated test suites running on Electron.</li>
       </ul>
 
       <h2>Outcome</h2>
