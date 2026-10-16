@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moton — Tienda de repuestos y accesorios para moto — Andrey Martínez</title>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/estilos.css">
+<meta name="description" content="Propuesta de sitio web para un local de repuestos y accesorios de moto (NS, Dominar, Duke y más): catálogo por marca y categoría, buscador, carrito y pedido por WhatsApp con la lista y el total ya escritos."><link rel="canonical" href="https://andreymartinezportafolio.vercel.app/proyectos/moton-repuestos"><meta property="og:type" content="article"><meta property="og:site_name" content="H.A.M.C Soluciones en IA"><meta property="og:title" content="Moton — Tienda de repuestos y accesorios para moto — Andrey Martínez"><meta property="og:description" content="Propuesta de sitio web para un local de repuestos y accesorios de moto (NS, Dominar, Duke y más): catálogo por marca y categoría, buscador, carrito y pedido por WhatsApp con la lista y el total ya escritos."><meta property="og:url" content="https://andreymartinezportafolio.vercel.app/proyectos/moton-repuestos"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://andreymartinezportafolio.vercel.app/img/og/moton-repuestos.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="https://andreymartinezportafolio.vercel.app/img/og/moton-repuestos.jpg"></head>
+<body>
+  <header class="nav">
+    <div class="contenedor nav-interior">
+      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <nav id="menu" class="menu">
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#blog" data-t="nav_blog" data-seccion="blog">Blog</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="menu-contacto" data-cv="" download="" data-t="descargar_cv">Descargar CV</a>
+        <a href="/#contacto" class="menu-contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-icono btn-tema" type="button" data-icono="tema" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema claro/oscuro"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"></path></svg></button>
+        <button class="btn-idioma" type="button" aria-label="Switch to English"><span class="activo">ES</span><span>EN</span></button>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario nav-cta" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span>CV</span></a>
+        <a href="/#contacto" class="boton nav-cta"><span data-t="nav_contacto">Contacto</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <button class="btn-icono btn-menu" type="button" data-icono="menu" aria-controls="menu" aria-expanded="false" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <article id="detalle" class="detalle" data-tipo="proyecto">
+    <a class="migas" href="/#proyectos"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg> Proyectos</a>
+    <header class="detalle-cabecera revelar">
+      <div class="chips"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Propuesta para cliente</span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+      <h1>Moton — Tienda de repuestos y accesorios para moto</h1>
+      <p class="bajada">Propuesta de sitio web para un local de repuestos y accesorios de moto (NS, Dominar, Duke y más): catálogo por marca y categoría, buscador, carrito y pedido por WhatsApp con la lista y el total ya escritos.</p>
+      <div class="botones"><a class="boton" href="https://moton-repuestos.vercel.app" target="_blank" rel="noopener">Ver demostración <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a class="boton secundario" href="https://github.com/HANDREYMARTINEZ/moton-repuestos" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Ver código</a></div>
+    </header>
+    
+      <dl class="impacto revelar">
+        <div><dt>17</dt><dd>productos de ejemplo en el catálogo</dd></div><div><dt>7</dt><dd>marcas con filtro propio</dd></div><div><dt>0</dt><dd>dependencias: HTML, CSS y JavaScript puros</dd></div>
+      </dl>
+    <div class="marco revelar"><div class="marco-barra"><span></span><span></span><span></span></div><div class="marco-img"><img src="/img/moton-repuestos/portada.jpg" alt="Moton — Tienda de repuestos y accesorios para moto" loading="lazy"></div></div>
+    <div class="detalle-grid">
+      <div class="contenido"><p>Propuesta de sitio web para Moton, un local que vende repuestos y accesorios para motos de alto cilindraje y deportivas, sobre todo Bajaj Pulsar NS y Dominar, KTM Duke y otras marcas. Se preparó como demostración para ofrecer el servicio de diseño web al cliente. La desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>Es una demostración: los precios, el número de WhatsApp, la dirección y las cifras de la portada son de ejemplo. Las fotografías provienen de Wikimedia Commons bajo licencias libres, con la autoría de cada una en la página de créditos del sitio; en la versión final se reemplazan por fotos propias del local.</p>
+
+      <h2>El problema</h2>
+      <p>Un local de repuestos atiende a diario la misma pregunta: «¿tiene esta pieza para mi moto?». Sin un catálogo en línea, cada consulta se resuelve por teléfono o en el mostrador, y el cliente no puede ver qué hay disponible ni cuánto cuesta antes de escribir. El objetivo era una página que mostrara el inventario organizado por marca y tipo de pieza, y convirtiera esa búsqueda en un pedido concreto por WhatsApp.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Buscador por moto:</strong> desde la portada, el visitante elige la marca y la categoría y llega directamente a las piezas compatibles.</li>
+        <li><strong>Dos líneas de producto:</strong> repuestos (discos de freno, mordazas, pastillas, discos de clutch, kit de arrastre, barras de tren delantero, amortiguadores) y accesorios (cúpulas, manilletas, exploradoras, bombillos LED, farolas, espejos, tapas y defensas).</li>
+        <li><strong>Compra por marca:</strong> KTM, Pulsar NS, Dominar, Ducati, Yamaha, Honda, Suzuki y Kawasaki, cada una con foto, modelos y número de piezas; al tocarla, el catálogo se filtra.</li>
+        <li><strong>Catálogo:</strong> filtros por categoría y marca, buscador que no distingue tildes, compatibilidad por modelo y precios en dólares.</li>
+        <li><strong>Carrito y pedido por WhatsApp:</strong> cantidades, descuento automático del combo disco + pastillas y un botón que abre WhatsApp con la lista, el total y un espacio para indicar la moto.</li>
+        <li><strong>Contacto:</strong> horario, ubicación y un campo para preguntar por una pieza que no esté en el catálogo.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      
+    <figure class="arquitectura revelar">
+      
+        
+        <div class="arq-capa" style="--i:0">
+          <p class="arq-nombre"><span>01</span>Datos</p>
+          
+            <div class="arq-nodo">
+              <strong>Catálogo</strong>
+              <span>Productos con categoría, compatibilidad y precio en USD</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Marcas</strong>
+              <span>Tarjetas con foto y modelos de cada marca</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:1">
+          <p class="arq-nombre"><span>02</span>Interacción · JavaScript</p>
+          
+            <div class="arq-nodo">
+              <strong>Filtros y buscador</strong>
+              <span>Por categoría y marca; búsqueda sin importar tildes</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Carrito</strong>
+              <span>Cantidades, descuento de combo y total</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>WhatsApp</strong>
+              <span>Arma el pedido y lo abre en un enlace wa.me</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:2">
+          <p class="arq-nombre"><span>03</span>Publicación</p>
+          
+            <div class="arq-nodo">
+              <strong>GitHub</strong>
+              <span>Código y control de versiones</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Vercel</strong>
+              <span>Despliegue automático en cada cambio</span>
+            </div>
+        </div>
+    </figure>
+      <ul>
+        <li><strong>HTML, CSS y JavaScript</strong> sin frameworks ni dependencias: el catálogo vive en una lista de datos que el dueño puede ampliar sin tocar el diseño.</li>
+        <li>Diseño oscuro con acento naranja, tipografías Barlow Condensed e Inter, y variables de color; adaptable a celular, tableta y escritorio.</li>
+        <li>El carrito se conserva en el navegador del visitante y el pedido se envía con un enlace <code>wa.me</code>, sin servidor ni base de datos.</li>
+        <li>Respeta la preferencia de reducir el movimiento y funciona con teclado.</li>
+        <li>Publicada en <strong>Vercel</strong> con despliegue automático desde <strong>GitHub</strong>.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>Demostración publicada y funcionando en el celular y en el computador, lista para presentar al cliente.</li>
+        <li>Cada cambio que se sube a GitHub se publica automáticamente.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/moton-repuestos/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/01-inicio.jpg" alt="Portada con el buscador por moto" loading="lazy"></a><figcaption>Portada con el buscador por moto</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/02-lineas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/02-lineas.jpg" alt="Repuestos y accesorios" loading="lazy"></a><figcaption>Repuestos y accesorios</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/03-marcas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/03-marcas.jpg" alt="Compra por marca" loading="lazy"></a><figcaption>Compra por marca</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/04-catalogo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/04-catalogo.jpg" alt="Catálogo con filtros" loading="lazy"></a><figcaption>Catálogo con filtros</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/05-filtro.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/05-filtro.jpg" alt="Repuestos filtrados por marca" loading="lazy"></a><figcaption>Repuestos filtrados por marca</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/06-carrito.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/06-carrito.jpg" alt="Carrito con descuento de combo" loading="lazy"></a><figcaption>Carrito con descuento de combo</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/07-combo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/07-combo.jpg" alt="Combo del mes y ventajas" loading="lazy"></a><figcaption>Combo del mes y ventajas</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/08-contacto.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/08-contacto.jpg" alt="Contacto y pie de página" loading="lazy"></a><figcaption>Contacto y pie de página</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/moton-repuestos/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/20-movil-inicio.jpg" alt="Portada" loading="lazy"></a><figcaption>Portada</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/21-movil-marcas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/21-movil-marcas.jpg" alt="Marcas" loading="lazy"></a><figcaption>Marcas</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/22-movil-catalogo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/22-movil-catalogo.jpg" alt="Catálogo" loading="lazy"></a><figcaption>Catálogo</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/23-movil-carrito.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/23-movil-carrito.jpg" alt="Carrito" loading="lazy"></a><figcaption>Carrito</figcaption></figure>
+      </div></div>
+      <aside class="ficha">
+        <dl><div><dt>Fecha</dt><dd>octubre de 2026</dd></div><div><dt>Tipo</dt><dd>Web</dd></div><div><dt>Estado</dt><dd><span class="chip estado"><span class="punto"></span>Propuesta para cliente</span></dd></div><div><dt>Desarrollo</dt><dd>Asistido por IA · Claude Code</dd></div><div><dt>Tecnologías</dt><dd><div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span><span class="etiqueta">JavaScript</span><span class="etiqueta">Vercel</span></div></dd></div></dl>
+        <div class="ficha-enlaces"><a class="boton" href="https://moton-repuestos.vercel.app" target="_blank" rel="noopener">Ver demostración <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a class="boton secundario" href="https://github.com/HANDREYMARTINEZ/moton-repuestos" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Ver código</a></div>
+      </aside>
+    </div>
+    
+      <section class="otros">
+        <h2>Otros proyectos</h2>
+        <div class="grilla">
+    <a class="tarjeta revelar" href="/proyectos/hotel-suite-royal">
+      <div class="portada"><img src="/img/hotel-suite-royal/portada.jpg" alt="Hotel Suite Royal — Landing page bilingüe" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Terminado</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>octubre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Hotel Suite Royal<span>Landing page bilingüe</span></h3>
+        <p>Sitio web para un hotel 4 estrellas en Melgar (Tolima), en español e inglés, con galería filtrable, opiniones de huéspedes y reserva directa por WhatsApp con las fechas ya escritas en el mensaje.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Publicada en Vercel en español e inglés, con despliegue automático desde GitHub.</span></p>
+        <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span><span class="etiqueta">JavaScript</span><span class="etiqueta">Vercel</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
+    <a class="tarjeta revelar" href="/proyectos/hotel-pms">
+      <div class="portada"><img src="/img/hotel-pms/portada.png" alt="Hotel PMS — Administración hotelera" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>En curso</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>octubre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Hotel PMS<span>Administración hotelera</span></h3>
+        <p>Sistema web de gestión hotelera (PMS) para un hotel pequeño en Colombia: reservas en línea de tiempo, check-in y check-out por pasos, cuenta del huésped, inventario, limpieza desde el celular, postventa y reportes legales TRA y SIRE.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>13 módulos operativos; el siguiente paso es el módulo de reservas en línea.</span></p>
+        <div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">Node.js</span><span class="etiqueta">Express</span><span class="etiqueta">SQLite</span><span class="etiqueta">+3</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a></div>
+      </section></article>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <div class="pie-marca">
+        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <p class="pie-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
+        <p class="pie-frase" data-t="pie_frase">Construyo soluciones con inteligencia artificial, automatización y datos para empresas y emprendimientos.</p>
+      </div>
+      <nav class="pie-columna" aria-labelledby="pie-t-nav">
+        <h3 id="pie-t-nav" data-t="pie_navegacion">Navegación</h3>
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/#contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="pie-columna">
+        <h3 data-t="pie_contacto">Contacto</h3>
+        <nav id="pie-redes" class="pie-redes"><a href="https://github.com/HANDREYMARTINEZ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a><a href="https://www.linkedin.com/in/andreymartinezdata" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a><a href="https://wa.me/573227179287" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>WhatsApp</a><a href="mailto:2002.ha.mc@gmail.com"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a></nav>
+      </div>
+      <div class="pie-columna">
+        <h3 data-t="cv_titulo">Hoja de vida</h3>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" data-cv="" download="" data-t="cv_pdf">Descargar PDF</a>
+        <a href="/hoja-de-vida?lang=es" data-cv-ver="" target="_blank" rel="noopener" data-t="cv_ver">Ver en línea</a>
+      </div>
+    </div>
+    <div class="contenedor pie-legal">
+      <p>© <span id="anio">2026</span> <span data-sitio="nombre">Harold Andrey Martínez Cortés</span> · <span data-t="derechos">Desarrollado en Colombia</span></p>
+      <a href="#" class="pie-arriba"><span data-t="arriba">Volver arriba</span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script src="/data/blog.js"></script>
+  <script src="/js/textos.js"></script>
+  <script src="/js/main.js"></script>
+
+
+</body></html>
+

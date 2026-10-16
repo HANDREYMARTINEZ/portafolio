@@ -18,6 +18,155 @@
 
 const PROYECTOS = [
   {
+    slug: "moton-repuestos",
+    titulo: { es: "Moton — Tienda de repuestos y accesorios para moto", en: "Moton — Motorcycle parts and accessories store" },
+    resumen: {
+      es: "Propuesta de sitio web para un local de repuestos y accesorios de moto (NS, Dominar, Duke y más): catálogo por marca y categoría, buscador, carrito y pedido por WhatsApp con la lista y el total ya escritos.",
+      en: "Website proposal for a motorcycle parts and accessories shop (Pulsar NS, Dominar, Duke and more): catalog by brand and category, search, cart and WhatsApp ordering with the item list and total already written.",
+    },
+    fecha: "2026-10-15",
+    tipo: "web",
+    conIA: "Claude Code",
+    estado: { es: "Propuesta para cliente", en: "Client proposal" },
+    etiquetas: ["HTML", "CSS", "JavaScript", "Vercel"],
+    resultado: { es: "Demostración publicada en Vercel, con despliegue automático desde GitHub, lista para presentar al cliente.", en: "Demo live on Vercel with automatic deployment from GitHub, ready to present to the client." },
+    cifras: [
+      { valor: "17", etiqueta: { es: "productos de ejemplo en el catálogo", en: "sample products in the catalog" } },
+      { valor: "7", etiqueta: { es: "marcas con filtro propio", en: "brands with their own filter" } },
+      { valor: "0", etiqueta: { es: "dependencias: HTML, CSS y JavaScript puros", en: "dependencies: plain HTML, CSS and JavaScript" } },
+    ],
+    arquitectura: [
+      {
+        capa: { es: "Datos", en: "Data" },
+        nodos: [
+          { titulo: { es: "Catálogo", en: "Catalog" }, detalle: { es: "Productos con categoría, compatibilidad y precio en USD", en: "Products with category, fitment and price in USD" } },
+          { titulo: { es: "Marcas", en: "Brands" }, detalle: { es: "Tarjetas con foto y modelos de cada marca", en: "Cards with a photo and the models of each brand" } },
+        ],
+      },
+      {
+        capa: { es: "Interacción · JavaScript", en: "Interaction · JavaScript" },
+        nodos: [
+          { titulo: { es: "Filtros y buscador", en: "Filters & search" }, detalle: { es: "Por categoría y marca; búsqueda sin importar tildes", en: "By category and brand; accent-insensitive search" } },
+          { titulo: { es: "Carrito", en: "Cart" }, detalle: { es: "Cantidades, descuento de combo y total", en: "Quantities, bundle discount and total" } },
+          { titulo: "WhatsApp", detalle: { es: "Arma el pedido y lo abre en un enlace wa.me", en: "Composes the order and opens it in a wa.me link" } },
+        ],
+      },
+      {
+        capa: { es: "Publicación", en: "Hosting" },
+        nodos: [
+          { titulo: "GitHub", detalle: { es: "Código y control de versiones", en: "Source code and version control" } },
+          { titulo: "Vercel", detalle: { es: "Despliegue automático en cada cambio", en: "Automatic deployment on every change" } },
+        ],
+      },
+    ],
+    imagen: "/img/moton-repuestos/portada.jpg",
+    demo: "https://moton-repuestos.vercel.app",
+    codigo: "https://github.com/HANDREYMARTINEZ/moton-repuestos",
+    contenido: {
+      es: `<p>Propuesta de sitio web para Moton, un local que vende repuestos y accesorios para motos de alto cilindraje y deportivas, sobre todo Bajaj Pulsar NS y Dominar, KTM Duke y otras marcas. Se preparó como demostración para ofrecer el servicio de diseño web al cliente. La desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>Es una demostración: los precios, el número de WhatsApp, la dirección y las cifras de la portada son de ejemplo. Las fotografías provienen de Wikimedia Commons bajo licencias libres, con la autoría de cada una en la página de créditos del sitio; en la versión final se reemplazan por fotos propias del local.</p>
+
+      <h2>El problema</h2>
+      <p>Un local de repuestos atiende a diario la misma pregunta: «¿tiene esta pieza para mi moto?». Sin un catálogo en línea, cada consulta se resuelve por teléfono o en el mostrador, y el cliente no puede ver qué hay disponible ni cuánto cuesta antes de escribir. El objetivo era una página que mostrara el inventario organizado por marca y tipo de pieza, y convirtiera esa búsqueda en un pedido concreto por WhatsApp.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Buscador por moto:</strong> desde la portada, el visitante elige la marca y la categoría y llega directamente a las piezas compatibles.</li>
+        <li><strong>Dos líneas de producto:</strong> repuestos (discos de freno, mordazas, pastillas, discos de clutch, kit de arrastre, barras de tren delantero, amortiguadores) y accesorios (cúpulas, manilletas, exploradoras, bombillos LED, farolas, espejos, tapas y defensas).</li>
+        <li><strong>Compra por marca:</strong> KTM, Pulsar NS, Dominar, Ducati, Yamaha, Honda, Suzuki y Kawasaki, cada una con foto, modelos y número de piezas; al tocarla, el catálogo se filtra.</li>
+        <li><strong>Catálogo:</strong> filtros por categoría y marca, buscador que no distingue tildes, compatibilidad por modelo y precios en dólares.</li>
+        <li><strong>Carrito y pedido por WhatsApp:</strong> cantidades, descuento automático del combo disco + pastillas y un botón que abre WhatsApp con la lista, el total y un espacio para indicar la moto.</li>
+        <li><strong>Contacto:</strong> horario, ubicación y un campo para preguntar por una pieza que no esté en el catálogo.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>HTML, CSS y JavaScript</strong> sin frameworks ni dependencias: el catálogo vive en una lista de datos que el dueño puede ampliar sin tocar el diseño.</li>
+        <li>Diseño oscuro con acento naranja, tipografías Barlow Condensed e Inter, y variables de color; adaptable a celular, tableta y escritorio.</li>
+        <li>El carrito se conserva en el navegador del visitante y el pedido se envía con un enlace <code>wa.me</code>, sin servidor ni base de datos.</li>
+        <li>Respeta la preferencia de reducir el movimiento y funciona con teclado.</li>
+        <li>Publicada en <strong>Vercel</strong> con despliegue automático desde <strong>GitHub</strong>.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>Demostración publicada y funcionando en el celular y en el computador, lista para presentar al cliente.</li>
+        <li>Cada cambio que se sube a GitHub se publica automáticamente.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/moton-repuestos/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/01-inicio.jpg" alt="Portada con el buscador por moto" loading="lazy" /></a><figcaption>Portada con el buscador por moto</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/02-lineas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/02-lineas.jpg" alt="Repuestos y accesorios" loading="lazy" /></a><figcaption>Repuestos y accesorios</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/03-marcas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/03-marcas.jpg" alt="Compra por marca" loading="lazy" /></a><figcaption>Compra por marca</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/04-catalogo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/04-catalogo.jpg" alt="Catálogo con filtros" loading="lazy" /></a><figcaption>Catálogo con filtros</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/05-filtro.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/05-filtro.jpg" alt="Repuestos filtrados por marca" loading="lazy" /></a><figcaption>Repuestos filtrados por marca</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/06-carrito.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/06-carrito.jpg" alt="Carrito con descuento de combo" loading="lazy" /></a><figcaption>Carrito con descuento de combo</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/07-combo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/07-combo.jpg" alt="Combo del mes y ventajas" loading="lazy" /></a><figcaption>Combo del mes y ventajas</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/08-contacto.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/08-contacto.jpg" alt="Contacto y pie de página" loading="lazy" /></a><figcaption>Contacto y pie de página</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/moton-repuestos/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/20-movil-inicio.jpg" alt="Portada" loading="lazy" /></a><figcaption>Portada</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/21-movil-marcas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/21-movil-marcas.jpg" alt="Marcas" loading="lazy" /></a><figcaption>Marcas</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/22-movil-catalogo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/22-movil-catalogo.jpg" alt="Catálogo" loading="lazy" /></a><figcaption>Catálogo</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/23-movil-carrito.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/23-movil-carrito.jpg" alt="Carrito" loading="lazy" /></a><figcaption>Carrito</figcaption></figure>
+      </div>`,
+      en: `<p>Website proposal for Moton, a shop that sells parts and accessories for sport and mid-to-high displacement motorcycles, mainly Bajaj Pulsar NS and Dominar, KTM Duke and other brands. It was prepared as a demo to offer web design services to the client. I built it with the help of artificial intelligence (Claude Code).</p>
+      <p>This is a demo: prices, the WhatsApp number, the address and the figures on the home page are placeholders. The photos come from Wikimedia Commons under free licenses, with each author credited on the site's credits page; the final version would use the shop's own photos.</p>
+
+      <h2>The problem</h2>
+      <p>A parts shop answers the same question every day: "do you have this part for my bike?". Without an online catalog, every inquiry goes through the phone or the counter, and customers cannot see what is available or what it costs before reaching out. The goal was a page that shows the inventory organized by brand and part type, and turns that search into a concrete order over WhatsApp.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Find by bike:</strong> from the home page, visitors choose a brand and a category and go straight to the compatible parts.</li>
+        <li><strong>Two product lines:</strong> parts (brake discs, calipers, pads, clutch plates, chain and sprocket kits, fork tubes, shock absorbers) and accessories (windscreens, levers, auxiliary lights, LED bulbs, headlights, mirrors, caps and crash bars).</li>
+        <li><strong>Shop by brand:</strong> KTM, Pulsar NS, Dominar, Ducati, Yamaha, Honda, Suzuki and Kawasaki, each with a photo, models and part count; tapping one filters the catalog.</li>
+        <li><strong>Catalog:</strong> category and brand filters, accent-insensitive search, fitment by model and prices in US dollars.</li>
+        <li><strong>Cart and WhatsApp ordering:</strong> quantities, an automatic discount for the disc + pads bundle and a button that opens WhatsApp with the list, the total and a line to state the bike.</li>
+        <li><strong>Contact:</strong> opening hours, location and a field to ask about a part that is not in the catalog.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>HTML, CSS and JavaScript</strong> with no frameworks or dependencies: the catalog lives in a data list the owner can extend without touching the design.</li>
+        <li>Dark design with an orange accent, Barlow Condensed and Inter typefaces, and color tokens; responsive across phone, tablet and desktop.</li>
+        <li>The cart is kept in the visitor's browser and the order is sent through a <code>wa.me</code> link, with no server or database.</li>
+        <li>Supports the reduced-motion preference and works with the keyboard.</li>
+        <li>Hosted on <strong>Vercel</strong> with automatic deployment from <strong>GitHub</strong>.</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>The demo is live and working on phones and desktops, ready to present to the client.</li>
+        <li>Every change pushed to GitHub is published automatically.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <p>The site is in Spanish.</p>
+      <div class="galeria">
+        <figure><a href="/img/moton-repuestos/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/01-inicio.jpg" alt="Home page with the find-by-bike search" loading="lazy" /></a><figcaption>Home page with the find-by-bike search</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/02-lineas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/02-lineas.jpg" alt="Parts and accessories" loading="lazy" /></a><figcaption>Parts and accessories</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/03-marcas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/03-marcas.jpg" alt="Shop by brand" loading="lazy" /></a><figcaption>Shop by brand</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/04-catalogo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/04-catalogo.jpg" alt="Catalog with filters" loading="lazy" /></a><figcaption>Catalog with filters</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/05-filtro.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/05-filtro.jpg" alt="Parts filtered by brand" loading="lazy" /></a><figcaption>Parts filtered by brand</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/06-carrito.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/06-carrito.jpg" alt="Cart with bundle discount" loading="lazy" /></a><figcaption>Cart with bundle discount</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/07-combo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/07-combo.jpg" alt="Deal of the month and benefits" loading="lazy" /></a><figcaption>Deal of the month and benefits</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/08-contacto.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/08-contacto.jpg" alt="Contact and footer" loading="lazy" /></a><figcaption>Contact and footer</figcaption></figure>
+      </div>
+      <h3>On mobile</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/moton-repuestos/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/20-movil-inicio.jpg" alt="Home page" loading="lazy" /></a><figcaption>Home page</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/21-movil-marcas.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/21-movil-marcas.jpg" alt="Brands" loading="lazy" /></a><figcaption>Brands</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/22-movil-catalogo.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/22-movil-catalogo.jpg" alt="Catalog" loading="lazy" /></a><figcaption>Catalog</figcaption></figure>
+        <figure><a href="/img/moton-repuestos/23-movil-carrito.jpg" target="_blank" rel="noopener"><img src="/img/moton-repuestos/23-movil-carrito.jpg" alt="Cart" loading="lazy" /></a><figcaption>Cart</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
     slug: "hotel-suite-royal",
     titulo: { es: "Hotel Suite Royal — Landing page bilingüe", en: "Hotel Suite Royal — Bilingual landing page" },
     resumen: {

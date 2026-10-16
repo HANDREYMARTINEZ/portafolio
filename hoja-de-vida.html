@@ -19,7 +19,7 @@
     body { font-family: "Inter", system-ui, sans-serif; color: var(--texto); font-size: 9.1pt; line-height: 1.42; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .hoja { width: 210mm; min-height: 297mm; margin: 24px auto; background: #fff; display: grid; grid-template-columns: minmax(0, 1fr) 70mm; box-shadow: 0 10px 40px rgb(0 0 0 / .15); }
     @media print { html { background: #fff; } .hoja { margin: 0; box-shadow: none; } }
-    .principal { padding: 10mm 9mm 8mm 13mm; }
+    .principal { padding: 10mm 9mm 6mm 13mm; }
     .lateral { padding: 10mm 8mm 8mm 8mm; background: var(--fondo-lat); }
 
     header { display: flex; gap: 7mm; align-items: flex-start; }
@@ -43,7 +43,7 @@
     .item li::marker { color: var(--acento); }
     .item p.resumen { margin-top: 2pt; color: var(--suave); }
     .item a { color: var(--acento); text-decoration: none; font-size: 8.4pt; }
-    .proyecto-linea { display: flex; align-items: baseline; gap: 6pt; margin-bottom: 3pt; }
+    .proyecto-linea { display: flex; align-items: baseline; gap: 6pt; margin-bottom: 1.5pt; }
     .proyecto-linea h3 { font-size: 9.6pt; font-weight: 700; white-space: nowrap; }
     .proyecto-linea span { flex: 1; min-width: 0; color: var(--suave); font-size: 8.4pt; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .proyecto-linea a { color: var(--acento); text-decoration: none; font-size: 8.4pt; white-space: nowrap; }
@@ -106,6 +106,11 @@
         <h3>Reportes con IA</h3>
         <span>IA y datos</span>
         <a href="https://andreymartinezportafolio.vercel.app/proyectos/reportes-con-ia">Ver proyecto ↗</a>
+      </div>
+      <div class="proyecto-linea">
+        <h3>Moton</h3>
+        <span>Plataforma web</span>
+        <a href="https://andreymartinezportafolio.vercel.app/proyectos/moton-repuestos">Ver proyecto ↗</a>
       </div>
       <div class="proyecto-linea">
         <h3>Hotel Suite Royal</h3>
@@ -202,6 +207,8 @@
     $("cv-certificaciones").innerHTML = SITIO.certificaciones.map(estudio).join("");
     $("cv-stack").innerHTML = SITIO.stack.map((g) => `<div class="grupo"><strong>${tr(g.grupo)}</strong><p>${g.items.map(tr).join(" · ")}</p></div>`).join("");
   </script>
+
+
 
 
 

@@ -44,7 +44,7 @@
     </header>
     
       <dl class="impacto revelar">
-        <div><dt>300+</dt><dd>clientes registrados</dd></div><div><dt>3</dt><dd>formas de entrar: huella, carnet o PIN</dd></div><div><dt>27</dt><dd>suites de pruebas automáticas</dd></div>
+        <div><dt>300+</dt><dd>clientes registrados</dd></div><div><dt>3</dt><dd>formas de entrar: huella, carnet o PIN</dd></div><div><dt>31</dt><dd>suites de pruebas automáticas</dd></div>
       </dl>
     <div class="marco revelar"><div class="marco-barra"><span></span><span></span><span></span></div><div class="marco-img"><img src="/img/gymapp/13-dashboards.png" alt="GymApp — Administración de gimnasio" loading="lazy"></div></div>
     <div class="detalle-grid">
@@ -58,8 +58,9 @@
       <ul>
         <li><strong>Clientes y membresías:</strong> ficha con foto, planes por días o por tiquetes, renovaciones, pausas y pagos a crédito (fiados).</li>
         <li><strong>Control de acceso:</strong> kiosco a pantalla completa donde el cliente entra con huella, código de barras del carnet o PIN. Cada entrada queda registrada con su motivo.</li>
-        <li><strong>Puerta automática:</strong> un Arduino Nano con un relé abre el torniquete cuando el acceso es válido.</li>
-        <li><strong>Punto de venta, inventario y caja:</strong> productos con código de barras, entradas y salidas de mercancía, apertura y cierre por turno con cada medio de pago.</li>
+        <li><strong>Kiosco en la segunda pantalla:</strong> con dos monitores, el kiosco se abre a pantalla completa en el de los clientes (un botón o F2) mientras recepción sigue vendiendo en el otro. Los dos comparten el mismo lector de huella: cada huella cuenta una sola entrada y se muestra en ambos. Con tres o más monitores se elige en cuál sale (con un botón que numera cada pantalla), y si se conecta o desconecta alguno el kiosco se recoloca solo, sin tapar nunca la pantalla de recepción. Mientras está abierto, el teclado numérico es del kiosco: quien no marca con la huella escribe su documento y su PIN sin tocar el mouse, aunque recepción esté trabajando en otra ventana.</li>
+        <li><strong>Puerta automática:</strong> cuando el acceso es válido, un Arduino Nano con un relé le da la orden al controlador del electroimán y la puerta se suelta unos segundos. Ya está probada de punta a punta; falta montarla en la entrada.</li>
+        <li><strong>Punto de venta, inventario y caja:</strong> productos con código de barras, entradas y salidas de mercancía, apertura y cierre por turno. Cada cobro entra a la caja con su medio (efectivo, QR, Llave, Nequi, tarjeta) y al cerrar se ve cuánto entró por cada uno; el arqueo cuenta solo el efectivo.</li>
         <li><strong>Recordatorios por correo:</strong> aviso automático a quien está por vencer o ya venció, con frenos para no escribirle dos veces a nadie.</li>
         <li><strong>Excel y respaldos:</strong> importación masiva de clientes, exportación del padrón y copias de seguridad con restauración verificada.</li>
       </ul>
@@ -112,7 +113,7 @@
             </div>
             <div class="arq-nodo">
               <strong>Puerta</strong>
-              <span>Arduino Nano + relé por puerto serie</span>
+              <span>Arduino Nano + relé por puerto serie, hacia el controlador del electroimán</span>
             </div>
         </div>
     </figure>
@@ -121,15 +122,16 @@
         <li><strong>Cifrado</strong> de datos sensibles, fotos y huellas; contraseñas con <strong>Argon2</strong>.</li>
         <li>Un proceso aparte en <strong>.NET</strong> habla con el lector de huella DigitalPersona.</li>
         <li><strong>Autodiagnóstico del lector:</strong> si detecta el dedo pero deja de entregar la huella, el kiosco lo avisa y pide entrar con PIN, en vez de fallar en silencio.</li>
+        <li><strong>Acceso de mantenimiento con huella:</strong> el panel técnico se abre con la huella del desarrollador, guardada cifrada y aparte de la de los clientes para que nunca abra la puerta; la frase secreta queda como respaldo.</li>
         <li>Firmware propio para <strong>Arduino Nano</strong> por puerto serie.</li>
-        <li>27 suites de pruebas automáticas que corren sobre Electron.</li>
+        <li>31 suites de pruebas automáticas que corren sobre Electron.</li>
       </ul>
 
       <h2>Resultado</h2>
       <ul>
         <li><strong>En producción desde septiembre de 2026</strong> en el PC del mostrador, con más de 300 clientes registrados.</li>
         <li>Lo que antes estaba repartido en hojas de Excel (pagos, vencimientos, deudas y ventas) quedó en un solo sistema.</li>
-        <li>La entrada quedó controlada: la puerta solo se abre con una membresía vigente y cada ingreso queda registrado con su motivo.</li>
+        <li>La entrada quedó controlada: cada ingreso queda registrado con su motivo, y la puerta, una vez montada, solo se abrirá con un acceso válido.</li>
         <li>El cierre de caja por turno se arma solo, separado por medio de pago.</li>
       </ul>
 
@@ -157,6 +159,17 @@
       <section class="otros">
         <h2>Otros proyectos</h2>
         <div class="grilla">
+    <a class="tarjeta revelar" href="/proyectos/moton-repuestos">
+      <div class="portada"><img src="/img/moton-repuestos/portada.jpg" alt="Moton — Tienda de repuestos y accesorios para moto" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Propuesta para cliente</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>octubre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Moton<span>Tienda de repuestos y accesorios para moto</span></h3>
+        <p>Propuesta de sitio web para un local de repuestos y accesorios de moto (NS, Dominar, Duke y más): catálogo por marca y categoría, buscador, carrito y pedido por WhatsApp con la lista y el total ya escritos.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Demostración publicada en Vercel, con despliegue automático desde GitHub, lista para presentar al cliente.</span></p>
+        <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span><span class="etiqueta">JavaScript</span><span class="etiqueta">Vercel</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
     <a class="tarjeta revelar" href="/proyectos/hotel-suite-royal">
       <div class="portada"><img src="/img/hotel-suite-royal/portada.jpg" alt="Hotel Suite Royal — Landing page bilingüe" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Terminado</span></div></div>
       <div class="tarjeta-cuerpo">
@@ -165,17 +178,6 @@
         <p>Sitio web para un hotel 4 estrellas en Melgar (Tolima), en español e inglés, con galería filtrable, opiniones de huéspedes y reserva directa por WhatsApp con las fechas ya escritas en el mensaje.</p>
         <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Publicada en Vercel en español e inglés, con despliegue automático desde GitHub.</span></p>
         <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span><span class="etiqueta">JavaScript</span><span class="etiqueta">Vercel</span></div>
-        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
-      </div>
-    </a>
-    <a class="tarjeta revelar" href="/proyectos/hotel-pms">
-      <div class="portada"><img src="/img/hotel-pms/portada.png" alt="Hotel PMS — Administración hotelera" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>En curso</span></div></div>
-      <div class="tarjeta-cuerpo">
-        <div class="tarjeta-meta"><span><time>octubre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
-        <h3>Hotel PMS<span>Administración hotelera</span></h3>
-        <p>Sistema web de gestión hotelera (PMS) para un hotel pequeño en Colombia: reservas en línea de tiempo, check-in y check-out por pasos, cuenta del huésped, inventario, limpieza desde el celular, postventa y reportes legales TRA y SIRE.</p>
-        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>13 módulos operativos; el siguiente paso es el módulo de reservas en línea.</span></p>
-        <div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">Node.js</span><span class="etiqueta">Express</span><span class="etiqueta">SQLite</span><span class="etiqueta">+3</span></div>
         <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
       </div>
     </a></div>
