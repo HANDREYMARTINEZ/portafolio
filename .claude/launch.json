@@ -4,7 +4,7 @@
     {
       "name": "portafolio",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["-y", "serve", "-l", "3000", "F:/portafolio"],
+      "runtimeArgs": ["-y", "serve", "-l", "3000", "F:/H.A.M.C Solutions/raw/proyectos/personales/portafolio"],
       "port": 3000
     }
   ]

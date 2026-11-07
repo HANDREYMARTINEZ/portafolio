@@ -47,6 +47,7 @@
     .proyecto-linea h3 { font-size: 9.6pt; font-weight: 700; white-space: nowrap; }
     .proyecto-linea span { flex: 1; min-width: 0; color: var(--suave); font-size: 8.4pt; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .proyecto-linea a { color: var(--acento); text-decoration: none; font-size: 8.4pt; white-space: nowrap; }
+    #cv-proyectos .todos { display: inline-block; margin-top: 1pt; color: var(--acento); text-decoration: none; font-size: 8.4pt; font-weight: 600; }
 
     .contacto { list-style: none; display: flex; flex-direction: column; gap: 4pt; font-size: 8.4pt; }
     .contacto span { display: block; font-size: 7.6pt; color: var(--suave); text-transform: uppercase; letter-spacing: .08em; }
@@ -108,6 +109,11 @@
         <a href="https://andreymartinezportafolio.vercel.app/proyectos/reportes-con-ia">Ver proyecto ↗</a>
       </div>
       <div class="proyecto-linea">
+        <h3>GymApp</h3>
+        <span>Aplicación de escritorio</span>
+        <a href="https://andreymartinezportafolio.vercel.app/proyectos/app-gimnasio">Ver proyecto ↗</a>
+      </div>
+      <div class="proyecto-linea">
         <h3>Moton</h3>
         <span>Plataforma web</span>
         <a href="https://andreymartinezportafolio.vercel.app/proyectos/moton-repuestos">Ver proyecto ↗</a>
@@ -122,21 +128,7 @@
         <span>Plataforma web</span>
         <a href="https://andreymartinezportafolio.vercel.app/proyectos/hotel-pms">Ver proyecto ↗</a>
       </div>
-      <div class="proyecto-linea">
-        <h3>Web de gimnasio con entrenamiento personalizado</h3>
-        <span>Plataforma web</span>
-        <a href="https://andreymartinezportafolio.vercel.app/proyectos/pagina-gimnasio">Ver proyecto ↗</a>
-      </div>
-      <div class="proyecto-linea">
-        <h3>GymApp</h3>
-        <span>Aplicación de escritorio</span>
-        <a href="https://andreymartinezportafolio.vercel.app/proyectos/app-gimnasio">Ver proyecto ↗</a>
-      </div>
-      <div class="proyecto-linea">
-        <h3>Mis Finanzas</h3>
-        <span>Aplicación móvil</span>
-        <a href="https://andreymartinezportafolio.vercel.app/proyectos/mis-finanzas">Ver proyecto ↗</a>
-      </div></div>
+      <a class="todos" href="https://andreymartinezportafolio.vercel.app/#proyectos">Ver los 7 proyectos en el portafolio ↗</a></div>
     </section>
     <aside class="lateral">
       <h2 id="t-contacto">Contacto</h2>
@@ -162,8 +154,8 @@
     const tr = (v) => (v && typeof v === "object" ? v[idioma] || v.es || "" : v || "");
     const $ = (id) => document.getElementById(id);
     const T = {
-      es: { experiencia: "Experiencia", proyectos: "Proyectos destacados", contacto: "Contacto", formacion: "Formación", certificaciones: "Certificaciones", stack: "Habilidades", ubicacion: "Ubicación", portafolio: "Portafolio", titulo: "Hoja de vida", ver: "Ver proyecto", tipo_ia: "IA y datos", tipo_web: "Plataforma web", tipo_escritorio: "Aplicación de escritorio", tipo_movil: "Aplicación móvil" },
-      en: { experiencia: "Experience", proyectos: "Selected projects", contacto: "Contact", formacion: "Education", certificaciones: "Certifications", stack: "Skills", ubicacion: "Location", portafolio: "Portfolio", titulo: "Resume", ver: "View project", tipo_ia: "AI & data", tipo_web: "Web platform", tipo_escritorio: "Desktop application", tipo_movil: "Mobile app" },
+      es: { experiencia: "Experiencia", proyectos: "Proyectos destacados", contacto: "Contacto", formacion: "Formación", certificaciones: "Certificaciones", stack: "Habilidades", ubicacion: "Ubicación", portafolio: "Portafolio", titulo: "Hoja de vida", ver: "Ver proyecto", todos: "Ver los {n} proyectos en el portafolio", tipo_ia: "IA y datos", tipo_web: "Plataforma web", tipo_escritorio: "Aplicación de escritorio", tipo_movil: "Aplicación móvil" },
+      en: { experiencia: "Experience", proyectos: "Selected projects", contacto: "Contact", formacion: "Education", certificaciones: "Certifications", stack: "Skills", ubicacion: "Location", portafolio: "Portfolio", titulo: "Resume", ver: "View project", todos: "See all {n} projects in the portfolio", tipo_ia: "AI & data", tipo_web: "Web platform", tipo_escritorio: "Desktop application", tipo_movil: "Mobile app" },
     }[idioma];
     const PORTAFOLIO = "https://andreymartinezportafolio.vercel.app";
 
@@ -183,14 +175,20 @@
         <ul>${(x.logros?.[idioma] || x.logros?.es || []).map((l) => `<li>${l}</li>`).join("")}</ul>
       </div>`).join("");
 
-    // Los de IA primero y el resto del más reciente al más antiguo
-    const proyectos = [...PROYECTOS].sort((a, b) => b.fecha.localeCompare(a.fecha)).sort((a, b) => (b.tipo === "ia") - (a.tipo === "ia"));
+    // Para que la hoja quepa en una página van solo los MAX_PROYECTOS más relevantes: los de IA primero,
+    // luego el destacado y el resto del más reciente al más antiguo; enCV: false deja uno fuera.
+    // Si quedan proyectos sin mostrar, una última línea enlaza a todos en el portafolio.
+    const MAX_PROYECTOS = 5;
+    const proyectos = PROYECTOS.filter((p) => p.enCV !== false)
+      .sort((a, b) => (b.tipo === "ia") - (a.tipo === "ia") || !!b.destacado - !!a.destacado || b.fecha.localeCompare(a.fecha))
+      .slice(0, MAX_PROYECTOS);
     $("cv-proyectos").innerHTML = proyectos.map((p) => `
       <div class="proyecto-linea">
         <h3>${tr(p.titulo).split(" — ")[0]}</h3>
         <span>${T["tipo_" + p.tipo] || ""}</span>
         <a href="${PORTAFOLIO}/proyectos/${p.slug}">${T.ver} ↗</a>
-      </div>`).join("");
+      </div>`).join("") + (proyectos.length < PROYECTOS.length ? `
+      <a class="todos" href="${PORTAFOLIO}/#proyectos">${T.todos.replace("{n}", PROYECTOS.length)} ↗</a>` : "");
 
     const contacto = [
       [T.ubicacion, tr(SITIO.pais)],
@@ -207,6 +205,8 @@
     $("cv-certificaciones").innerHTML = SITIO.certificaciones.map(estudio).join("");
     $("cv-stack").innerHTML = SITIO.stack.map((g) => `<div class="grupo"><strong>${tr(g.grupo)}</strong><p>${g.items.map(tr).join(" · ")}</p></div>`).join("");
   </script>
+
+
 
 
 

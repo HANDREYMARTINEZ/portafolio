@@ -6,6 +6,9 @@
 //  - conIA: herramienta de IA con la que se desarrolló, ej. "Claude Code" (chip "Hecho con IA")
 //  - estado: opcional, ej. { es: "En producción", en: "In production" }
 //  - destacado: true para mostrarlo en la portada (solo uno)
+//  - enCV: false para dejarlo fuera de la hoja de vida (opcional). La hoja muestra solo los
+//    5 más relevantes (los de IA, el destacado y luego los más recientes) y un enlace a todos,
+//    para seguir en una página; con enCV: false se elige cuál ceder su lugar
 //  - etiquetas: tecnologías usadas
 //  - resultado: una línea con el resultado principal para la tarjeta { es, en } (solo datos reales)
 //  - cifras: 2 a 4 datos de impacto reales { valor, etiqueta: { es, en } }
