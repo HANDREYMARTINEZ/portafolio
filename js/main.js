@@ -168,7 +168,6 @@ function pintarComun() {
   document.querySelectorAll("[data-cv]").forEach((a) => (a.href = `/cv/Andrey-Martinez-CV-${idioma}.pdf`));
   document.querySelectorAll("[data-cv-ver]").forEach((a) => (a.href = `/hoja-de-vida?lang=${idioma}`));
   document.querySelectorAll("[data-sitio]").forEach((el) => (el.textContent = tr(SITIO[el.dataset.sitio])));
-  if (SITIO.foto) document.querySelectorAll(".logo-marca").forEach((el) => (el.innerHTML = `<img src="${SITIO.foto}" alt="" />`));
   document.querySelectorAll("i[data-icono]").forEach((el) => (el.outerHTML = ico(el.dataset.icono)));
   document.querySelectorAll(".btn-menu").forEach((b) => {
     b.innerHTML = ico("menu");
@@ -194,7 +193,28 @@ function pintarComun() {
 }
 
 // ---------- Portada ----------
+// Lluvia binaria del inicio (identidad "Código binario"): columnas de 0 y 1 que bajan despacio.
+// Solo decoración (aria-hidden). Se arma una vez; el texto va repetido para que el bucle no salte.
+function pintarLluvia() {
+  const caja = $("lluvia");
+  if (!caja || caja.dataset.lista) return;
+  const columnas = innerWidth < 760 ? 12 : 26;
+  let html = "";
+  for (let i = 0; i < columnas; i++) {
+    const largo = 18 + Math.floor(Math.random() * 18);
+    const digitos = Array.from({ length: largo }, () => (Math.random() < 0.5 ? "0" : "1")).join("\n");
+    const izquierda = ((i + Math.random() * 0.7) / columnas) * 100;
+    const opacidad = (0.1 + Math.random() * 0.28).toFixed(2);
+    const duracion = (16 + Math.random() * 22).toFixed(1);
+    const retraso = (-Math.random() * 30).toFixed(1);
+    html += `<span style="left:${izquierda.toFixed(1)}%;opacity:${opacidad};animation-duration:${duracion}s;animation-delay:${retraso}s">${digitos}\n${digitos}</span>`;
+  }
+  caja.innerHTML = html;
+  caja.dataset.lista = "1";
+}
+
 function pintarHero() {
+  pintarLluvia();
   document.title = `${SITIO.nombreCorto} — ${tr(SITIO.rol).split("·")[0].trim()}`;
   ponerDescripcion(`${SITIO.nombre} — ${tr(SITIO.rol)}. ${tr(SITIO.frase)}`);
   $("disponible").hidden = !SITIO.disponible;

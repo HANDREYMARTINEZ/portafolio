@@ -21,6 +21,307 @@
 
 const PROYECTOS = [
   {
+    slug: "planillero-voley",
+    titulo: { es: "Planillero Vóley — Planilla de juego para la mesa de control", en: "Planillero Vóley — Volleyball scoresheet for the scorer's table" },
+    resumen: {
+      es: "Aplicación instalable para iPad que lleva el partido de voleibol con las reglas FIVB, funciona sin internet y al final llena la planilla oficial en PDF. Incluye hoja de posiciones con QR para entrenadores y lector de alineaciones para árbitros.",
+      en: "Installable iPad app that runs a volleyball match under FIVB rules, works offline and fills in the official PDF scoresheet at the end. Includes a QR lineup sheet for coaches and a lineup scanner for referees.",
+    },
+    fecha: "2026-11-07",
+    tipo: "movil",
+    conIA: "Claude Code",
+    estado: { es: "Publicada", en: "Live" },
+    etiquetas: ["HTML", "JavaScript", "PWA", "Service Worker", "pdf-lib", "jsQR", "Vercel"],
+    resultado: {
+      es: "La mesa de control lleva el partido en el iPad y descarga la planilla oficial ya diligenciada, sin depender del internet del coliseo.",
+      en: "The scorer's table runs the match on the iPad and downloads the official scoresheet already filled in, without relying on the venue's internet.",
+    },
+    cifras: [
+      { valor: "3", etiqueta: { es: "modos: mesa de control, entrenadores y árbitros", en: "modes: scorer's table, coaches and referees" } },
+      { valor: "0", etiqueta: { es: "conexión necesaria durante el partido: funciona sin internet", en: "connection needed during the match: works offline" } },
+      { valor: "1", etiqueta: { es: "archivo HTML con toda la aplicación, sin servidor", en: "HTML file with the whole app, no server" } },
+    ],
+    arquitectura: [
+      {
+        capa: { es: "Partido · iPad", en: "Match · iPad" },
+        nodos: [
+          { titulo: { es: "Mesa de control", en: "Scorer's table" }, detalle: { es: "Marcador, rotaciones, cambios, líbero, tiempos y sanciones", en: "Score, rotations, substitutions, libero, timeouts and sanctions" } },
+          { titulo: { es: "Firmas", en: "Signatures" }, detalle: { es: "Capitanes, técnicos y árbitros firman con el dedo", en: "Captains, coaches and referees sign with a finger" } },
+        ],
+      },
+      {
+        capa: { es: "Alineaciones · QR", en: "Lineups · QR" },
+        nodos: [
+          { titulo: { es: "Hoja de posiciones", en: "Lineup sheet" }, detalle: { es: "El entrenador arma la rotación y genera el QR del set", en: "The coach sets the rotation and generates the set's QR" } },
+          { titulo: { es: "Lector", en: "Scanner" }, detalle: { es: "Cámara o foto; mismo formato que AppLineUp", en: "Camera or photo; same format as AppLineUp" } },
+        ],
+      },
+      {
+        capa: { es: "Salida y publicación", en: "Output & hosting" },
+        nodos: [
+          { titulo: { es: "PDF oficial", en: "Official PDF" }, detalle: { es: "pdf-lib escribe sobre la plantilla del torneo", en: "pdf-lib writes onto the tournament template" } },
+          { titulo: "Service Worker", detalle: { es: "Guarda la app en el dispositivo para usarla sin internet", en: "Stores the app on the device for offline use" } },
+          { titulo: "Vercel", detalle: { es: "Dirección https para instalarla y usar la cámara", en: "HTTPS address to install it and use the camera" } },
+        ],
+      },
+    ],
+    imagen: "/img/planillero/portada.jpg",
+    demo: "https://planillero-pwa.vercel.app",
+    codigo: "https://github.com/HANDREYMARTINEZ/planillero-voley",
+    contenido: {
+      es: `<p>Planillero es la planilla de juego de voleibol que usa la mesa de control durante los partidos. Se desarrolló para los <strong>Juegos Deportivos y Paradeportivos Identidad Cundinamarca 2025</strong>: se instala en el iPad desde Safari, funciona sin internet y, al terminar el partido, llena la planilla oficial del torneo en PDF. La desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>Los equipos, jugadoras y árbitros de las capturas son datos de ejemplo.</p>
+
+      <h2>El problema</h2>
+      <p>En la mesa de control la planilla se diligencia a mano mientras el partido avanza: puntos, rotaciones, cambios, tiempos, líbero y sanciones, todo con las reglas de la FIVB. Es fácil equivocarse con la rotación o con el número de cambios, y al final hay que pasar todo en limpio al formato oficial. Además, los coliseos no siempre tienen buena señal, así que la herramienta no podía depender de internet.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Nuevo partido:</strong> competición, categoría, sede, árbitros, formato (mejor de 3 o de 5) y la nómina de cada equipo con líberos y capitán; también se puede pegar la lista.</li>
+        <li><strong>Firmas de inicio y cierre</strong> de capitanes, técnicos y árbitros, con el dedo o el lápiz.</li>
+        <li><strong>Formación por set:</strong> las seis zonas de cada equipo, quién saca primero y el lado de la cancha.</li>
+        <li><strong>Marcador con reglas FIVB:</strong> punto con un toque, rotación automática al recuperar el saque, cambios con su límite, entrada y salida del líbero, tiempos, sanciones y registro de cada jugada con opción de deshacer.</li>
+        <li><strong>Planilla oficial en PDF:</strong> al cerrar, la aplicación escribe sobre la plantilla del torneo la formación, los puntos al cambio, los turnos al saque, los resultados por set, la nómina y las firmas.</li>
+        <li><strong>Entrenadores:</strong> hoja de posiciones de voleibol (6 zonas) o minivoleibol (4), revisión de errores de alineación y un código QR por set.</li>
+        <li><strong>Árbitros:</strong> lector de alineaciones con la cámara o desde una foto; muestra la cancha con las dos formaciones y la zona de saque.</li>
+        <li><strong>Mesa de control:</strong> en la formación del set, «Escanear QR» llena las seis zonas y avisa si un dorsal no está en la nómina.</li>
+        <li><strong>Copias de seguridad:</strong> exportar e importar los partidos en un archivo.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li>Toda la aplicación vive en <strong>un solo archivo HTML</strong> con JavaScript, sin frameworks ni servidor; los partidos se guardan en el propio dispositivo.</li>
+        <li><strong>PWA instalable</strong>: un Service Worker guarda la app, la plantilla oficial y las librerías al instalarla; desde ahí funciona sin conexión. Cada versión cambia su número para que los iPad reciban la actualización solos.</li>
+        <li><strong>pdf-lib</strong> escribe sobre el PDF oficial; <strong>qrcode-generator</strong> crea los QR y <strong>jsQR</strong> los lee desde la cámara o una foto.</li>
+        <li>Los QR usan <strong>el mismo formato que AppLineUp</strong> (RFEVB), así que las dos aplicaciones se leen entre sí.</li>
+        <li>Publicada en <strong>Vercel</strong> (https, necesario para instalarla en el iPad y usar la cámara); el código está en GitHub con su historial de versiones.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>La mesa de control lleva el partido en el iPad y descarga la planilla oficial ya diligenciada.</li>
+        <li>La versión 2 suma las alineaciones por QR para entrenadores y árbitros, y se publicó en la misma dirección: los iPad se actualizan sin perder los partidos guardados.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/planillero/04-marcador.jpg" target="_blank" rel="noopener"><img src="/img/planillero/04-marcador.jpg" alt="Marcador con la cancha y las rotaciones" loading="lazy" /></a><figcaption>Marcador con la cancha y las rotaciones</figcaption></figure>
+        <figure><a href="/img/planillero/06-planilla-oficial.jpg" target="_blank" rel="noopener"><img src="/img/planillero/06-planilla-oficial.jpg" alt="Planilla oficial llenada por la aplicación" loading="lazy" /></a><figcaption>Planilla oficial llenada por la aplicación</figcaption></figure>
+        <figure><a href="/img/planillero/03-formacion.jpg" target="_blank" rel="noopener"><img src="/img/planillero/03-formacion.jpg" alt="Formación del set" loading="lazy" /></a><figcaption>Formación del set</figcaption></figure>
+        <figure><a href="/img/planillero/02-nuevo-partido.jpg" target="_blank" rel="noopener"><img src="/img/planillero/02-nuevo-partido.jpg" alt="Datos del partido y nóminas" loading="lazy" /></a><figcaption>Datos del partido y nóminas</figcaption></figure>
+        <figure><a href="/img/planillero/05-resumen.jpg" target="_blank" rel="noopener"><img src="/img/planillero/05-resumen.jpg" alt="Resumen del partido y descarga del PDF" loading="lazy" /></a><figcaption>Resumen del partido y descarga del PDF</figcaption></figure>
+        <figure><a href="/img/planillero/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/planillero/01-inicio.jpg" alt="Inicio con los tres modos" loading="lazy" /></a><figcaption>Inicio con los tres modos</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/planillero/20-movil-hoja-qr.jpg" target="_blank" rel="noopener"><img src="/img/planillero/20-movil-hoja-qr.jpg" alt="QR de la alineación para el entrenador" loading="lazy" /></a><figcaption>QR de la alineación</figcaption></figure>
+        <figure><a href="/img/planillero/21-movil-arbitros.jpg" target="_blank" rel="noopener"><img src="/img/planillero/21-movil-arbitros.jpg" alt="Lector de alineaciones para árbitros" loading="lazy" /></a><figcaption>Lector para árbitros</figcaption></figure>
+        <figure><a href="/img/planillero/22-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/planillero/22-movil-inicio.jpg" alt="Inicio en el celular" loading="lazy" /></a><figcaption>Inicio</figcaption></figure>
+      </div>`,
+      en: `<p>Planillero is the volleyball scoresheet used by the scorer's table during matches. It was built for the <strong>Identidad Cundinamarca 2025 Sports and Para-sports Games</strong>: it installs on the iPad from Safari, works offline and, when the match ends, fills in the tournament's official PDF scoresheet. I built it with the help of artificial intelligence (Claude Code).</p>
+      <p>Teams, players and referees in the screenshots are sample data.</p>
+
+      <h2>The problem</h2>
+      <p>At the scorer's table the scoresheet is filled in by hand while the match goes on: points, rotations, substitutions, timeouts, libero and sanctions, all under FIVB rules. It is easy to get a rotation or the substitution count wrong, and at the end everything has to be copied neatly onto the official form. Venues do not always have good signal either, so the tool could not depend on the internet.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>New match:</strong> competition, category, venue, referees, format (best of 3 or 5) and each team's roster with liberos and captain; the list can also be pasted.</li>
+        <li><strong>Start and closing signatures</strong> from captains, coaches and referees, with a finger or a stylus.</li>
+        <li><strong>Lineup per set:</strong> each team's six zones, who serves first and the side of the court.</li>
+        <li><strong>Scoreboard with FIVB rules:</strong> one tap per point, automatic rotation on side-out, substitutions with their limit, libero in and out, timeouts, sanctions and a log of every rally with undo.</li>
+        <li><strong>Official PDF scoresheet:</strong> on closing, the app writes the lineups, points at substitution, service turns, set results, roster and signatures onto the tournament template.</li>
+        <li><strong>Coaches:</strong> lineup sheet for volleyball (6 zones) or mini-volleyball (4), lineup error checks and one QR code per set.</li>
+        <li><strong>Referees:</strong> lineup scanner using the camera or a photo; it shows the court with both lineups and the serving zone.</li>
+        <li><strong>Scorer's table:</strong> in the set lineup, "Scan QR" fills the six zones and warns if a shirt number is not on the roster.</li>
+        <li><strong>Backups:</strong> export and import matches to a file.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li>The whole app lives in <strong>a single HTML file</strong> with JavaScript, no frameworks or server; matches are stored on the device itself.</li>
+        <li><strong>Installable PWA</strong>: a Service Worker stores the app, the official template and the libraries on install; from then on it works offline. Each release changes its version number so iPads pick up the update on their own.</li>
+        <li><strong>pdf-lib</strong> writes onto the official PDF; <strong>qrcode-generator</strong> creates the QR codes and <strong>jsQR</strong> reads them from the camera or a photo.</li>
+        <li>The QR codes use <strong>the same format as AppLineUp</strong> (Spanish Volleyball Federation), so both apps can read each other's codes.</li>
+        <li>Hosted on <strong>Vercel</strong> (HTTPS, required to install it on the iPad and use the camera); the source code is on GitHub with its version history.</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>The scorer's table runs the match on the iPad and downloads the official scoresheet already filled in.</li>
+        <li>Version 2 adds QR lineups for coaches and referees and was published at the same address: iPads update without losing saved matches.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <p>The app is in Spanish.</p>
+      <div class="galeria">
+        <figure><a href="/img/planillero/04-marcador.jpg" target="_blank" rel="noopener"><img src="/img/planillero/04-marcador.jpg" alt="Scoreboard with the court and rotations" loading="lazy" /></a><figcaption>Scoreboard with the court and rotations</figcaption></figure>
+        <figure><a href="/img/planillero/06-planilla-oficial.jpg" target="_blank" rel="noopener"><img src="/img/planillero/06-planilla-oficial.jpg" alt="Official scoresheet filled in by the app" loading="lazy" /></a><figcaption>Official scoresheet filled in by the app</figcaption></figure>
+        <figure><a href="/img/planillero/03-formacion.jpg" target="_blank" rel="noopener"><img src="/img/planillero/03-formacion.jpg" alt="Set lineup" loading="lazy" /></a><figcaption>Set lineup</figcaption></figure>
+        <figure><a href="/img/planillero/02-nuevo-partido.jpg" target="_blank" rel="noopener"><img src="/img/planillero/02-nuevo-partido.jpg" alt="Match details and rosters" loading="lazy" /></a><figcaption>Match details and rosters</figcaption></figure>
+        <figure><a href="/img/planillero/05-resumen.jpg" target="_blank" rel="noopener"><img src="/img/planillero/05-resumen.jpg" alt="Match summary and PDF download" loading="lazy" /></a><figcaption>Match summary and PDF download</figcaption></figure>
+        <figure><a href="/img/planillero/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/planillero/01-inicio.jpg" alt="Home with the three modes" loading="lazy" /></a><figcaption>Home with the three modes</figcaption></figure>
+      </div>
+      <h3>On mobile</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/planillero/20-movil-hoja-qr.jpg" target="_blank" rel="noopener"><img src="/img/planillero/20-movil-hoja-qr.jpg" alt="Lineup QR for the coach" loading="lazy" /></a><figcaption>Lineup QR</figcaption></figure>
+        <figure><a href="/img/planillero/21-movil-arbitros.jpg" target="_blank" rel="noopener"><img src="/img/planillero/21-movil-arbitros.jpg" alt="Lineup scanner for referees" loading="lazy" /></a><figcaption>Referee scanner</figcaption></figure>
+        <figure><a href="/img/planillero/22-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/planillero/22-movil-inicio.jpg" alt="Home on mobile" loading="lazy" /></a><figcaption>Home</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
+    slug: "bicifest-colombia",
+    titulo: { es: "BiciFest Colombia 2026 — Sitio, inscripciones y panel del evento", en: "BiciFest Colombia 2026 — Website, registrations and event dashboard" },
+    resumen: {
+      es: "Sitio oficial de la décima edición de BiciFest en Villa de Guaduas: inscripciones con exención firmada y PDF, código QR por inscripción, verificación en la entrada con la cámara y panel con reportes en Excel y PDF, en producción con PHP y MySQL.",
+      en: "Official website for the tenth BiciFest in Villa de Guaduas: registrations with a signed waiver and PDF, a QR code per registration, camera check-in at the entrance and a dashboard with Excel and PDF reports, in production on PHP and MySQL.",
+    },
+    fecha: "2026-11-05",
+    tipo: "web",
+    conIA: "Claude Code",
+    estado: { es: "En producción", en: "In production" },
+    etiquetas: ["React", "TypeScript", "Tailwind CSS", "Vite", "PHP", "MySQL", "jsPDF", "Hostinger"],
+    resultado: {
+      es: "En producción en bicifestcolombia.com desde el 5 de noviembre de 2026, con inscripciones, QR y verificación probados de punta a punta.",
+      en: "Live at bicifestcolombia.com since November 5, 2026, with registrations, QR codes and check-in tested end to end.",
+    },
+    cifras: [
+      { valor: "6", etiqueta: { es: "pruebas en dos días, con cupos por competencia", en: "events over two days, with spots per competition" } },
+      { valor: "2", etiqueta: { es: "perfiles en el panel: organizador y puerta", en: "dashboard roles: organizer and gate" } },
+      { valor: "110/110", etiqueta: { es: "pruebas de la API superadas en la auditoría", en: "API tests passed in the audit" } },
+      { valor: "100", etiqueta: { es: "en accesibilidad, buenas prácticas y SEO (Lighthouse móvil)", en: "in accessibility, best practices and SEO (Lighthouse mobile)" } },
+    ],
+    arquitectura: [
+      {
+        capa: { es: "Sitio · React", en: "Website · React" },
+        nodos: [
+          { titulo: { es: "Landing", en: "Landing page" }, detalle: { es: "Agenda, pruebas, galería, patrocinadores y cómo llegar", en: "Schedule, events, gallery, sponsors and directions" } },
+          { titulo: { es: "Inscripción", en: "Registration" }, detalle: { es: "Formulario por categoría, firma y PDF en el navegador", en: "Form by category, signature and PDF in the browser" } },
+        ],
+      },
+      {
+        capa: { es: "Servidor · PHP", en: "Server · PHP" },
+        nodos: [
+          { titulo: "API", detalle: { es: "Valida, recalcula precios y controla los cupos", en: "Validates, recalculates prices and enforces spots" } },
+          { titulo: "MySQL", detalle: { es: "Inscripciones, pagos, verificaciones y bitácora", en: "Registrations, payments, check-ins and audit log" } },
+        ],
+      },
+      {
+        capa: { es: "Evento", en: "Event" },
+        nodos: [
+          { titulo: "QR", detalle: { es: "Uno por inscripción, en la confirmación y en el PDF", en: "One per registration, on the confirmation and the PDF" } },
+          { titulo: { es: "Panel", en: "Dashboard" }, detalle: { es: "Verificar con la cámara, pagos y reportes Excel/PDF", en: "Camera check-in, payments and Excel/PDF reports" } },
+        ],
+      },
+    ],
+    imagen: "/img/bicifest/portada.jpg",
+    demo: "https://www.bicifestcolombia.com",
+    contenido: {
+      es: `<p>BiciFest Colombia celebra su décima edición el 5 y 6 de diciembre de 2026 en Villa de Guaduas, Cundinamarca: un fin de semana de competencias, recorridos en familia, feria comercial y actos culturales alrededor de la bicicleta. Para su organizador, Grupo JG Eventos, desarrollé el sitio oficial con las inscripciones en línea y el panel que se usa el día del evento. Lo desarrollé con apoyo de inteligencia artificial (Claude Code), y H.A.M.C Solutions es además patrocinador principal de esta edición.</p>
+      <p>Las capturas son del sitio publicado; no muestran el panel, que contiene datos reales de los participantes.</p>
+
+      <h2>El problema</h2>
+      <p>El evento necesitaba recibir inscripciones para seis pruebas, con hasta 200 cupos por competencia, y cada participante debía diligenciar y firmar una exención de responsabilidad. El día del evento, además, había que confirmar en la entrada quién estaba inscrito y al día con el pago. El objetivo era una página que contara el evento, recibiera las inscripciones con la firma incluida y diera a los organizadores una forma rápida de verificar a cada persona en la llegada.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Sitio del evento:</strong> cuenta regresiva, qué es BiciFest con una entrevista en video, las seis pruebas, agenda de los dos días con filtros y archivo de calendario, patrocinadores por nivel, galería con fotos y videos de 2025, hospedaje, mapa y preguntas frecuentes.</li>
+        <li><strong>Inscripción por pasos:</strong> participante o menor con su acudiente, prueba y categoría por edad y género, lectura y firma de la exención en el celular y un PDF con la inscripción.</li>
+        <li><strong>Código QR por inscripción:</strong> aparece en la confirmación y en el encabezado del PDF.</li>
+        <li><strong>Panel del evento</strong> con dos perfiles: el organizador ve resumen, inscripciones, pagos, reportes y cuentas; la puerta solo verifica. Escanear el QR deja la inscripción verificada y una segunda lectura avisa que ya lo estaba.</li>
+        <li><strong>Pagos coordinados por WhatsApp:</strong> el panel guarda el estado, el método y la referencia de cada pago.</li>
+        <li><strong>Reportes:</strong> Excel por categoría, planillas en PDF para imprimir y filtro del día.</li>
+        <li><strong>Política de tratamiento de datos</strong> aprobada por el cliente y enlazada desde el formulario.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>React, TypeScript y Tailwind CSS</strong> con Vite. Todo el contenido editable vive en archivos de datos, así que agenda, pruebas o patrocinadores se cambian sin tocar los componentes.</li>
+        <li>Dos escenas animadas con el desplazamiento: se atraviesa una rueda hasta la plaza y una foto de montaña se abre a pantalla completa.</li>
+        <li><strong>API en PHP con MySQL</strong> en Hostinger: valida cada inscripción, recalcula los precios en el servidor, controla los cupos por competencia y evita inscripciones repetidas.</li>
+        <li>Seguridad revisada con una auditoría completa: cabeceras y política de contenido, límites de intentos por persona, perfiles con permisos y CSV sin fórmulas.</li>
+        <li>PDF generado en el navegador con <strong>jsPDF</strong> y lectura de QR con la cámara del celular.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>En producción en <strong>bicifestcolombia.com</strong> desde el 5 de noviembre de 2026, con la prueba completa de inscripción, QR y escaneo hecha en el sitio publicado.</li>
+        <li>Auditoría de calidad y seguridad: 110 de 110 pruebas de la API superadas y Lighthouse móvil con 100 en accesibilidad, buenas prácticas y SEO.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/bicifest/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/01-inicio.jpg" alt="Inicio con la cuenta regresiva" loading="lazy" /></a><figcaption>Inicio con la cuenta regresiva</figcaption></figure>
+        <figure><a href="/img/bicifest/03-inscripciones.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/03-inscripciones.jpg" alt="Inscripciones abiertas" loading="lazy" /></a><figcaption>Inscripciones abiertas</figcaption></figure>
+        <figure><a href="/img/bicifest/04-formulario.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/04-formulario.jpg" alt="Formulario de inscripción por pasos" loading="lazy" /></a><figcaption>Formulario de inscripción por pasos</figcaption></figure>
+        <figure><a href="/img/bicifest/02-agenda.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/02-agenda.jpg" alt="Agenda de los dos días" loading="lazy" /></a><figcaption>Agenda de los dos días</figcaption></figure>
+        <figure><a href="/img/bicifest/05-patrocinadores.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/05-patrocinadores.jpg" alt="Patrocinadores por nivel" loading="lazy" /></a><figcaption>Patrocinadores por nivel</figcaption></figure>
+        <figure><a href="/img/bicifest/06-como-llegar.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/06-como-llegar.jpg" alt="Cómo llegar a la Villa de Guaduas" loading="lazy" /></a><figcaption>Cómo llegar</figcaption></figure>
+        <figure><a href="/img/bicifest/07-hamc.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/07-hamc.jpg" alt="Sección de H.A.M.C Solutions al final del sitio" loading="lazy" /></a><figcaption>Sección de H.A.M.C Solutions</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/bicifest/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/20-movil-inicio.jpg" alt="Inicio en el celular" loading="lazy" /></a><figcaption>Inicio</figcaption></figure>
+        <figure><a href="/img/bicifest/21-movil-inscripciones.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/21-movil-inscripciones.jpg" alt="Inscripciones en el celular" loading="lazy" /></a><figcaption>Inscripciones</figcaption></figure>
+        <figure><a href="/img/bicifest/22-movil-hamc.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/22-movil-hamc.jpg" alt="Sección de H.A.M.C Solutions en el celular" loading="lazy" /></a><figcaption>H.A.M.C Solutions</figcaption></figure>
+      </div>`,
+      en: `<p>BiciFest Colombia holds its tenth edition on December 5 and 6, 2026 in Villa de Guaduas, Cundinamarca: a weekend of races, family rides, a trade fair and cultural events built around the bicycle. For its organizer, Grupo JG Eventos, I built the official website with online registration and the dashboard used on event day. I built it with the help of artificial intelligence (Claude Code), and H.A.M.C Solutions is also a main sponsor of this edition.</p>
+      <p>The screenshots come from the live site; they do not show the dashboard, which holds real participant data.</p>
+
+      <h2>The problem</h2>
+      <p>The event needed to take registrations for six events, with up to 200 spots per competition, and every participant had to fill in and sign a liability waiver. On event day, someone also had to confirm at the entrance who was registered and up to date with payment. The goal was a page that presents the event, takes registrations with the signature included and gives organizers a fast way to check each person in on arrival.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Event website:</strong> countdown, what BiciFest is with a video interview, the six events, a two-day schedule with filters and a calendar file, sponsors by tier, a gallery with 2025 photos and videos, lodging, map and FAQ.</li>
+        <li><strong>Step-by-step registration:</strong> adult or minor with a guardian, event and category by age and gender, reading and signing the waiver on the phone and a PDF of the registration.</li>
+        <li><strong>QR code per registration:</strong> shown on the confirmation and in the PDF header.</li>
+        <li><strong>Event dashboard</strong> with two roles: organizers see the summary, registrations, payments, reports and accounts; the gate only checks people in. Scanning the QR marks the registration as verified, and a second scan warns that it already was.</li>
+        <li><strong>Payments coordinated over WhatsApp:</strong> the dashboard stores each payment's status, method and reference.</li>
+        <li><strong>Reports:</strong> Excel by category, printable PDF sheets and a today filter.</li>
+        <li><strong>Data processing policy</strong> approved by the client and linked from the form.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>React, TypeScript and Tailwind CSS</strong> with Vite. All editable content lives in data files, so the schedule, events or sponsors change without touching the components.</li>
+        <li>Two scroll-driven scenes: you travel through a bicycle wheel into the town square, and a mountain photo opens up to full screen.</li>
+        <li><strong>PHP API with MySQL</strong> on Hostinger: it validates every registration, recalculates prices on the server, enforces the spots per event and prevents duplicate registrations.</li>
+        <li>Security reviewed with a full audit: headers and content policy, per-person attempt limits, role permissions and formula-free CSV exports.</li>
+        <li>PDF generated in the browser with <strong>jsPDF</strong> and QR scanning with the phone's camera.</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Live at <strong>bicifestcolombia.com</strong> since November 5, 2026, with the full registration, QR and scanning flow tested on the published site.</li>
+        <li>Quality and security audit: 110 of 110 API tests passed and Lighthouse mobile scores of 100 in accessibility, best practices and SEO.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <p>The site is in Spanish.</p>
+      <div class="galeria">
+        <figure><a href="/img/bicifest/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/01-inicio.jpg" alt="Home page with the countdown" loading="lazy" /></a><figcaption>Home page with the countdown</figcaption></figure>
+        <figure><a href="/img/bicifest/03-inscripciones.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/03-inscripciones.jpg" alt="Registrations open" loading="lazy" /></a><figcaption>Registrations open</figcaption></figure>
+        <figure><a href="/img/bicifest/04-formulario.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/04-formulario.jpg" alt="Step-by-step registration form" loading="lazy" /></a><figcaption>Step-by-step registration form</figcaption></figure>
+        <figure><a href="/img/bicifest/02-agenda.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/02-agenda.jpg" alt="Two-day schedule" loading="lazy" /></a><figcaption>Two-day schedule</figcaption></figure>
+        <figure><a href="/img/bicifest/05-patrocinadores.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/05-patrocinadores.jpg" alt="Sponsors by tier" loading="lazy" /></a><figcaption>Sponsors by tier</figcaption></figure>
+        <figure><a href="/img/bicifest/06-como-llegar.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/06-como-llegar.jpg" alt="Directions to Villa de Guaduas" loading="lazy" /></a><figcaption>Directions</figcaption></figure>
+        <figure><a href="/img/bicifest/07-hamc.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/07-hamc.jpg" alt="H.A.M.C Solutions section at the end of the site" loading="lazy" /></a><figcaption>H.A.M.C Solutions section</figcaption></figure>
+      </div>
+      <h3>On mobile</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/bicifest/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/20-movil-inicio.jpg" alt="Home page on mobile" loading="lazy" /></a><figcaption>Home page</figcaption></figure>
+        <figure><a href="/img/bicifest/21-movil-inscripciones.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/21-movil-inscripciones.jpg" alt="Registrations on mobile" loading="lazy" /></a><figcaption>Registrations</figcaption></figure>
+        <figure><a href="/img/bicifest/22-movil-hamc.jpg" target="_blank" rel="noopener"><img src="/img/bicifest/22-movil-hamc.jpg" alt="H.A.M.C Solutions section on mobile" loading="lazy" /></a><figcaption>H.A.M.C Solutions</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
     slug: "moton-repuestos",
     titulo: { es: "Moton — Tienda de repuestos y accesorios para moto", en: "Moton — Motorcycle parts and accessories store" },
     resumen: {

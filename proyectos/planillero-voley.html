@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planillero Vóley — Planilla de juego para la mesa de control — Andrey Martínez</title>
+  <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/img/marca/apple-touch-icon.png">
+  <meta name="theme-color" content="#07101D">
+  <link rel="stylesheet" href="/css/estilos.css">
+<meta name="description" content="Aplicación instalable para iPad que lleva el partido de voleibol con las reglas FIVB, funciona sin internet y al final llena la planilla oficial en PDF. Incluye hoja de posiciones con QR para entrenadores y lector de alineaciones para árbitros."><link rel="canonical" href="https://andreymartinezportafolio.vercel.app/proyectos/planillero-voley"><meta property="og:type" content="article"><meta property="og:site_name" content="H.A.M.C Soluciones en IA"><meta property="og:title" content="Planillero Vóley — Planilla de juego para la mesa de control — Andrey Martínez"><meta property="og:description" content="Aplicación instalable para iPad que lleva el partido de voleibol con las reglas FIVB, funciona sin internet y al final llena la planilla oficial en PDF. Incluye hoja de posiciones con QR para entrenadores y lector de alineaciones para árbitros."><meta property="og:url" content="https://andreymartinezportafolio.vercel.app/proyectos/planillero-voley"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://andreymartinezportafolio.vercel.app/img/og/planillero-voley.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="https://andreymartinezportafolio.vercel.app/img/og/planillero-voley.jpg"></head>
+<body>
+  <header class="nav">
+    <div class="contenedor nav-interior">
+      <a href="/" class="logo" aria-label="H.A.M.C Solutions"><img class="logo-img logo-oscuro" src="/img/marca/logo-horizontal-oscuro.png" alt="" width="444" height="120"><img class="logo-img logo-claro" src="/img/marca/logo-horizontal-claro.png" alt="" width="444" height="120"></a>
+      <nav id="menu" class="menu">
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#blog" data-t="nav_blog" data-seccion="blog">Blog</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="menu-contacto" data-cv="" download="" data-t="descargar_cv">Descargar CV</a>
+        <a href="/#contacto" class="menu-contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-icono btn-tema" type="button" data-icono="tema" aria-label="Cambiar tema claro/oscuro" title="Cambiar tema claro/oscuro"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2m-7.07-2.93 1.41-1.41m11.32-11.32 1.41-1.41M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41"></path></svg></button>
+        <button class="btn-idioma" type="button" aria-label="Switch to English"><span class="activo">ES</span><span>EN</span></button>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" class="boton secundario nav-cta" data-cv="" download=""><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg><span>CV</span></a>
+        <a href="/#contacto" class="boton nav-cta"><span data-t="nav_contacto">Contacto</span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        <button class="btn-icono btn-menu" type="button" data-icono="menu" aria-controls="menu" aria-expanded="false" aria-label="Menú"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <article id="detalle" class="detalle" data-tipo="proyecto">
+    <a class="migas" href="/#proyectos"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg> Proyectos</a>
+    <header class="detalle-cabecera revelar">
+      <div class="chips"><span class="chip">Móvil</span><span class="chip estado"><span class="punto"></span>Publicada</span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+      <h1>Planillero Vóley — Planilla de juego para la mesa de control</h1>
+      <p class="bajada">Aplicación instalable para iPad que lleva el partido de voleibol con las reglas FIVB, funciona sin internet y al final llena la planilla oficial en PDF. Incluye hoja de posiciones con QR para entrenadores y lector de alineaciones para árbitros.</p>
+      <div class="botones"><a class="boton" href="https://planillero-pwa.vercel.app" target="_blank" rel="noopener">Ver demostración <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a class="boton secundario" href="https://github.com/HANDREYMARTINEZ/planillero-voley" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Ver código</a></div>
+    </header>
+    
+      <dl class="impacto revelar">
+        <div><dt>3</dt><dd>modos: mesa de control, entrenadores y árbitros</dd></div><div><dt>0</dt><dd>conexión necesaria durante el partido: funciona sin internet</dd></div><div><dt>1</dt><dd>archivo HTML con toda la aplicación, sin servidor</dd></div>
+      </dl>
+    <div class="marco revelar"><div class="marco-barra"><span></span><span></span><span></span></div><div class="marco-img"><img src="/img/planillero/portada.jpg" alt="Planillero Vóley — Planilla de juego para la mesa de control" loading="lazy"></div></div>
+    <div class="detalle-grid">
+      <div class="contenido"><p>Planillero es la planilla de juego de voleibol que usa la mesa de control durante los partidos. Se desarrolló para los <strong>Juegos Deportivos y Paradeportivos Identidad Cundinamarca 2025</strong>: se instala en el iPad desde Safari, funciona sin internet y, al terminar el partido, llena la planilla oficial del torneo en PDF. La desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>Los equipos, jugadoras y árbitros de las capturas son datos de ejemplo.</p>
+
+      <h2>El problema</h2>
+      <p>En la mesa de control la planilla se diligencia a mano mientras el partido avanza: puntos, rotaciones, cambios, tiempos, líbero y sanciones, todo con las reglas de la FIVB. Es fácil equivocarse con la rotación o con el número de cambios, y al final hay que pasar todo en limpio al formato oficial. Además, los coliseos no siempre tienen buena señal, así que la herramienta no podía depender de internet.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Nuevo partido:</strong> competición, categoría, sede, árbitros, formato (mejor de 3 o de 5) y la nómina de cada equipo con líberos y capitán; también se puede pegar la lista.</li>
+        <li><strong>Firmas de inicio y cierre</strong> de capitanes, técnicos y árbitros, con el dedo o el lápiz.</li>
+        <li><strong>Formación por set:</strong> las seis zonas de cada equipo, quién saca primero y el lado de la cancha.</li>
+        <li><strong>Marcador con reglas FIVB:</strong> punto con un toque, rotación automática al recuperar el saque, cambios con su límite, entrada y salida del líbero, tiempos, sanciones y registro de cada jugada con opción de deshacer.</li>
+        <li><strong>Planilla oficial en PDF:</strong> al cerrar, la aplicación escribe sobre la plantilla del torneo la formación, los puntos al cambio, los turnos al saque, los resultados por set, la nómina y las firmas.</li>
+        <li><strong>Entrenadores:</strong> hoja de posiciones de voleibol (6 zonas) o minivoleibol (4), revisión de errores de alineación y un código QR por set.</li>
+        <li><strong>Árbitros:</strong> lector de alineaciones con la cámara o desde una foto; muestra la cancha con las dos formaciones y la zona de saque.</li>
+        <li><strong>Mesa de control:</strong> en la formación del set, «Escanear QR» llena las seis zonas y avisa si un dorsal no está en la nómina.</li>
+        <li><strong>Copias de seguridad:</strong> exportar e importar los partidos en un archivo.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      
+    <figure class="arquitectura revelar">
+      
+        
+        <div class="arq-capa" style="--i:0">
+          <p class="arq-nombre"><span>01</span>Partido · iPad</p>
+          
+            <div class="arq-nodo">
+              <strong>Mesa de control</strong>
+              <span>Marcador, rotaciones, cambios, líbero, tiempos y sanciones</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Firmas</strong>
+              <span>Capitanes, técnicos y árbitros firman con el dedo</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:1">
+          <p class="arq-nombre"><span>02</span>Alineaciones · QR</p>
+          
+            <div class="arq-nodo">
+              <strong>Hoja de posiciones</strong>
+              <span>El entrenador arma la rotación y genera el QR del set</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Lector</strong>
+              <span>Cámara o foto; mismo formato que AppLineUp</span>
+            </div>
+        </div>
+        <div class="arq-flecha" aria-hidden="true"><span></span></div>
+        <div class="arq-capa" style="--i:2">
+          <p class="arq-nombre"><span>03</span>Salida y publicación</p>
+          
+            <div class="arq-nodo">
+              <strong>PDF oficial</strong>
+              <span>pdf-lib escribe sobre la plantilla del torneo</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Service Worker</strong>
+              <span>Guarda la app en el dispositivo para usarla sin internet</span>
+            </div>
+            <div class="arq-nodo">
+              <strong>Vercel</strong>
+              <span>Dirección https para instalarla y usar la cámara</span>
+            </div>
+        </div>
+    </figure>
+      <ul>
+        <li>Toda la aplicación vive en <strong>un solo archivo HTML</strong> con JavaScript, sin frameworks ni servidor; los partidos se guardan en el propio dispositivo.</li>
+        <li><strong>PWA instalable</strong>: un Service Worker guarda la app, la plantilla oficial y las librerías al instalarla; desde ahí funciona sin conexión. Cada versión cambia su número para que los iPad reciban la actualización solos.</li>
+        <li><strong>pdf-lib</strong> escribe sobre el PDF oficial; <strong>qrcode-generator</strong> crea los QR y <strong>jsQR</strong> los lee desde la cámara o una foto.</li>
+        <li>Los QR usan <strong>el mismo formato que AppLineUp</strong> (RFEVB), así que las dos aplicaciones se leen entre sí.</li>
+        <li>Publicada en <strong>Vercel</strong> (https, necesario para instalarla en el iPad y usar la cámara); el código está en GitHub con su historial de versiones.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>La mesa de control lleva el partido en el iPad y descarga la planilla oficial ya diligenciada.</li>
+        <li>La versión 2 suma las alineaciones por QR para entrenadores y árbitros, y se publicó en la misma dirección: los iPad se actualizan sin perder los partidos guardados.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/planillero/04-marcador.jpg" target="_blank" rel="noopener"><img src="/img/planillero/04-marcador.jpg" alt="Marcador con la cancha y las rotaciones" loading="lazy"></a><figcaption>Marcador con la cancha y las rotaciones</figcaption></figure>
+        <figure><a href="/img/planillero/06-planilla-oficial.jpg" target="_blank" rel="noopener"><img src="/img/planillero/06-planilla-oficial.jpg" alt="Planilla oficial llenada por la aplicación" loading="lazy"></a><figcaption>Planilla oficial llenada por la aplicación</figcaption></figure>
+        <figure><a href="/img/planillero/03-formacion.jpg" target="_blank" rel="noopener"><img src="/img/planillero/03-formacion.jpg" alt="Formación del set" loading="lazy"></a><figcaption>Formación del set</figcaption></figure>
+        <figure><a href="/img/planillero/02-nuevo-partido.jpg" target="_blank" rel="noopener"><img src="/img/planillero/02-nuevo-partido.jpg" alt="Datos del partido y nóminas" loading="lazy"></a><figcaption>Datos del partido y nóminas</figcaption></figure>
+        <figure><a href="/img/planillero/05-resumen.jpg" target="_blank" rel="noopener"><img src="/img/planillero/05-resumen.jpg" alt="Resumen del partido y descarga del PDF" loading="lazy"></a><figcaption>Resumen del partido y descarga del PDF</figcaption></figure>
+        <figure><a href="/img/planillero/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/planillero/01-inicio.jpg" alt="Inicio con los tres modos" loading="lazy"></a><figcaption>Inicio con los tres modos</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/planillero/20-movil-hoja-qr.jpg" target="_blank" rel="noopener"><img src="/img/planillero/20-movil-hoja-qr.jpg" alt="QR de la alineación para el entrenador" loading="lazy"></a><figcaption>QR de la alineación</figcaption></figure>
+        <figure><a href="/img/planillero/21-movil-arbitros.jpg" target="_blank" rel="noopener"><img src="/img/planillero/21-movil-arbitros.jpg" alt="Lector de alineaciones para árbitros" loading="lazy"></a><figcaption>Lector para árbitros</figcaption></figure>
+        <figure><a href="/img/planillero/22-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/planillero/22-movil-inicio.jpg" alt="Inicio en el celular" loading="lazy"></a><figcaption>Inicio</figcaption></figure>
+      </div></div>
+      <aside class="ficha">
+        <dl><div><dt>Fecha</dt><dd>noviembre de 2026</dd></div><div><dt>Tipo</dt><dd>Móvil</dd></div><div><dt>Estado</dt><dd><span class="chip estado"><span class="punto"></span>Publicada</span></dd></div><div><dt>Desarrollo</dt><dd>Asistido por IA · Claude Code</dd></div><div><dt>Tecnologías</dt><dd><div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">JavaScript</span><span class="etiqueta">PWA</span><span class="etiqueta">Service Worker</span><span class="etiqueta">pdf-lib</span><span class="etiqueta">jsQR</span><span class="etiqueta">Vercel</span></div></dd></div></dl>
+        <div class="ficha-enlaces"><a class="boton" href="https://planillero-pwa.vercel.app" target="_blank" rel="noopener">Ver demostración <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a><a class="boton secundario" href="https://github.com/HANDREYMARTINEZ/planillero-voley" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg> Ver código</a></div>
+      </aside>
+    </div>
+    
+      <section class="otros">
+        <h2>Otros proyectos</h2>
+        <div class="grilla">
+    <a class="tarjeta revelar" href="/proyectos/bicifest-colombia">
+      <div class="portada"><img src="/img/bicifest/portada.jpg" alt="BiciFest Colombia 2026 — Sitio, inscripciones y panel del evento" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>En producción</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>noviembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>BiciFest Colombia 2026<span>Sitio, inscripciones y panel del evento</span></h3>
+        <p>Sitio oficial de la décima edición de BiciFest en Villa de Guaduas: inscripciones con exención firmada y PDF, código QR por inscripción, verificación en la entrada con la cámara y panel con reportes en Excel y PDF, en producción con PHP y MySQL.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>En producción en bicifestcolombia.com desde el 5 de noviembre de 2026, con inscripciones, QR y verificación probados de punta a punta.</span></p>
+        <div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">TypeScript</span><span class="etiqueta">Tailwind CSS</span><span class="etiqueta">Vite</span><span class="etiqueta">+4</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a>
+    <a class="tarjeta revelar" href="/proyectos/moton-repuestos">
+      <div class="portada"><img src="/img/moton-repuestos/portada.jpg" alt="Moton — Tienda de repuestos y accesorios para moto" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Propuesta para cliente</span></div></div>
+      <div class="tarjeta-cuerpo">
+        <div class="tarjeta-meta"><span><time>octubre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Moton<span>Tienda de repuestos y accesorios para moto</span></h3>
+        <p>Propuesta de sitio web para un local de repuestos y accesorios de moto (NS, Dominar, Duke y más): catálogo por marca y categoría, buscador, carrito y pedido por WhatsApp con la lista y el total ya escritos.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Demostración publicada en Vercel, con despliegue automático desde GitHub, lista para presentar al cliente.</span></p>
+        <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span><span class="etiqueta">JavaScript</span><span class="etiqueta">Vercel</span></div>
+        <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+      </div>
+    </a></div>
+      </section></article>
+  </main>
+
+  <footer class="pie">
+    <div class="pie-corte" aria-hidden="true"><span></span></div>
+    <div class="contenedor pie-interior">
+      <div class="pie-marca">
+        <a href="/" class="pie-logo" aria-label="H.A.M.C Solutions"><img src="/img/marca/logo-vertical.webp" alt="" width="484" height="492" loading="lazy" decoding="async"></a>
+        <p class="pie-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
+        <p class="pie-frase" data-t="pie_frase">Construyo soluciones con inteligencia artificial, automatización y datos para empresas y emprendimientos.</p>
+      </div>
+      <nav class="pie-columna" aria-labelledby="pie-t-nav">
+        <h3 id="pie-t-nav" data-t="pie_navegacion">Navegación</h3>
+        <a href="/#servicios" data-t="nav_servicios">Servicios</a>
+        <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
+        <a href="/#experiencia" data-t="nav_experiencia">Experiencia</a>
+        <a href="/#sobre-mi" data-t="nav_sobre">Perfil</a>
+        <a href="/#contacto" data-t="nav_contacto">Contacto</a>
+      </nav>
+      <div class="pie-columna">
+        <h3 data-t="pie_contacto">Contacto</h3>
+        <nav id="pie-redes" class="pie-redes"><a href="https://github.com/HANDREYMARTINEZ" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>GitHub</a><a href="https://www.linkedin.com/in/andreymartinezdata" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>LinkedIn</a><a href="https://wa.me/573227179287" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>WhatsApp</a><a href="mailto:2002.ha.mc@gmail.com"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>Email</a></nav>
+      </div>
+      <div class="pie-columna">
+        <h3 data-t="cv_titulo">Hoja de vida</h3>
+        <a href="/cv/Andrey-Martinez-CV-es.pdf" data-cv="" download="" data-t="cv_pdf">Descargar PDF</a>
+        <a href="/hoja-de-vida?lang=es" data-cv-ver="" target="_blank" rel="noopener" data-t="cv_ver">Ver en línea</a>
+      </div>
+    </div>
+    <div class="contenedor pie-legal">
+      <p>© <span id="anio">2026</span> <span data-sitio="nombre">Harold Andrey Martínez Cortés</span> · <span data-t="derechos">Desarrollado en Colombia</span></p>
+      <a href="#" class="pie-arriba"><span data-t="arriba">Volver arriba</span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="/data/config.js"></script>
+  <script src="/data/proyectos.js"></script>
+  <script src="/data/blog.js"></script>
+  <script src="/js/textos.js"></script>
+  <script src="/js/main.js"></script>
+
+
+</body></html>
+

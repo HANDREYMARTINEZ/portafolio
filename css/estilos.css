@@ -1,63 +1,82 @@
 /* ============================================================
-   Colores y medidas (cambia aquí la paleta de todo el sitio)
+   Colores y medidas — identidad H.A.M.C "Código binario"
+   (raw/material/identidad/codigo-binario del cerebro: azul eléctrico, cian, cian código,
+   vidrio, plata y azul noche; Space Grotesk + Inter + mono)
    ============================================================ */
 :root {
-  --fondo: #f7f8fb;
-  --fondo-alt: #eef1f7;
+  /* Marca (iguales en los dos temas) */
+  --electrico: #009DFF;
+  --cian-marca: #0DDCFF;
+  --noche: #07101D;
+  --plata: #DDE2EA;
+  --degradado-marca: linear-gradient(115deg, #0DDCFF 0%, #009DFF 55%, #2E7BFF 100%);
+
+  /* Tema claro */
+  --fondo: #f3f6fa;
+  --fondo-alt: #e9eff6;
   --superficie: #ffffff;
-  --superficie-2: #f3f5fa;
-  --texto: #0f1729;
-  --texto-suave: #5b6478;
-  --borde: #e3e7ef;
-  --borde-fuerte: #cdd4e1;
-  --acento: #4169e1;          /* azul rey */
-  --acento-fuerte: #2f52c9;
-  --acento-suave: #e9eefc;
-  --sobre-acento: #ffffff;    /* texto encima del color de acento */
-  --verde: #16a34a;
-  --sombra: 0 1px 2px rgb(15 23 41 / .04), 0 8px 24px rgb(15 23 41 / .06);
-  --sombra-alta: 0 2px 4px rgb(15 23 41 / .04), 0 24px 48px rgb(15 23 41 / .12);
-  --radio: 18px;
-  --mono: "JetBrains Mono", ui-monospace, monospace;
-  --titulos: "Manrope", "Inter", system-ui, sans-serif;
+  --superficie-2: #f1f5fa;
+  --vidrio: #ffffff;
+  --texto: #0b1624;
+  --texto-suave: #4c5c71;
+  --borde: #dce4ee;
+  --borde-fuerte: #c2cfdf;
+  --acento: #006fcc;          /* eléctrico oscurecido para leerse sobre blanco */
+  --acento-fuerte: #0058a8;
+  --acento-suave: #e2f0ff;
+  --sobre-acento: #04101c;    /* texto encima del degradado de marca */
+  --codigo: #0a9fb0;          /* dígitos 0 y 1 */
+  --brillo: rgb(0 157 255 / .22);
+  --verde: #15924f;
+  --sombra: 0 1px 2px rgb(11 22 36 / .05), 0 8px 24px rgb(11 22 36 / .07);
+  --sombra-alta: 0 2px 4px rgb(11 22 36 / .05), 0 24px 48px rgb(11 22 36 / .13);
+  --radio: 16px;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --titulos: "Space Grotesk", "Inter", system-ui, sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --fondo: #090d16;
-    --fondo-alt: #0e1321;
-    --superficie: #111726;
-    --superficie-2: #171e30;
-    --texto: #e8ecf4;
-    --texto-suave: #98a2b8;
-    --borde: #1f2840;
-    --borde-fuerte: #2d3854;
-    --acento: #6f8ff0;
-    --acento-fuerte: #8ea8f6;
-    --acento-suave: #172149;
-    --sobre-acento: #090d16;
-    --verde: #4ade80;
-    --sombra: 0 1px 2px rgb(0 0 0 / .3), 0 10px 30px rgb(0 0 0 / .3);
-    --sombra-alta: 0 2px 4px rgb(0 0 0 / .3), 0 30px 60px rgb(0 0 0 / .5);
+    --fondo: #07101d;
+    --fondo-alt: #081627;
+    --superficie: #0b1828;
+    --superficie-2: #0f2135;
+    --vidrio: linear-gradient(160deg, rgb(14 53 80 / .55), rgb(11 24 40 / .94) 58%);
+    --texto: #eaf1fa;
+    --texto-suave: #93a5bc;
+    --borde: #15304b;
+    --borde-fuerte: #23496f;
+    --acento: #1fa8ff;
+    --acento-fuerte: #5cc2ff;
+    --acento-suave: #0a2843;
+    --sobre-acento: #04101c;
+    --codigo: #45e8e8;
+    --brillo: rgb(0 157 255 / .38);
+    --verde: #3ee08f;
+    --sombra: 0 1px 2px rgb(0 0 0 / .35), 0 10px 30px rgb(0 0 0 / .35);
+    --sombra-alta: 0 2px 4px rgb(0 0 0 / .35), 0 30px 60px rgb(0 0 0 / .55);
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --fondo: #090d16;
-  --fondo-alt: #0e1321;
-  --superficie: #111726;
-  --superficie-2: #171e30;
-  --texto: #e8ecf4;
-  --texto-suave: #98a2b8;
-  --borde: #1f2840;
-  --borde-fuerte: #2d3854;
-  --acento: #6f8ff0;
-  --acento-fuerte: #8ea8f6;
-  --acento-suave: #172149;
-  --sobre-acento: #090d16;
-  --verde: #4ade80;
-  --sombra: 0 1px 2px rgb(0 0 0 / .3), 0 10px 30px rgb(0 0 0 / .3);
-  --sombra-alta: 0 2px 4px rgb(0 0 0 / .3), 0 30px 60px rgb(0 0 0 / .5);
+  --fondo: #07101d;
+  --fondo-alt: #081627;
+  --superficie: #0b1828;
+  --superficie-2: #0f2135;
+  --vidrio: linear-gradient(160deg, rgb(14 53 80 / .55), rgb(11 24 40 / .94) 58%);
+  --texto: #eaf1fa;
+  --texto-suave: #93a5bc;
+  --borde: #15304b;
+  --borde-fuerte: #23496f;
+  --acento: #1fa8ff;
+  --acento-fuerte: #5cc2ff;
+  --acento-suave: #0a2843;
+  --sobre-acento: #04101c;
+  --codigo: #45e8e8;
+  --brillo: rgb(0 157 255 / .38);
+  --verde: #3ee08f;
+  --sombra: 0 1px 2px rgb(0 0 0 / .35), 0 10px 30px rgb(0 0 0 / .35);
+  --sombra-alta: 0 2px 4px rgb(0 0 0 / .35), 0 30px 60px rgb(0 0 0 / .55);
   color-scheme: dark;
 }
 
@@ -111,7 +130,7 @@ button { font: inherit; color: inherit; }
 .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -.01em; }
 .logo-marca {
   display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px;
-  background: linear-gradient(135deg, var(--acento), color-mix(in srgb, var(--acento) 60%, #7c3aed));
+  background: var(--degradado-marca);
   color: #fff; font-size: .78rem; font-weight: 800; letter-spacing: .02em; overflow: hidden; flex-shrink: 0;
 }
 .logo-marca img { width: 100%; height: 100%; object-fit: cover; }
@@ -489,7 +508,7 @@ body.asistente-abierto .wa-flotante { display: none; }
 }
 .avatar {
   width: 88px; height: 88px; border-radius: 22px; overflow: hidden; display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--acento), color-mix(in srgb, var(--acento) 60%, #7c3aed));
+  background: var(--degradado-marca);
   color: #fff; font-weight: 800; font-size: 1.6rem;
 }
 .avatar img { width: 100%; height: 100%; object-fit: cover; }
@@ -899,4 +918,188 @@ body.asistente-abierto .wa-flotante { display: none; }
   .logo [data-sitio="marca"] { font-size: .86rem; line-height: 1.15; }
   .nav-interior, .nav-acciones { gap: 6px; }
   .btn-idioma span { padding: 4px 5px; }
+}
+
+/* ============================================================
+   Identidad H.A.M.C "Código binario"
+   Torres de vidrio oscuro con contornos de neón y columnas de 0 y 1. Patrón de la sección
+   final de BiciFest: corte diagonal con dos líneas de neón, brillos y símbolo de marca de agua.
+   ============================================================ */
+
+/* Títulos en Space Grotesk: llega hasta 700, se aprieta menos que Manrope */
+.hero h1, .seccion h2, .cta h2, .detalle-cabecera h1, .error-404 h1, .no-encontrado h1 { font-weight: 700; letter-spacing: -.03em; }
+.tarjeta-cuerpo h3, .servicio h3, .hito h3, .metodologia-titulo, .otros h2, .contenido > h2 { font-weight: 700; }
+.cifra strong, .impacto dt { font-family: var(--titulos); font-weight: 700; }
+.cifras-texto .cifra strong, .impacto dt {
+  background: var(--degradado-marca); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+:root[data-theme="light"] .cifras-texto .cifra strong, :root[data-theme="light"] .impacto dt { background: none; color: var(--acento); }
+
+/* Logo horizontal: versión clara u oscura según el tema */
+.logo { gap: 0; }
+.logo-img { height: 46px; width: auto; }
+.logo-claro { display: none; }
+:root[data-theme="light"] .logo-oscuro { display: none; }
+:root[data-theme="light"] .logo-claro { display: block; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .logo-oscuro { display: none; }
+  :root:not([data-theme="dark"]) .logo-claro { display: block; }
+}
+.nav.con-fondo { box-shadow: 0 1px 0 color-mix(in srgb, var(--electrico) 18%, transparent); }
+
+/* Rótulos: barra inclinada de neón como la franja de la H */
+.eyebrow { color: var(--acento); }
+.eyebrow::before {
+  content: ""; width: 6px; height: 12px; flex-shrink: 0; transform: skewX(-22deg);
+  background: var(--cian-marca); box-shadow: 0 0 8px var(--cian-marca);
+}
+.saludo::before { content: "// "; color: var(--codigo); }
+
+/* Botón principal con el degradado de la marca y brillo de neón */
+.boton:not(.secundario) {
+  background: var(--degradado-marca); color: var(--sobre-acento);
+  box-shadow: 0 0 0 1px rgb(13 220 255 / .25), 0 8px 26px -6px var(--brillo);
+}
+.boton:not(.secundario):hover { background: var(--degradado-marca); filter: brightness(1.08); box-shadow: 0 0 0 1px rgb(13 220 255 / .45), 0 10px 32px -4px var(--brillo); }
+.boton.secundario:hover { border-color: var(--acento); color: var(--acento); }
+.chip-ia { color: var(--acento); }
+
+/* Superficies de vidrio: tarjetas, servicios, perfil, ficha… */
+.tarjeta, .servicio, .sobre-parte, .stack-grupo, .perfil, .formacion, .testimonio, .ficha,
+.cifras, .impacto, .destacado, .asis-resumen, .marco { background: var(--vidrio); }
+.tarjeta:hover, .servicio:hover {
+  border-color: color-mix(in srgb, var(--electrico) 55%, var(--borde));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--electrico) 25%, transparent), 0 22px 46px -18px var(--brillo);
+}
+.habilidad:hover, .arq-nodo:hover { box-shadow: 0 0 14px -4px var(--brillo); }
+.servicio-icono, .formacion-icono { background: var(--acento-suave); color: var(--acento); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--electrico) 30%, transparent); }
+.tarjeta-num, .sobre-parte-num, .contenido > h2::before { color: var(--codigo); }
+.portada-ver { background: var(--degradado-marca); color: var(--sobre-acento); }
+.paso-num { border-color: var(--electrico); color: var(--acento); box-shadow: 0 0 12px -2px var(--brillo); }
+.hito::before { border-color: var(--electrico); }
+.hito:first-child::before { background: var(--electrico); box-shadow: 0 0 0 5px var(--acento-suave), 0 0 14px var(--electrico); }
+.linea-tiempo::before { background: linear-gradient(var(--electrico), var(--borde) 40%); }
+.marco-barra span:nth-child(1) { background: var(--electrico); }
+.marco-barra span:nth-child(2) { background: var(--cian-marca); }
+.destacado-etiqueta { background: var(--degradado-marca); color: var(--sobre-acento); }
+
+/* Separador entre secciones: trazo de neón que se apaga hacia los lados */
+.seccion { position: relative; }
+.seccion::before {
+  content: ""; position: absolute; top: 52px; left: 50%; translate: -50% 0; pointer-events: none;
+  width: min(1112px, calc(100% - 48px)); height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--electrico) 45%, transparent), color-mix(in srgb, var(--cian-marca) 35%, transparent), transparent);
+}
+@media (max-width: 760px) { .seccion::before { top: 40px; width: calc(100% - 32px); } }
+
+/* ---------- Inicio: lluvia binaria, cuadrícula de vidrio y órbita ---------- */
+.hero { isolation: isolate; }
+.hero::before {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--electrico) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--electrico) 9%, transparent) 1px, transparent 1px);
+  opacity: 1;
+}
+.hero::after {
+  width: 820px; height: 820px; right: -260px; top: -300px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--electrico) 26%, transparent), color-mix(in srgb, var(--cian-marca) 6%, transparent) 45%, transparent 68%);
+}
+.lluvia {
+  position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none;
+  /* Se apaga arriba y abajo, y casi del todo detrás del texto (lado izquierdo) para que se lea */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 55%, transparent 92%), linear-gradient(to right, rgb(0 0 0 / .18) 0 48%, #000 66%);
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 55%, transparent 92%), linear-gradient(to right, rgb(0 0 0 / .18) 0 48%, #000 66%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+@media (max-width: 960px) {
+  .lluvia {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, rgb(0 0 0 / .35) 15%, rgb(0 0 0 / .2) 45%, #000 70%, transparent 95%);
+    mask-image: linear-gradient(to bottom, transparent, rgb(0 0 0 / .35) 15%, rgb(0 0 0 / .2) 45%, #000 70%, transparent 95%);
+  }
+}
+.lluvia span {
+  position: absolute; top: 0; width: 1ch; white-space: pre; text-align: center;
+  font-family: var(--mono); font-size: 13px; line-height: 1.35; color: var(--codigo);
+  text-shadow: 0 0 6px color-mix(in srgb, var(--codigo) 70%, transparent);
+  animation: caer linear infinite; will-change: transform;
+}
+@keyframes caer { from { transform: translateY(-50%); } to { transform: translateY(0); } }
+:root[data-theme="light"] .lluvia span { text-shadow: none; }
+@media (prefers-reduced-motion: reduce) { .lluvia span { animation: none; transform: translateY(-25%); } }
+
+/* La tarjeta destacada queda dentro de la órbita del logo, con los cuadros de píxeles */
+.destacado { box-shadow: 0 0 0 1px color-mix(in srgb, var(--electrico) 22%, transparent), var(--sombra-alta); }
+.destacado::before {
+  inset: -9% -7%; z-index: -1; border-radius: 50%;
+  background: none; border: 2px solid var(--electrico);
+  box-shadow: 0 0 18px var(--brillo), inset 0 0 18px var(--brillo);
+  transform: rotate(-12deg);
+  -webkit-mask-image: linear-gradient(105deg, #000 0 30%, transparent 46% 60%, #000 78%);
+  mask-image: linear-gradient(105deg, #000 0 30%, transparent 46% 60%, #000 78%);
+}
+.destacado:hover::before { transform: rotate(-9deg) scale(1.02); }
+.destacado::after {
+  content: ""; position: absolute; top: -26px; right: -4px; width: 12px; height: 12px; pointer-events: none;
+  background: var(--cian-marca);
+  box-shadow: 16px -12px 0 -1px var(--electrico), 18px 6px 0 1px var(--electrico), -2px 18px 0 -3px var(--cian-marca), 34px -2px 0 -3px var(--cian-marca);
+  filter: drop-shadow(0 0 6px var(--electrico));
+}
+
+/* ---------- Contacto: bloque de vidrio con brillos y píxeles ---------- */
+.cta {
+  border-color: color-mix(in srgb, var(--electrico) 30%, var(--borde));
+  background:
+    radial-gradient(ellipse 55% 75% at 50% 0%, color-mix(in srgb, var(--electrico) 22%, transparent), transparent 70%),
+    radial-gradient(ellipse 35% 50% at 100% 100%, color-mix(in srgb, var(--cian-marca) 10%, transparent), transparent 70%),
+    var(--superficie);
+}
+.cta::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cian-marca), var(--electrico), transparent);
+  box-shadow: 0 0 12px var(--electrico);
+}
+
+/* ---------- Pie: bloque azul noche con corte diagonal y dos líneas de neón ---------- */
+.pie {
+  /* El pie es oscuro en los dos temas, como la sección de H.A.M.C en BiciFest */
+  --texto: #eaf1fa; --texto-suave: #93a5bc; --borde: #17324e; --acento: #1fa8ff; --fondo-alt: #07101d;
+  position: relative; isolation: isolate; overflow: hidden;
+  border-top: 0; background: var(--noche); color: var(--texto);
+  padding-top: 3rem;
+  clip-path: polygon(0 3rem, 100% 0, 100% 100%, 0 100%);
+}
+.pie::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(38rem 26rem at 12% 55%, rgb(0 157 255 / .16), transparent 70%),
+    radial-gradient(30rem 22rem at 92% 10%, rgb(13 220 255 / .08), transparent 70%);
+}
+.pie::after {
+  content: ""; position: absolute; right: -60px; bottom: -40px; z-index: -1; width: 520px; height: 290px; pointer-events: none;
+  background: url("/img/marca/simbolo.webp") no-repeat center / contain; opacity: .07;
+}
+.pie-corte { position: absolute; inset: 0 0 auto 0; height: calc(3rem + 10px); filter: drop-shadow(0 0 6px #3fe6ff); pointer-events: none; }
+.pie-corte::before, .pie-corte span { content: ""; position: absolute; inset: 0; }
+.pie-corte::before { background: var(--electrico); clip-path: polygon(0 3rem, 100% 0, 100% 10px, 0 calc(3rem + 10px)); }
+.pie-corte span { background: #3fe6ff; clip-path: polygon(0 3rem, 100% 0, 100% 3px, 0 calc(3rem + 3px)); }
+.pie-logo { display: inline-block; }
+.pie-logo img { width: 200px; height: auto; filter: drop-shadow(0 0 18px rgb(0 157 255 / .25)); }
+.pie-marca .pie-rol { margin-top: 14px; }
+.pie-columna > a:hover, .pie-redes a:hover, .pie-arriba:hover { color: #3fe6ff; }
+.pie-legal { border-top-color: rgb(255 255 255 / .1); }
+.pie :focus-visible { outline-color: #3fe6ff; }
+
+@media (max-width: 760px) {
+  .pie { padding-top: 2rem; clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0 100%); }
+  .pie-corte { height: calc(2rem + 10px); }
+  .pie-corte::before { clip-path: polygon(0 2rem, 100% 0, 100% 10px, 0 calc(2rem + 10px)); }
+  .pie-corte span { clip-path: polygon(0 2rem, 100% 0, 100% 3px, 0 calc(2rem + 3px)); }
+  .pie::after { width: 320px; height: 180px; right: -80px; }
+  .pie-logo img { width: 168px; }
+  .lluvia span { font-size: 11px; }
+  .destacado::before { inset: -6% -4%; }
+}
+@media (max-width: 420px) {
+  .logo-img { height: 34px; }
 }

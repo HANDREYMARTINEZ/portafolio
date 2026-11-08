@@ -6,14 +6,17 @@
   <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/img/marca/apple-touch-icon.png">
+  <meta name="theme-color" content="#07101D">
   <link rel="stylesheet" href="/css/estilos.css">
 <meta name="description" content="Aplicación Android para la gestión de finanzas personales —ingresos, gastos, tarjetas de crédito, préstamos y metas de ahorro— con almacenamiento exclusivamente local."><link rel="canonical" href="https://andreymartinezportafolio.vercel.app/proyectos/mis-finanzas"><meta property="og:type" content="article"><meta property="og:site_name" content="H.A.M.C Soluciones en IA"><meta property="og:title" content="Mis Finanzas — App de finanzas personales — Andrey Martínez"><meta property="og:description" content="Aplicación Android para la gestión de finanzas personales —ingresos, gastos, tarjetas de crédito, préstamos y metas de ahorro— con almacenamiento exclusivamente local."><meta property="og:url" content="https://andreymartinezportafolio.vercel.app/proyectos/mis-finanzas"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="https://andreymartinezportafolio.vercel.app/img/og/mis-finanzas.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="https://andreymartinezportafolio.vercel.app/img/og/mis-finanzas.jpg"></head>
 <body>
   <header class="nav">
     <div class="contenedor nav-interior">
-      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <a href="/" class="logo" aria-label="H.A.M.C Solutions"><img class="logo-img logo-oscuro" src="/img/marca/logo-horizontal-oscuro.png" alt="" width="444" height="120"><img class="logo-img logo-claro" src="/img/marca/logo-horizontal-claro.png" alt="" width="444" height="120"></a>
       <nav id="menu" class="menu">
         <a href="/#servicios" data-t="nav_servicios">Servicios</a>
         <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
@@ -152,25 +155,25 @@
       <section class="otros">
         <h2>Otros proyectos</h2>
         <div class="grilla">
-    <a class="tarjeta revelar" href="/proyectos/moton-repuestos">
-      <div class="portada"><img src="/img/moton-repuestos/portada.jpg" alt="Moton — Tienda de repuestos y accesorios para moto" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Propuesta para cliente</span></div></div>
+    <a class="tarjeta revelar" href="/proyectos/planillero-voley">
+      <div class="portada"><img src="/img/planillero/portada.jpg" alt="Planillero Vóley — Planilla de juego para la mesa de control" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Móvil</span><span class="chip estado"><span class="punto"></span>Publicada</span></div></div>
       <div class="tarjeta-cuerpo">
-        <div class="tarjeta-meta"><span><time>octubre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
-        <h3>Moton<span>Tienda de repuestos y accesorios para moto</span></h3>
-        <p>Propuesta de sitio web para un local de repuestos y accesorios de moto (NS, Dominar, Duke y más): catálogo por marca y categoría, buscador, carrito y pedido por WhatsApp con la lista y el total ya escritos.</p>
-        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Demostración publicada en Vercel, con despliegue automático desde GitHub, lista para presentar al cliente.</span></p>
-        <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span><span class="etiqueta">JavaScript</span><span class="etiqueta">Vercel</span></div>
+        <div class="tarjeta-meta"><span><time>noviembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>Planillero Vóley<span>Planilla de juego para la mesa de control</span></h3>
+        <p>Aplicación instalable para iPad que lleva el partido de voleibol con las reglas FIVB, funciona sin internet y al final llena la planilla oficial en PDF. Incluye hoja de posiciones con QR para entrenadores y lector de alineaciones para árbitros.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>La mesa de control lleva el partido en el iPad y descarga la planilla oficial ya diligenciada, sin depender del internet del coliseo.</span></p>
+        <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">JavaScript</span><span class="etiqueta">PWA</span><span class="etiqueta">Service Worker</span><span class="etiqueta">+3</span></div>
         <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
       </div>
     </a>
-    <a class="tarjeta revelar" href="/proyectos/hotel-suite-royal">
-      <div class="portada"><img src="/img/hotel-suite-royal/portada.jpg" alt="Hotel Suite Royal — Landing page bilingüe" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>Terminado</span></div></div>
+    <a class="tarjeta revelar" href="/proyectos/bicifest-colombia">
+      <div class="portada"><img src="/img/bicifest/portada.jpg" alt="BiciFest Colombia 2026 — Sitio, inscripciones y panel del evento" loading="lazy"><span class="portada-ver" aria-hidden="true">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span><div class="chips-portada"><span class="chip">Web</span><span class="chip estado"><span class="punto"></span>En producción</span></div></div>
       <div class="tarjeta-cuerpo">
-        <div class="tarjeta-meta"><span><time>octubre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
-        <h3>Hotel Suite Royal<span>Landing page bilingüe</span></h3>
-        <p>Sitio web para un hotel 4 estrellas en Melgar (Tolima), en español e inglés, con galería filtrable, opiniones de huéspedes y reserva directa por WhatsApp con las fechas ya escritas en el mensaje.</p>
-        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>Publicada en Vercel en español e inglés, con despliegue automático desde GitHub.</span></p>
-        <div class="etiquetas"><span class="etiqueta">HTML</span><span class="etiqueta">CSS</span><span class="etiqueta">JavaScript</span><span class="etiqueta">Vercel</span></div>
+        <div class="tarjeta-meta"><span><time>noviembre de 2026</time></span><span class="chip chip-ia"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>Hecho con IA</span></div>
+        <h3>BiciFest Colombia 2026<span>Sitio, inscripciones y panel del evento</span></h3>
+        <p>Sitio oficial de la décima edición de BiciFest en Villa de Guaduas: inscripciones con exención firmada y PDF, código QR por inscripción, verificación en la entrada con la cámara y panel con reportes en Excel y PDF, en producción con PHP y MySQL.</p>
+        <p class="tarjeta-resultado"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 7 13.5 15.5 8.5 10.5 2 17"></path><path d="M16 7h6v6"></path></svg><span>En producción en bicifestcolombia.com desde el 5 de noviembre de 2026, con inscripciones, QR y verificación probados de punta a punta.</span></p>
+        <div class="etiquetas"><span class="etiqueta">React</span><span class="etiqueta">TypeScript</span><span class="etiqueta">Tailwind CSS</span><span class="etiqueta">Vite</span><span class="etiqueta">+4</span></div>
         <span class="ver-mas">Ver caso de estudio <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
       </div>
     </a></div>
@@ -178,9 +181,10 @@
   </main>
 
   <footer class="pie">
+    <div class="pie-corte" aria-hidden="true"><span></span></div>
     <div class="contenedor pie-interior">
       <div class="pie-marca">
-        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales"><img src="/img/perfil.jpg" alt=""></span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <a href="/" class="pie-logo" aria-label="H.A.M.C Solutions"><img src="/img/marca/logo-vertical.webp" alt="" width="484" height="492" loading="lazy" decoding="async"></a>
         <p class="pie-rol" data-sitio="rol">Ingeniero de IA y Automatización</p>
         <p class="pie-frase" data-t="pie_frase">Construyo soluciones con inteligencia artificial, automatización y datos para empresas y emprendimientos.</p>
       </div>

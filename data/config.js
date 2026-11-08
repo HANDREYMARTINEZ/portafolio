@@ -57,7 +57,7 @@ const SITIO = {
   cifras: [
     { valor: "1–2 días", etiqueta: { es: "para reportes que manualmente toman 2–3 semanas", en: "for reports that take 2–3 weeks manually" } },
     { valor: "300+", etiqueta: { es: "clientes gestionados con GymApp en producción", en: "clients managed with GymApp in production" } },
-    { valor: "4", etiqueta: { es: "proyectos documentados como casos de estudio", en: "projects documented as case studies" } },
+    { valor: "9", etiqueta: { es: "proyectos documentados como casos de estudio", en: "projects documented as case studies" } },
     { valor: "6", etiqueta: { es: "años de formación en ingeniería", en: "years of engineering education" } },
   ],
 
@@ -138,8 +138,8 @@ const SITIO = {
         es: "Sitios corporativos y plataformas para empresas, instituciones educativas y comercios, con áreas privadas y permisos diferenciados por rol.",
         en: "Corporate websites and platforms for companies, schools and businesses, with private areas and role-based permissions.",
       },
-      ejemplo: "pagina-gimnasio",
-      ejemploNombre: { es: "Web de gimnasio", en: "Gym website" },
+      ejemplo: "bicifest-colombia",
+      ejemploNombre: { es: "BiciFest Colombia", en: "BiciFest Colombia" },
     },
     {
       icono: "celular",

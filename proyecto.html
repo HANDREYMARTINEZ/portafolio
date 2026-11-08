@@ -7,14 +7,17 @@
   <script>document.documentElement.classList.add("js");try{document.documentElement.dataset.theme=localStorage.getItem("tema")||"dark"}catch(e){document.documentElement.dataset.theme="dark"}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/img/marca/apple-touch-icon.png" />
+  <meta name="theme-color" content="#07101D" />
   <link rel="stylesheet" href="/css/estilos.css" />
 </head>
 <body>
   <header class="nav">
     <div class="contenedor nav-interior">
-      <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales">HM</span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+      <a href="/" class="logo" aria-label="H.A.M.C Solutions"><img class="logo-img logo-oscuro" src="/img/marca/logo-horizontal-oscuro.png" alt="" width="444" height="120" /><img class="logo-img logo-claro" src="/img/marca/logo-horizontal-claro.png" alt="" width="444" height="120" /></a>
       <nav id="menu" class="menu">
         <a href="/#servicios" data-t="nav_servicios">Servicios</a>
         <a href="/#proyectos" data-t="nav_proyectos">Proyectos</a>
@@ -39,9 +42,10 @@
   </main>
 
   <footer class="pie">
+    <div class="pie-corte" aria-hidden="true"><span></span></div>
     <div class="contenedor pie-interior">
       <div class="pie-marca">
-        <a href="/" class="logo"><span class="logo-marca" data-sitio="iniciales">HM</span><span data-sitio="marca">H.A.M.C Soluciones en IA</span></a>
+        <a href="/" class="pie-logo" aria-label="H.A.M.C Solutions"><img src="/img/marca/logo-vertical.webp" alt="" width="484" height="492" loading="lazy" decoding="async" /></a>
         <p class="pie-rol" data-sitio="rol"></p>
         <p class="pie-frase" data-t="pie_frase"></p>
       </div>
