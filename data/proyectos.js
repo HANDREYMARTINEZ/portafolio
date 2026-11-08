@@ -21,6 +21,421 @@
 
 const PROYECTOS = [
   {
+    slug: "barberia-jair",
+    titulo: { es: "Jair's Barbershop — Sitio y reservas para una barbería en Nueva York", en: "Jair's Barbershop — Website and booking for a New York barbershop" },
+    resumen: {
+      es: "Sitio bilingüe para una barbería en White Plains, Nueva York: servicios con precios, barberos, reserva en cuatro pasos con ticket y un panel donde el barbero recibe la solicitud y la acepta.",
+      en: "Bilingual website for a barbershop in White Plains, New York: services with prices, barbers, four-step booking with a ticket and a dashboard where the barber receives the request and accepts it.",
+    },
+    fecha: "2026-11-05",
+    tipo: "web",
+    conIA: "Claude Code",
+    estado: { es: "Beta en producción", en: "Production beta" },
+    etiquetas: ["HTML", "CSS", "JavaScript", "Vercel"],
+    resultado: {
+      es: "Publicada en versión beta: la reserva funciona de punta a punta y el barbero la acepta desde su panel.",
+      en: "Live as a beta: booking works end to end and the barber accepts it from the dashboard.",
+    },
+    cifras: [
+      { valor: "4", etiqueta: { es: "pasos para reservar: servicio, barbero, fecha y datos", en: "booking steps: service, barber, date and details" } },
+      { valor: "2", etiqueta: { es: "idiomas: inglés por defecto y español", en: "languages: English by default and Spanish" } },
+      { valor: "0", etiqueta: { es: "dependencias: HTML, CSS y JavaScript puros", en: "dependencies: plain HTML, CSS and JavaScript" } },
+    ],
+    arquitectura: [
+      {
+        capa: { es: "Sitio", en: "Website" },
+        nodos: [
+          { titulo: { es: "Portada y servicios", en: "Home & services" }, detalle: { es: "Menú con precios, barberos y escena con el scroll", en: "Price menu, barbers and a scroll-driven scene" } },
+          { titulo: { es: "Textos", en: "Copy" }, detalle: { es: "Inglés y español desde un archivo de datos", en: "English and Spanish from a data file" } },
+        ],
+      },
+      {
+        capa: { es: "Reserva", en: "Booking" },
+        nodos: [
+          { titulo: { es: "Cuatro pasos", en: "Four steps" }, detalle: { es: "Servicio, barbero, fecha y hora, datos; ticket con código", en: "Service, barber, date and time, details; ticket with a code" } },
+          { titulo: { es: "Calendario", en: "Calendar" }, detalle: { es: "Archivo .ics para agregar la cita", en: ".ics file to add the appointment" } },
+        ],
+      },
+      {
+        capa: { es: "Barbero", en: "Barber" },
+        nodos: [
+          { titulo: { es: "Panel", en: "Dashboard" }, detalle: { es: "Solicitudes nuevas con aceptar o rechazar, por barbero", en: "New requests with accept or decline, per barber" } },
+          { titulo: { es: "Avisos", en: "Alerts" }, detalle: { es: "Sonido, notificación del navegador y contador", en: "Sound, browser notification and counter" } },
+        ],
+      },
+    ],
+    imagen: "/img/barberia-jair/portada.jpg",
+    demo: "https://jairs-barbershop.vercel.app",
+    contenido: {
+      es: `<p>Sitio web para la barbería de Jair en White Plains, Nueva York. El cliente elige servicio, barbero, día y hora, ve el precio y pide la cita; el barbero recibe el aviso y la acepta. Está publicado como <strong>beta</strong>: funciona completo y se ajusta con los datos reales del local. Lo desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>Precios, horarios, reseñas, teléfono y dirección exacta son de ejemplo, y las reseñas lo indican en la página. Las fotos son de bancos de imágenes con licencia libre; las tarjetas de los barberos usan el número de silla en lugar de fotos.</p>
+
+      <h2>El problema</h2>
+      <p>En una barbería con varios barberos, las citas llegan por llamadas y mensajes, y cada cliente pregunta lo mismo: qué cuesta, quién está libre y a qué hora. El objetivo era una página con personalidad de barbería clásica de Nueva York que mostrara servicios y precios, y que convirtiera esa conversación en una reserva concreta que el barbero pudiera aceptar.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Portada</strong> con el próximo turno disponible en vivo, menú editorial de servicios con precios y duración, y los barberos con sus días y especialidades.</li>
+        <li><strong>Escena con el scroll:</strong> el poste de barbería gira y se abre hasta la foto del local.</li>
+        <li><strong>Reserva en cuatro pasos</strong> (servicio, barbero, fecha y hora, datos) con un ticket que resume la cita, código de reserva y archivo para agregarla al calendario.</li>
+        <li><strong>Panel del barbero:</strong> solicitudes nuevas con aceptar o rechazar, citas confirmadas por día y filtro por barbero; la confirmación del cliente cambia sola a «reservado».</li>
+        <li><strong>Horario</strong> con «abierto ahora» en la hora de Nueva York y mapa.</li>
+        <li><strong>Bilingüe:</strong> inglés por defecto y español.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>HTML, CSS y JavaScript</strong> sin compilación ni dependencias; todos los textos están en un archivo de datos.</li>
+        <li>Dirección visual de barbería nocturna y cálida: tinta, crema, latón y vino, con el poste rojo, crema y azul como motivo; tipografías Big Shoulders Display, Cormorant Garamond y Manrope.</li>
+        <li>En esta beta las reservas se guardan en el navegador y el aviso llega entre pestañas; el siguiente paso es una base de datos compartida con avisos al celular del barbero.</li>
+        <li>Publicada en <strong>Vercel</strong>.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>Beta publicada y probada en computador y celular, en inglés y español, con el flujo completo: reservar, aviso en el panel, aceptar y confirmación al cliente.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/barberia-jair/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/01-inicio.jpg" alt="Portada con el próximo turno disponible" loading="lazy" /></a><figcaption>Portada con el próximo turno disponible</figcaption></figure>
+        <figure><a href="/img/barberia-jair/05-reserva.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/05-reserva.jpg" alt="Reserva en cuatro pasos con ticket" loading="lazy" /></a><figcaption>Reserva en cuatro pasos con ticket</figcaption></figure>
+        <figure><a href="/img/barberia-jair/08-panel-barbero.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/08-panel-barbero.jpg" alt="Panel del barbero con solicitudes nuevas" loading="lazy" /></a><figcaption>Panel del barbero con solicitudes nuevas</figcaption></figure>
+        <figure><a href="/img/barberia-jair/02-servicios.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/02-servicios.jpg" alt="Menú de servicios con precios" loading="lazy" /></a><figcaption>Menú de servicios con precios</figcaption></figure>
+        <figure><a href="/img/barberia-jair/03-barberos.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/03-barberos.jpg" alt="Barberos con sus días y especialidades" loading="lazy" /></a><figcaption>Barberos</figcaption></figure>
+        <figure><a href="/img/barberia-jair/04-escena.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/04-escena.jpg" alt="Escena con el scroll hasta el local" loading="lazy" /></a><figcaption>Escena con el scroll</figcaption></figure>
+        <figure><a href="/img/barberia-jair/06-resenas.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/06-resenas.jpg" alt="Reseñas de ejemplo" loading="lazy" /></a><figcaption>Reseñas (de ejemplo)</figcaption></figure>
+        <figure><a href="/img/barberia-jair/07-visita.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/07-visita.jpg" alt="Horario y mapa" loading="lazy" /></a><figcaption>Horario y mapa</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/barberia-jair/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/20-movil-inicio.jpg" alt="Portada en el celular" loading="lazy" /></a><figcaption>Portada</figcaption></figure>
+        <figure><a href="/img/barberia-jair/21-movil-barberos.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/21-movil-barberos.jpg" alt="Barberos en el celular" loading="lazy" /></a><figcaption>Barberos</figcaption></figure>
+        <figure><a href="/img/barberia-jair/22-movil-reserva.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/22-movil-reserva.jpg" alt="Reserva en el celular" loading="lazy" /></a><figcaption>Reserva</figcaption></figure>
+      </div>`,
+      en: `<p>Website for Jair's barbershop in White Plains, New York. Customers choose a service, a barber, a day and a time, see the price and request the appointment; the barber gets an alert and accepts it. It is live as a <strong>beta</strong>: fully working and being tuned with the shop's real details. I built it with the help of artificial intelligence (Claude Code).</p>
+      <p>Prices, hours, reviews, phone number and exact address are placeholders, and the reviews say so on the page. Photos come from free-license stock libraries; barber cards use the chair number instead of photos.</p>
+
+      <h2>The problem</h2>
+      <p>In a shop with several barbers, appointments come in through calls and messages, and every customer asks the same things: how much, who is free and at what time. The goal was a page with the personality of a classic New York barbershop that shows services and prices and turns that conversation into a concrete booking the barber can accept.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Home page</strong> with the next available slot live, an editorial service menu with prices and duration, and the barbers with their days and specialties.</li>
+        <li><strong>Scroll-driven scene:</strong> the barber pole spins and opens up into a photo of the shop.</li>
+        <li><strong>Four-step booking</strong> (service, barber, date and time, details) with a ticket summarizing the appointment, a booking code and a file to add it to the calendar.</li>
+        <li><strong>Barber dashboard:</strong> new requests with accept or decline, confirmed appointments by day and a per-barber filter; the customer's confirmation switches to "booked" on its own.</li>
+        <li><strong>Opening hours</strong> with "open now" in New York time, plus a map.</li>
+        <li><strong>Bilingual:</strong> English by default and Spanish.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>HTML, CSS and JavaScript</strong> with no build step or dependencies; all copy lives in a data file.</li>
+        <li>A warm, after-hours barbershop look: ink, cream, brass and wine, with the red, cream and blue pole as the recurring motif; Big Shoulders Display, Cormorant Garamond and Manrope typefaces.</li>
+        <li>In this beta, bookings are stored in the browser and alerts travel between tabs; the next step is a shared database with alerts on the barber's phone.</li>
+        <li>Hosted on <strong>Vercel</strong>.</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Beta live and tested on desktop and mobile, in English and Spanish, with the full flow: book, alert on the dashboard, accept and confirmation to the customer.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <div class="galeria">
+        <figure><a href="/img/barberia-jair/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/01-inicio.jpg" alt="Home page with the next available slot" loading="lazy" /></a><figcaption>Home page with the next available slot</figcaption></figure>
+        <figure><a href="/img/barberia-jair/05-reserva.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/05-reserva.jpg" alt="Four-step booking with ticket" loading="lazy" /></a><figcaption>Four-step booking with ticket</figcaption></figure>
+        <figure><a href="/img/barberia-jair/08-panel-barbero.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/08-panel-barbero.jpg" alt="Barber dashboard with new requests" loading="lazy" /></a><figcaption>Barber dashboard with new requests</figcaption></figure>
+        <figure><a href="/img/barberia-jair/02-servicios.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/02-servicios.jpg" alt="Service menu with prices" loading="lazy" /></a><figcaption>Service menu with prices</figcaption></figure>
+        <figure><a href="/img/barberia-jair/03-barberos.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/03-barberos.jpg" alt="Barbers with their days and specialties" loading="lazy" /></a><figcaption>Barbers</figcaption></figure>
+        <figure><a href="/img/barberia-jair/04-escena.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/04-escena.jpg" alt="Scroll scene into the shop" loading="lazy" /></a><figcaption>Scroll scene</figcaption></figure>
+        <figure><a href="/img/barberia-jair/06-resenas.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/06-resenas.jpg" alt="Sample reviews" loading="lazy" /></a><figcaption>Reviews (sample)</figcaption></figure>
+        <figure><a href="/img/barberia-jair/07-visita.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/07-visita.jpg" alt="Hours and map" loading="lazy" /></a><figcaption>Hours and map</figcaption></figure>
+      </div>
+      <h3>On mobile</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/barberia-jair/20-movil-inicio.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/20-movil-inicio.jpg" alt="Home page on mobile" loading="lazy" /></a><figcaption>Home page</figcaption></figure>
+        <figure><a href="/img/barberia-jair/21-movil-barberos.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/21-movil-barberos.jpg" alt="Barbers on mobile" loading="lazy" /></a><figcaption>Barbers</figcaption></figure>
+        <figure><a href="/img/barberia-jair/22-movil-reserva.jpg" target="_blank" rel="noopener"><img src="/img/barberia-jair/22-movil-reserva.jpg" alt="Booking on mobile" loading="lazy" /></a><figcaption>Booking</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
+    slug: "cine-villeta",
+    titulo: { es: "Cine Villeta — Cartelera y reserva de sillas", en: "Cine Villeta — Showtimes and seat booking" },
+    resumen: {
+      es: "Propuesta de sitio para un cine de una sala en Villeta: cartelera por día, programación semanal, promociones, precios con confitería y reserva de sillas sobre el mapa de la sala, enviada al WhatsApp del cine con código y total.",
+      en: "Website proposal for a single-screen cinema in Villeta: daily listings, weekly schedule, promotions, prices with concessions and seat booking on the theater map, sent to the cinema's WhatsApp with a code and total.",
+    },
+    fecha: "2026-10-17",
+    tipo: "web",
+    conIA: "Claude Code",
+    estado: { es: "Propuesta para cliente", en: "Client proposal" },
+    etiquetas: ["HTML", "CSS", "JavaScript", "Vercel"],
+    resultado: {
+      es: "Propuesta publicada y presentada al cine, con la reserva completa del lado del visitante.",
+      en: "Proposal live and presented to the cinema, with the full booking flow on the visitor's side.",
+    },
+    cifras: [
+      { valor: "3", etiqueta: { es: "tipos de silla: General, Preferencial y Sofá pareja", en: "seat types: General, Preferred and Couple sofa" } },
+      { valor: "2x1", etiqueta: { es: "de los miércoles aplicado solo al reservar", en: "Wednesday deal applied automatically when booking" } },
+      { valor: "1", etiqueta: { es: "archivo de datos para actualizar la cartelera cada semana", en: "data file to update the listings every week" } },
+    ],
+    arquitectura: [
+      {
+        capa: { es: "Datos", en: "Data" },
+        nodos: [
+          { titulo: { es: "Cartelera", en: "Listings" }, detalle: { es: "Películas, programación, precios y promociones", en: "Movies, schedule, prices and promotions" } },
+          { titulo: { es: "Sala", en: "Theater" }, detalle: { es: "Mapa de sillas por tipo", en: "Seat map by type" } },
+        ],
+      },
+      {
+        capa: { es: "Visitante · JavaScript", en: "Visitor · JavaScript" },
+        nodos: [
+          { titulo: { es: "Reserva", en: "Booking" }, detalle: { es: "Función, sillas, confitería y total", en: "Showtime, seats, concessions and total" } },
+          { titulo: { es: "Mis reservas", en: "My bookings" }, detalle: { es: "Código y resumen guardados en el navegador", en: "Code and summary stored in the browser" } },
+        ],
+      },
+      {
+        capa: { es: "Cine", en: "Cinema" },
+        nodos: [
+          { titulo: "WhatsApp", detalle: { es: "Mensaje con código, sillas y total listo para enviar", en: "Message with code, seats and total ready to send" } },
+          { titulo: "Vercel", detalle: { es: "Publicación del sitio", en: "Site hosting" } },
+        ],
+      },
+    ],
+    imagen: "/img/cine-villeta/portada.jpg",
+    demo: "https://cine-villeta.vercel.app",
+    contenido: {
+      es: `<p>Propuesta de sitio web para el cine de una sala de Villeta, Cundinamarca. Se ofreció al cine como borrador para mostrar cómo sus clientes podrían ver la cartelera y apartar sillas desde el celular. La desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>Es una propuesta: horarios, precios, dirección y sinopsis son de ejemplo; el teléfono y las redes salen de las publicaciones del cine. Los afiches pertenecen a sus distribuidoras.</p>
+
+      <h2>El problema</h2>
+      <p>La programación del cine se publicaba en piezas sueltas en redes sociales, y quien quería apartar puestos tenía que escribir para preguntar qué sillas quedaban. El objetivo era una página con la cartelera siempre a la mano y una forma sencilla de elegir función y sillas, que llegara al cine como un mensaje ordenado.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Cartelera por día</strong> con clasificación, duración y avance de cada película, y una franja de destacados.</li>
+        <li><strong>Programación de la semana</strong> en un tablero: tocar un horario abre la reserva.</li>
+        <li><strong>Promociones y precios:</strong> entradas por tipo de silla y confitería con combos.</li>
+        <li><strong>Reserva de sillas</strong> sobre el mapa de la sala (General, Preferencial y Sofá pareja), con confitería opcional y el 2x1 de los miércoles aplicado solo.</li>
+        <li><strong>Envío por WhatsApp:</strong> el visitante manda al cine un mensaje con código, función, sillas y total; la reserva queda en «Mis reservas».</li>
+        <li><strong>Publicaciones del cine</strong>, ubicación y contacto.</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>HTML, CSS y JavaScript</strong> sin compilación. Todo lo que cambia cada semana está en un solo archivo de datos.</li>
+        <li>Paleta roja del logo del cine con plata y dorado.</li>
+        <li>En la propuesta las sillas ocupadas son simuladas; la versión completa llevaría base de datos, panel para el cine y pago en línea.</li>
+        <li>Publicada en <strong>Vercel</strong>.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>Propuesta publicada y presentada al cine, funcionando en celular y computador.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/cine-villeta/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/01-inicio.jpg" alt="Portada con la película destacada" loading="lazy" /></a><figcaption>Portada con la película destacada</figcaption></figure>
+        <figure><a href="/img/cine-villeta/02-programacion.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/02-programacion.jpg" alt="Programación de la semana" loading="lazy" /></a><figcaption>Programación de la semana</figcaption></figure>
+        <figure><a href="/img/cine-villeta/03-precios.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/03-precios.jpg" alt="Entradas y confitería" loading="lazy" /></a><figcaption>Entradas y confitería</figcaption></figure>
+        <figure><a href="/img/cine-villeta/04-sala.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/04-sala.jpg" alt="La sala" loading="lazy" /></a><figcaption>La sala</figcaption></figure>
+        <figure><a href="/img/cine-villeta/05-contacto.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/05-contacto.jpg" alt="Ubicación y contacto" loading="lazy" /></a><figcaption>Ubicación y contacto</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/cine-villeta/20-movil-programacion.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/20-movil-programacion.jpg" alt="Programación en el celular" loading="lazy" /></a><figcaption>Programación</figcaption></figure>
+        <figure><a href="/img/cine-villeta/21-movil-sala.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/21-movil-sala.jpg" alt="La sala en el celular" loading="lazy" /></a><figcaption>La sala</figcaption></figure>
+      </div>`,
+      en: `<p>Website proposal for a single-screen cinema in Villeta, Cundinamarca. It was offered to the cinema as a draft showing how its customers could check the listings and hold seats from their phones. I built it with the help of artificial intelligence (Claude Code).</p>
+      <p>This is a proposal: showtimes, prices, address and synopses are placeholders; the phone number and social accounts come from the cinema's own posts. Movie posters belong to their distributors.</p>
+
+      <h2>The problem</h2>
+      <p>The cinema published its schedule as scattered social media posts, and anyone wanting to hold seats had to message and ask which ones were left. The goal was a page with the listings always at hand and a simple way to choose a showtime and seats that reaches the cinema as a tidy message.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Daily listings</strong> with rating, runtime and trailer for each movie, plus a featured carousel.</li>
+        <li><strong>Weekly schedule</strong> on a board: tapping a showtime opens the booking.</li>
+        <li><strong>Promotions and prices:</strong> tickets by seat type and concessions with combos.</li>
+        <li><strong>Seat booking</strong> on the theater map (General, Preferred and Couple sofa), with optional concessions and the Wednesday 2-for-1 applied automatically.</li>
+        <li><strong>WhatsApp delivery:</strong> visitors send the cinema a message with code, showtime, seats and total; the booking is kept under "My bookings".</li>
+        <li><strong>The cinema's posts</strong>, location and contact.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>HTML, CSS and JavaScript</strong> with no build step. Everything that changes weekly lives in a single data file.</li>
+        <li>Red palette from the cinema's logo with silver and gold.</li>
+        <li>In the proposal, taken seats are simulated; the full version would add a database, a dashboard for the cinema and online payment.</li>
+        <li>Hosted on <strong>Vercel</strong>.</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Proposal live and presented to the cinema, working on phones and desktops.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <p>The site is in Spanish.</p>
+      <div class="galeria">
+        <figure><a href="/img/cine-villeta/01-inicio.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/01-inicio.jpg" alt="Home page with the featured movie" loading="lazy" /></a><figcaption>Home page with the featured movie</figcaption></figure>
+        <figure><a href="/img/cine-villeta/02-programacion.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/02-programacion.jpg" alt="Weekly schedule" loading="lazy" /></a><figcaption>Weekly schedule</figcaption></figure>
+        <figure><a href="/img/cine-villeta/03-precios.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/03-precios.jpg" alt="Tickets and concessions" loading="lazy" /></a><figcaption>Tickets and concessions</figcaption></figure>
+        <figure><a href="/img/cine-villeta/04-sala.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/04-sala.jpg" alt="The theater" loading="lazy" /></a><figcaption>The theater</figcaption></figure>
+        <figure><a href="/img/cine-villeta/05-contacto.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/05-contacto.jpg" alt="Location and contact" loading="lazy" /></a><figcaption>Location and contact</figcaption></figure>
+      </div>
+      <h3>On mobile</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/cine-villeta/20-movil-programacion.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/20-movil-programacion.jpg" alt="Schedule on mobile" loading="lazy" /></a><figcaption>Schedule</figcaption></figure>
+        <figure><a href="/img/cine-villeta/21-movil-sala.jpg" target="_blank" rel="noopener"><img src="/img/cine-villeta/21-movil-sala.jpg" alt="The theater on mobile" loading="lazy" /></a><figcaption>The theater</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
+    slug: "mostrador",
+    titulo: { es: "Mostrador — Punto de venta para ferretería y papelería", en: "Mostrador — Point of sale for a hardware and stationery store" },
+    resumen: {
+      es: "Aplicación de ventas para un negocio que es ferretería y papelería a la vez: venta con lector de código de barras, efectivo, tarjeta, transferencia o fiado, inventario con pedido sugerido, cierre de caja, clientes con saldo y reportes por negocio.",
+      en: "Sales app for a store that is both a hardware shop and a stationery shop: barcode-scanner checkout, cash, card, transfer or store credit, inventory with suggested reorders, cash closing, customers with balances and reports per business.",
+    },
+    fecha: "2026-10-13",
+    tipo: "web",
+    conIA: "Claude Code",
+    estado: { es: "Beta", en: "Beta" },
+    etiquetas: ["HTML", "CSS", "JavaScript", "Vercel"],
+    resultado: {
+      es: "Beta funcional publicada para que el negocio la pruebe con datos de ejemplo antes de cargar su inventario.",
+      en: "Working beta published so the store can try it with sample data before loading its inventory.",
+    },
+    cifras: [
+      { valor: "2", etiqueta: { es: "negocios en una sola app: ferretería y papelería", en: "businesses in one app: hardware and stationery" } },
+      { valor: "4", etiqueta: { es: "formas de pago: efectivo, tarjeta, transferencia y fiado", en: "payment methods: cash, card, transfer and store credit" } },
+      { valor: "19 %", etiqueta: { es: "de IVA calculado en cada venta", en: "VAT calculated on every sale" } },
+    ],
+    arquitectura: [
+      {
+        capa: { es: "Mostrador", en: "Counter" },
+        nodos: [
+          { titulo: { es: "Vender", en: "Sell" }, detalle: { es: "Búsqueda o lector de código de barras, descuento y cobro", en: "Search or barcode scanner, discount and checkout" } },
+          { titulo: { es: "Factura", en: "Receipt" }, detalle: { es: "Tirilla y envío por WhatsApp", en: "Printed slip and WhatsApp delivery" } },
+        ],
+      },
+      {
+        capa: { es: "Negocio", en: "Business" },
+        nodos: [
+          { titulo: { es: "Inventario", en: "Inventory" }, detalle: { es: "Costo, precio, margen, existencias y pedido sugerido", en: "Cost, price, margin, stock and suggested reorder" } },
+          { titulo: { es: "Clientes", en: "Customers" }, detalle: { es: "Compras y saldo fiado con abonos", en: "Purchases and store-credit balance with payments" } },
+        ],
+      },
+      {
+        capa: { es: "Control", en: "Control" },
+        nodos: [
+          { titulo: { es: "Caja y reportes", en: "Cash & reports" }, detalle: { es: "Cierre de caja, ventas por día y por negocio, CSV", en: "Cash closing, sales by day and business, CSV" } },
+          { titulo: "Vercel", detalle: { es: "Publicación de la beta", en: "Beta hosting" } },
+        ],
+      },
+    ],
+    imagen: "/img/mostrador/portada.jpg",
+    demo: "https://mostrador-ferreteria-papeleria.vercel.app",
+    contenido: {
+      es: `<p>Mostrador es la aplicación de ventas para una papelería y ferretería en Colombia, dos negocios que comparten el mismo local y la misma caja. Está publicada como <strong>beta</strong> con datos de ejemplo para que el negocio la pruebe antes de cargar su inventario. La desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>Productos, clientes y ventas de las capturas son datos de ejemplo.</p>
+
+      <h2>El problema</h2>
+      <p>En un local que vende a la vez tornillos y cuadernos, es común anotar las ventas en una libreta y llevar el fiado de memoria, y al final del día no es claro cuánto vendió cada negocio ni qué hay que volver a pedir. El objetivo era una aplicación sencilla para el mostrador que separara los dos negocios, controlara el fiado y mostrara qué surtir.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Panel</strong> con las ventas del día, la ganancia y el mes, separadas por ferretería y papelería, y una lista de productos por surtir.</li>
+        <li><strong>Vender:</strong> búsqueda o lector de código de barras, descuentos, IVA del 19 % y cobro en efectivo (con cambio), tarjeta, transferencia o fiado.</li>
+        <li><strong>Inventario</strong> con costo, precio, margen, existencias, estado de stock bajo y pedido sugerido.</li>
+        <li><strong>Ventas</strong> con filtros por fecha y forma de pago, cierre de caja y exportación a CSV.</li>
+        <li><strong>Clientes</strong> con historial de compras y saldo fiado con abonos; también proveedores.</li>
+        <li><strong>Reportes</strong> por día, por negocio y por forma de pago.</li>
+        <li>Factura enviada por WhatsApp y vocabulario de mostrador colombiano (consumidor final, tirilla, fiado).</li>
+      </ul>
+
+      <h2>Cómo está hecha</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li>Toda la aplicación vive en <strong>un solo archivo HTML</strong> con JavaScript; en la beta los datos se guardan en el navegador.</li>
+        <li>Tema claro u oscuro según el sistema y diseño adaptable a computador, tableta y celular.</li>
+        <li>Publicada en <strong>Vercel</strong>.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>Beta funcional publicada, con todos los módulos de venta, inventario, clientes y reportes listos para probar.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/mostrador/01-panel.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/01-panel.jpg" alt="Panel con ventas por negocio" loading="lazy" /></a><figcaption>Panel con ventas por negocio</figcaption></figure>
+        <figure><a href="/img/mostrador/02-vender.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/02-vender.jpg" alt="Punto de venta" loading="lazy" /></a><figcaption>Punto de venta</figcaption></figure>
+        <figure><a href="/img/mostrador/03-inventario.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/03-inventario.jpg" alt="Inventario con márgenes y existencias" loading="lazy" /></a><figcaption>Inventario</figcaption></figure>
+        <figure><a href="/img/mostrador/04-ventas.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/04-ventas.jpg" alt="Ventas con cierre de caja" loading="lazy" /></a><figcaption>Ventas y cierre de caja</figcaption></figure>
+        <figure><a href="/img/mostrador/05-reportes.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/05-reportes.jpg" alt="Reportes por día y por negocio" loading="lazy" /></a><figcaption>Reportes</figcaption></figure>
+        <figure><a href="/img/mostrador/06-clientes.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/06-clientes.jpg" alt="Clientes con saldo fiado" loading="lazy" /></a><figcaption>Clientes con saldo fiado</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/mostrador/20-movil-panel.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/20-movil-panel.jpg" alt="Panel en el celular" loading="lazy" /></a><figcaption>Panel</figcaption></figure>
+      </div>`,
+      en: `<p>Mostrador is the sales app for a stationery and hardware store in Colombia, two businesses sharing the same shop and the same register. It is live as a <strong>beta</strong> with sample data so the store can try it before loading its inventory. I built it with the help of artificial intelligence (Claude Code).</p>
+      <p>Products, customers and sales in the screenshots are sample data.</p>
+
+      <h2>The problem</h2>
+      <p>In a shop that sells both screws and notebooks, it is common to write sales in a notebook and track store credit from memory, and at the end of the day it is unclear how much each business sold or what needs to be reordered. The goal was a simple counter app that separates both businesses, controls store credit and shows what to restock.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Dashboard</strong> with today's sales, profit and the month, split by hardware and stationery, plus a list of products to restock.</li>
+        <li><strong>Sell:</strong> search or barcode scanner, discounts, 19% VAT and checkout in cash (with change), card, transfer or store credit.</li>
+        <li><strong>Inventory</strong> with cost, price, margin, stock, low-stock status and suggested reorders.</li>
+        <li><strong>Sales</strong> with date and payment filters, cash closing and CSV export.</li>
+        <li><strong>Customers</strong> with purchase history and store-credit balances with payments; suppliers too.</li>
+        <li><strong>Reports</strong> by day, by business and by payment method.</li>
+        <li>Receipts sent over WhatsApp and Colombian counter vocabulary.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li>The whole app lives in <strong>a single HTML file</strong> with JavaScript; in the beta, data is stored in the browser.</li>
+        <li>Light or dark theme following the system, and a layout for desktop, tablet and phone.</li>
+        <li>Hosted on <strong>Vercel</strong>.</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>Working beta live, with every sales, inventory, customer and reporting module ready to try.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <p>The app is in Spanish.</p>
+      <div class="galeria">
+        <figure><a href="/img/mostrador/01-panel.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/01-panel.jpg" alt="Dashboard with sales per business" loading="lazy" /></a><figcaption>Dashboard with sales per business</figcaption></figure>
+        <figure><a href="/img/mostrador/02-vender.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/02-vender.jpg" alt="Point of sale" loading="lazy" /></a><figcaption>Point of sale</figcaption></figure>
+        <figure><a href="/img/mostrador/03-inventario.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/03-inventario.jpg" alt="Inventory with margins and stock" loading="lazy" /></a><figcaption>Inventory</figcaption></figure>
+        <figure><a href="/img/mostrador/04-ventas.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/04-ventas.jpg" alt="Sales with cash closing" loading="lazy" /></a><figcaption>Sales and cash closing</figcaption></figure>
+        <figure><a href="/img/mostrador/05-reportes.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/05-reportes.jpg" alt="Reports by day and business" loading="lazy" /></a><figcaption>Reports</figcaption></figure>
+        <figure><a href="/img/mostrador/06-clientes.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/06-clientes.jpg" alt="Customers with store-credit balance" loading="lazy" /></a><figcaption>Customers with store credit</figcaption></figure>
+      </div>
+      <h3>On mobile</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/mostrador/20-movil-panel.jpg" target="_blank" rel="noopener"><img src="/img/mostrador/20-movil-panel.jpg" alt="Dashboard on mobile" loading="lazy" /></a><figcaption>Dashboard</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
     slug: "agente-whatsapp",
     titulo: { es: "Agente de WhatsApp — Asistente con IA que atiende clientes", en: "WhatsApp Agent — AI assistant that serves customers" },
     resumen: {
