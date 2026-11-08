@@ -21,6 +21,148 @@
 
 const PROYECTOS = [
   {
+    slug: "agente-whatsapp",
+    titulo: { es: "Agente de WhatsApp — Asistente con IA que atiende clientes", en: "WhatsApp Agent — AI assistant that serves customers" },
+    resumen: {
+      es: "Agente con inteligencia artificial que atiende mi WhatsApp de trabajo dentro de la misma aplicación: conversa con cada cliente, recuerda sus datos, toma pedidos, agenda reuniones sin cruces y me avisa lo que necesita atención personal, con un panel que resume cada chat.",
+      en: "AI agent that answers my business WhatsApp inside the app itself: it talks with each customer, remembers their details, takes orders, books meetings without overlaps and flags what needs my personal attention, with a dashboard that summarizes every chat.",
+    },
+    fecha: "2026-11-07",
+    tipo: "ia",
+    conIA: "Claude Code",
+    estado: { es: "En producción", en: "In production" },
+    etiquetas: ["Gemini", "JavaScript", "Vercel Functions", "PostgreSQL", "Zernio", "WhatsApp"],
+    resultado: {
+      es: "Funciona de punta a punta en mi número: el mensaje llega, el agente responde en unos 5 segundos y todo queda en el panel.",
+      en: "Works end to end on my number: the message arrives, the agent replies in about 5 seconds and everything shows up in the dashboard.",
+    },
+    cifras: [
+      { valor: "9", etiqueta: { es: "herramientas: datos del cliente, pedidos, agenda y aviso a Andrey", en: "tools: customer data, orders, scheduling and handoff to Andrey" } },
+      { valor: "19", etiqueta: { es: "pruebas automáticas de punta a punta", en: "end-to-end automated tests" } },
+      { valor: "~5 s", etiqueta: { es: "en responder en la primera prueba real", en: "to reply in the first real test" } },
+      { valor: "$0", etiqueta: { es: "al mes: todo en planes gratuitos", en: "per month: all on free plans" } },
+    ],
+    arquitectura: [
+      {
+        capa: "WhatsApp",
+        nodos: [
+          { titulo: { es: "Cliente", en: "Customer" }, detalle: { es: "Escribe al número de siempre, sin instalar nada", en: "Writes to the usual number, nothing to install" } },
+          { titulo: "Zernio", detalle: { es: "API de WhatsApp en coexistencia con la app del celular", en: "WhatsApp API coexisting with the phone app" } },
+        ],
+      },
+      {
+        capa: { es: "Agente · Vercel", en: "Agent · Vercel" },
+        nodos: [
+          { titulo: "Webhook", detalle: { es: "Firma verificada, respuesta inmediata y trabajo en segundo plano", en: "Verified signature, instant response and background work" } },
+          { titulo: "Gemini", detalle: { es: "Conversa y usa las herramientas (pedidos, agenda, memoria)", en: "Converses and uses the tools (orders, calendar, memory)" } },
+        ],
+      },
+      {
+        capa: { es: "Datos y control", en: "Data & control" },
+        nodos: [
+          { titulo: "PostgreSQL", detalle: { es: "Clientes, mensajes, pedidos y reuniones (Neon)", en: "Customers, messages, orders and meetings (Neon)" } },
+          { titulo: { es: "Panel", en: "Dashboard" }, detalle: { es: "Resumen por chat, pedidos, reuniones y pausa del agente", en: "Per-chat summary, orders, meetings and agent pause" } },
+        ],
+      },
+    ],
+    imagen: "/img/agente-whatsapp/portada.jpg",
+    contenido: {
+      es: `<p>Agente con inteligencia artificial que atiende el WhatsApp de trabajo de H.A.M.C Solutions —el mismo número de este portafolio— <strong>dentro de WhatsApp</strong>. Conversa con cada cliente, entiende su negocio, responde sobre servicios y proyectos, toma pedidos, agenda reuniones y me pasa lo que necesita una respuesta personal. Lo desarrollé con apoyo de inteligencia artificial (Claude Code).</p>
+      <p>La conversación y el panel de las capturas usan clientes y datos de ejemplo; la primera imagen es una ilustración.</p>
+
+      <h2>El problema</h2>
+      <p>Los clientes escriben a cualquier hora y por WhatsApp, y cada conversación empieza igual: qué necesita, para qué negocio, para cuándo. Si no hay respuesta pronto, el interés se enfría; y cuando hay varias conversaciones a la vez, es fácil olvidar un pedido o cruzar dos reuniones. El objetivo era un asistente que atendiera en el mismo chat, con memoria de cada cliente, que dejara todo ordenado y que supiera cuándo hacerse a un lado.</p>
+
+      <h2>Qué hace</h2>
+      <ul>
+        <li><strong>Conversa y explora:</strong> pregunta por el negocio y la necesidad del cliente, responde sobre servicios y proyectos con la información del portafolio y lee los enlaces o imágenes que le envían.</li>
+        <li><strong>Memoria por cliente:</strong> guarda nombre, empresa, ciudad y necesidad, y los recuerda en la siguiente conversación sin mezclar clientes.</li>
+        <li><strong>Pedidos:</strong> los registra con tipo, detalle, presupuesto y fecha deseada, y los consulta o actualiza cuando el cliente pregunta.</li>
+        <li><strong>Agenda:</strong> ofrece horarios libres, agenda la reunión sin cruces y envía un enlace para agregarla al calendario del cliente.</li>
+        <li><strong>Sabe cuándo callarse:</strong> si yo respondo desde el celular, el agente se queda en silencio en ese chat por unas horas y guarda mi mensaje en el historial.</li>
+        <li><strong>Pasa a Andrey</strong> lo que requiere atención personal, como precios, plazos o una reunión presencial; no da precios ni plazos por su cuenta.</li>
+        <li><strong>Panel privado:</strong> resumen de una línea por chat y lo que me toca hacer, pedidos con su estado, próximas reuniones y la opción de pausar o reactivar el agente en cada conversación.</li>
+      </ul>
+
+      <h2>Cómo está hecho</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>Zernio</strong> conecta el número de WhatsApp en coexistencia: sigue funcionando en la app del celular y, a la vez, envía cada mensaje al agente.</li>
+        <li>El <strong>webhook en Vercel</strong> verifica la firma de cada evento, responde al instante y sigue el trabajo en segundo plano; espera unos segundos para juntar mensajes seguidos y usa un turno por cliente para no responder dos veces.</li>
+        <li><strong>Gemini</strong> conversa y llama a nueve herramientas con esquemas estrictos; si la cuota gratuita se agota o el servicio falla, el cliente recibe un aviso amable y el chat queda marcado.</li>
+        <li><strong>PostgreSQL</strong> (Neon) guarda clientes, mensajes, pedidos y reuniones; las pruebas usan PGlite y servidores falsos de Gemini y Zernio.</li>
+        <li>Pensado para la Ley 1581: los registros no guardan números completos ni textos de las conversaciones.</li>
+        <li>Basado en un proyecto de código abierto (MIT), reescrito en JavaScript para funcionar en Vercel.</li>
+      </ul>
+
+      <h2>Resultado</h2>
+      <ul>
+        <li>En producción en mi número de trabajo: en la primera prueba real, el mensaje llegó y el agente respondió en unos 5 segundos.</li>
+        <li>19 pruebas automáticas de punta a punta: firma, deduplicación, memoria sin mezclar clientes, pedidos, reuniones sin cruces, silencio y reactivación, fallas de los servicios y seguridad del panel.</li>
+        <li>Funciona con planes gratuitos de todos los servicios.</li>
+      </ul>
+
+      <h2>Capturas</h2>
+      <div class="galeria">
+        <figure><a href="/img/agente-whatsapp/01-ilustracion.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/01-ilustracion.jpg" alt="Ilustración de una conversación con el agente" loading="lazy" /></a><figcaption>Ilustración de una conversación (datos de ejemplo)</figcaption></figure>
+        <figure><a href="/img/agente-whatsapp/02-panel.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/02-panel.jpg" alt="Panel con los chats que necesitan atención, pedidos y reuniones" loading="lazy" /></a><figcaption>Panel: atención, pedidos y reuniones</figcaption></figure>
+        <figure><a href="/img/agente-whatsapp/03-conversacion.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/03-conversacion.jpg" alt="Ficha del cliente con su conversación" loading="lazy" /></a><figcaption>Ficha del cliente con su conversación</figcaption></figure>
+      </div>
+      <h3>En el celular</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/agente-whatsapp/20-movil-panel.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/20-movil-panel.jpg" alt="Panel en el celular" loading="lazy" /></a><figcaption>Panel</figcaption></figure>
+        <figure><a href="/img/agente-whatsapp/21-movil-conversacion.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/21-movil-conversacion.jpg" alt="Conversación en el celular" loading="lazy" /></a><figcaption>Conversación</figcaption></figure>
+      </div>`,
+      en: `<p>AI agent that answers the H.A.M.C Solutions business WhatsApp —the same number shown on this portfolio— <strong>inside WhatsApp</strong>. It talks with each customer, understands their business, answers questions about services and projects, takes orders, books meetings and hands me whatever needs a personal reply. I built it with the help of artificial intelligence (Claude Code).</p>
+      <p>The conversation and dashboard in the screenshots use sample customers and data; the first image is an illustration.</p>
+
+      <h2>The problem</h2>
+      <p>Customers write at any hour and over WhatsApp, and every conversation starts the same way: what they need, for which business, by when. Without a quick reply, interest cools down; and with several conversations at once, it is easy to forget an order or double-book two meetings. The goal was an assistant that answers in the same chat, remembers each customer, keeps everything organized and knows when to step aside.</p>
+
+      <h2>What it does</h2>
+      <ul>
+        <li><strong>Converses and explores:</strong> asks about the customer's business and needs, answers questions about services and projects using the portfolio's information, and reads the links or images customers send.</li>
+        <li><strong>Per-customer memory:</strong> stores name, company, city and need, and remembers them in the next conversation without mixing customers.</li>
+        <li><strong>Orders:</strong> records them with type, details, budget and desired date, and looks them up or updates them when the customer asks.</li>
+        <li><strong>Scheduling:</strong> offers open slots, books the meeting without overlaps and sends a link to add it to the customer's calendar.</li>
+        <li><strong>Knows when to stay quiet:</strong> if I reply from my phone, the agent goes silent in that chat for a few hours and keeps my message in the history.</li>
+        <li><strong>Hands off to Andrey</strong> anything that needs personal attention, such as prices, timelines or an in-person meeting; it never quotes prices or deadlines on its own.</li>
+        <li><strong>Private dashboard:</strong> a one-line summary per chat and what I need to do, orders with their status, upcoming meetings and the option to pause or resume the agent in each conversation.</li>
+      </ul>
+
+      <h2>How it's built</h2>
+      <div data-arquitectura></div>
+      <ul>
+        <li><strong>Zernio</strong> connects the WhatsApp number in coexistence mode: it keeps working in the phone app while every message is also sent to the agent.</li>
+        <li>The <strong>webhook on Vercel</strong> verifies each event's signature, responds instantly and continues the work in the background; it waits a few seconds to group consecutive messages and uses a per-customer turn so it never answers twice.</li>
+        <li><strong>Gemini</strong> converses and calls nine tools with strict schemas; if the free quota runs out or the service fails, the customer gets a friendly notice and the chat is flagged.</li>
+        <li><strong>PostgreSQL</strong> (Neon) stores customers, messages, orders and meetings; tests use PGlite plus fake Gemini and Zernio servers.</li>
+        <li>Designed with Colombia's data protection law (Law 1581) in mind: logs never store full phone numbers or conversation text.</li>
+        <li>Based on an open-source project (MIT), rewritten in JavaScript to run on Vercel.</li>
+      </ul>
+
+      <h2>Outcome</h2>
+      <ul>
+        <li>In production on my business number: in the first real test, the message arrived and the agent replied in about 5 seconds.</li>
+        <li>19 end-to-end automated tests: signatures, deduplication, memory without mixing customers, orders, non-overlapping meetings, silence and resume, service failures and dashboard security.</li>
+        <li>Runs on the free plans of every service.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+      <p>The agent and dashboard are in Spanish.</p>
+      <div class="galeria">
+        <figure><a href="/img/agente-whatsapp/01-ilustracion.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/01-ilustracion.jpg" alt="Illustration of a conversation with the agent" loading="lazy" /></a><figcaption>Illustration of a conversation (sample data)</figcaption></figure>
+        <figure><a href="/img/agente-whatsapp/02-panel.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/02-panel.jpg" alt="Dashboard with chats needing attention, orders and meetings" loading="lazy" /></a><figcaption>Dashboard: attention, orders and meetings</figcaption></figure>
+        <figure><a href="/img/agente-whatsapp/03-conversacion.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/03-conversacion.jpg" alt="Customer record with the conversation" loading="lazy" /></a><figcaption>Customer record with the conversation</figcaption></figure>
+      </div>
+      <h3>On mobile</h3>
+      <div class="galeria movil">
+        <figure><a href="/img/agente-whatsapp/20-movil-panel.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/20-movil-panel.jpg" alt="Dashboard on mobile" loading="lazy" /></a><figcaption>Dashboard</figcaption></figure>
+        <figure><a href="/img/agente-whatsapp/21-movil-conversacion.jpg" target="_blank" rel="noopener"><img src="/img/agente-whatsapp/21-movil-conversacion.jpg" alt="Conversation on mobile" loading="lazy" /></a><figcaption>Conversation</figcaption></figure>
+      </div>`,
+    },
+  },
+  {
     slug: "planillero-voley",
     titulo: { es: "Planillero Vóley — Planilla de juego para la mesa de control", en: "Planillero Vóley — Volleyball scoresheet for the scorer's table" },
     resumen: {
@@ -174,6 +316,7 @@ const PROYECTOS = [
   },
   {
     slug: "bicifest-colombia",
+    destacado: true,
     titulo: { es: "BiciFest Colombia 2026 — Sitio, inscripciones y panel del evento", en: "BiciFest Colombia 2026 — Website, registrations and event dashboard" },
     resumen: {
       es: "Sitio oficial de la décima edición de BiciFest en Villa de Guaduas: inscripciones con exención firmada y PDF, código QR por inscripción, verificación en la entrada con la cámara y panel con reportes en Excel y PDF, en producción con PHP y MySQL.",
@@ -917,7 +1060,6 @@ const PROYECTOS = [
     tipo: "escritorio",
     conIA: "Claude Code",
     estado: { es: "En producción", en: "In production" },
-    destacado: true,
     etiquetas: ["Electron", "React", "SQLite", "Arduino", ".NET"],
     resultado: { es: "En producción, con más de 300 clientes registrados.", en: "In production, with 300+ registered clients." },
     cifras: [

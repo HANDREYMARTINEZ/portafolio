@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Ilustración del agente</title>
+<!-- Fuente de img/agente-whatsapp/01-ilustracion.jpg y portada.jpg (1440×900, datos de ejemplo). -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1440px; height: 900px; overflow: hidden; }
+  body { background: #07101d; color: #eaf1fa; font-family: Inter, sans-serif; position: relative; display: flex; align-items: center; gap: 72px; padding: 0 96px; }
+  body::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgb(0 157 255 / .07) 1px, transparent 1px), linear-gradient(90deg, rgb(0 157 255 / .07) 1px, transparent 1px); background-size: 56px 56px; }
+  body::after { content: ""; position: absolute; left: -200px; top: -240px; width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(circle, rgb(0 157 255 / .25), transparent 65%); }
+  .tel { position: relative; z-index: 1; width: 400px; height: 800px; border-radius: 46px; background: #0b1828; padding: 14px; box-shadow: 0 0 0 2px #23496f, 0 0 0 3px rgb(13 220 255 / .25), 0 40px 80px rgb(0 0 0 / .5), 0 0 60px rgb(0 157 255 / .25); }
+  .pantalla { height: 100%; border-radius: 34px; overflow: hidden; background: #0e1a24; display: flex; flex-direction: column; }
+  .cab { display: flex; align-items: center; gap: 12px; padding: 18px 16px 14px; background: #13232f; }
+  .av { width: 40px; height: 40px; border-radius: 50%; background: #07101d url("/img/marca/simbolo.webp") center/86% no-repeat; box-shadow: 0 0 0 2px #009dff; }
+  .cab b { display: block; font-size: 15px; } .cab small { font-size: 12px; color: #7fd8a8; }
+  .chat { flex: 1; padding: 14px 12px; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; line-height: 1.42; }
+  .m { max-width: 82%; padding: 8px 11px 6px; border-radius: 12px; position: relative; }
+  .m i { display: block; text-align: right; font-style: normal; font-size: 10.5px; color: rgb(234 241 250 / .55); margin-top: 2px; }
+  .c { align-self: flex-start; background: #1d2c37; border-top-left-radius: 4px; }
+  .a { align-self: flex-end; background: #0a4a6e; border-top-right-radius: 4px; }
+  .tarjeta { align-self: flex-end; max-width: 82%; padding: 10px 12px; border-radius: 12px; background: #0b3554; border: 1px solid rgb(13 220 255 / .35); font-size: 12.5px; }
+  .tarjeta b { color: #0ddcff; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .04em; display: block; margin-bottom: 3px; }
+  .barra { margin: 8px 10px 12px; padding: 11px 16px; border-radius: 22px; background: #1d2c37; color: rgb(234 241 250 / .4); font-size: 13px; }
+  .texto { position: relative; z-index: 1; max-width: 640px; }
+  .rotulo { font-family: 'JetBrains Mono', monospace; color: #0ddcff; font-size: 16px; letter-spacing: .12em; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
+  .rotulo::before { content: ""; width: 7px; height: 14px; transform: skewX(-22deg); background: #0ddcff; box-shadow: 0 0 8px #0ddcff; }
+  h1 { font-family: 'Space Grotesk', sans-serif; font-size: 64px; line-height: 1.04; letter-spacing: -.03em; margin-top: 18px; }
+  p.b { font-size: 21px; color: #93a5bc; margin-top: 20px; line-height: 1.5; }
+  ul { list-style: none; margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  li { padding: 12px 16px; border-radius: 12px; border: 1px solid #15304b; background: linear-gradient(160deg, rgb(14 53 80 / .55), rgb(11 24 40 / .94)); font-size: 16px; }
+  li::before { content: "▸ "; color: #009dff; }
+  .marca { position: absolute; right: 26px; bottom: 20px; z-index: 1; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: rgb(234 241 250 / .45); }
+</style>
+</head>
+<body>
+  <div class="tel"><div class="pantalla">
+    <div class="cab"><span class="av"></span><div><b>H.A.M.C Solutions</b><small>en línea</small></div></div>
+    <div class="chat">
+      <div class="m c">Hola, tengo una panadería en Guaduas y quiero vender por internet<i>8:55 p. m.</i></div>
+      <div class="m a">¡Hola, Laura! Soy el asistente con IA de H.A.M.C Solutions. ¿Hoy cómo reciben los pedidos: por llamada, por WhatsApp o en el local?<i>8:56 p. m.</i></div>
+      <div class="m c">Casi todo por WhatsApp, pero se me pierden los pedidos<i>8:58 p. m.</i></div>
+      <div class="m a">Una página con su catálogo donde el cliente arma el pedido y lo envía por WhatsApp ya escrito, con la lista y el total. ¿Le gustaría algo así?<i>8:59 p. m.</i></div>
+      <div class="m c">Sí. ¿Podemos hablarlo el martes en la mañana?<i>9:04 p. m.</i></div>
+      <div class="tarjeta"><b>REUNIÓN AGENDADA</b>Martes 10:00 a. m. · videollamada<br />Enlace para agregarla a su calendario</div>
+      <div class="m a">Listo. Andrey le escribe hoy con la propuesta. ¡Gracias, Laura!<i>9:05 p. m.</i></div>
+    </div>
+    <div class="barra">Mensaje</div>
+  </div></div>
+  <div class="texto">
+    <p class="rotulo">Agente con IA · WhatsApp</p>
+    <h1>Atiende, recuerda y agenda dentro de WhatsApp</h1>
+    <p class="b">Conversa con cada cliente, guarda lo que necesita, toma pedidos, agenda reuniones sin cruces y avisa lo que requiere atención personal.</p>
+    <ul><li>Memoria por cliente</li><li>Pedidos y estados</li><li>Agenda sin cruces</li><li>Se calla si respondo yo</li><li>Panel con resumen por chat</li><li>Gemini + Zernio + Vercel</li></ul>
+  </div>
+  <p class="marca">Ilustración · datos de ejemplo</p>
+</body>
+</html>
